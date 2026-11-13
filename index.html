@@ -316,14 +316,6 @@ input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-vis
 .card:focus-visible,[tabindex]:focus-visible,a:focus-visible,.chip:focus-visible,.ac-side button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 [role=dialog]:focus{outline:none}
 .heart{position:absolute}.heart::after{content:"";position:absolute;inset:-12px}
-@media (pointer:coarse){
- button,.chip,select,input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}
- header .sec{min-width:44px}.carb{width:44px;height:44px}
- .chk{min-height:44px;display:inline-flex;align-items:center;gap:6px}
- input[type=checkbox],input[type=radio]{width:22px;height:22px}
- .heart{min-height:0}
- .body button{min-height:44px;font-size:.75rem}
-}
 
 /* ===== SouqPro premium refresh ===== */
 :root{--ff:"Cairo",system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;--gold:#f5c76b;--ease:cubic-bezier(.2,.7,.2,1)}
@@ -381,6 +373,65 @@ header .sec:hover{transform:translateY(-1px);background:color-mix(in srgb,var(--
  .bn-i b{position:absolute;top:-6px;inset-inline-end:-10px;min-width:16px;height:16px;border-radius:99px;background:var(--accent);color:var(--accent-t);font-size:.6rem;line-height:16px;text-align:center;padding:0 3px}
 }
 @media (prefers-reduced-motion:reduce){.card,.hero button{animation:none!important;transition:none!important}.card:hover{transform:none}.card:hover .pic img{transform:none}}
+
+/* ===== v3: reference look (compact, blue/violet, small buttons) ===== */
+:root{--accent:#4f8cff;--accent-t:#04123a;--blue:#2f66e0;--violet:#6a4fe0;--bg:#060d1b;--card:#0b1630;--card2:#0e1b38;--line:#1b2e55}
+:root[data-theme="light"]{--accent:#2563eb;--accent-t:#fff;--blue:#2563eb;--violet:#6d4fe0}
+.pri,.hero button{background:linear-gradient(135deg,#2f66e0,#6a4fe0)!important;color:#fff!important;box-shadow:0 6px 18px #2f66e044}
+.hero button{border-radius:12px;padding:10px 24px;font-size:.95rem}
+.ann{background:linear-gradient(90deg,#2f66e0,#6a4fe0);color:#fff}
+header h1{background:none;color:var(--text);-webkit-text-fill-color:currentColor;font-size:1.15rem}
+header h1::before{border-color:var(--accent);border-inline-end-color:var(--violet)}
+header .sec{border-radius:10px;padding:6px 10px;font-size:.85rem;min-height:0}
+.chip{border-radius:8px;padding:5px 12px;font-size:.82rem}
+.chip[aria-pressed="true"]{background:var(--blue);color:#fff;border-color:var(--blue)}
+.og button[aria-pressed="true"]{background:var(--blue);color:#fff}
+.hero{padding:30px 20px;border-radius:18px}
+.hero h2{font-size:clamp(1.3rem,4vw,2rem)}
+main{max-width:1180px}
+.grid{grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px}
+@media(min-width:561px){.grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+@media(max-width:560px){.grid{grid-template-columns:repeat(3,1fr);gap:8px}}
+.card{padding:6px;gap:6px;border-radius:14px;box-shadow:none;animation:rise .45s var(--ease) both}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 26px #0006}
+.card .pic,.pic{height:auto;aspect-ratio:1/1;border-radius:10px;font-size:1.6rem}
+.card .body,.body{padding:2px 3px 4px;gap:3px}
+.card .body h3,.body h3{font-size:.76rem;line-height:1.35;font-weight:700;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.card .body .muted,.body .muted{display:none}
+.stars{font-size:.66rem}
+.prow{display:flex;align-items:center;justify-content:space-between;gap:4px;margin-top:auto}
+.card .price{font-size:.8rem;font-weight:800;color:var(--text);line-height:1.25}
+.card .old{display:block;font-size:.62rem;font-weight:400;color:var(--muted);margin:0}
+.cartb{flex:none;width:28px;height:28px;min-height:0;padding:0;border-radius:9px;display:inline-flex;align-items:center;justify-content:center}
+.cartb:disabled{opacity:.4;background:var(--card2)!important;box-shadow:none}
+.bdg{font-size:.6rem;padding:0 5px}
+.heart{width:22px;height:22px;line-height:22px;font-size:.8rem}
+.card .body button:not(.cartb){min-height:0}
+.car-track{gap:8px;scroll-snap-type:none}
+.car-track .card{flex:0 0 118px;scroll-snap-align:none}
+.carb{width:28px;height:28px}
+.carh h3{font-size:.95rem}
+@media(max-width:700px){
+ body{padding-bottom:68px}
+ header{flex-wrap:nowrap;padding:8px 10px;gap:6px}
+ header h1{flex:1 1 auto;font-size:1rem}
+ header h1::before{width:20px;height:20px;border-width:3px}
+ header .sec{flex:none;padding:5px 9px;font-size:.78rem}
+ .hero{padding:24px 16px;border-radius:16px}
+ .bnav{padding:4px;border-radius:18px}
+ .bnav button{min-height:44px;font-size:.62rem}
+ .totop{bottom:80px}.wab{bottom:calc(80px + env(safe-area-inset-bottom,0px))}
+}
+/* settings sidebar like reference */
+.ac-lbl{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:14px 12px 4px;opacity:.85}
+.ac-panel .ac-side{gap:2px}
+.ac-panel .ac-side button{font-size:.86rem;padding:9px 12px;border-radius:10px;border:1px solid transparent;color:var(--muted)}
+.ac-panel .ac-side button svg{color:var(--accent);opacity:.9}
+.ac-panel .ac-side button:hover{transform:none;background:color-mix(in srgb,var(--accent) 8%,transparent);color:var(--text)}
+.ac-panel .ac-side button[aria-current=true],[dir=rtl] .ac-panel .ac-side button[aria-current=true]{background:color-mix(in srgb,var(--accent) 16%,transparent);border-color:color-mix(in srgb,var(--accent) 45%,transparent);color:var(--text);box-shadow:none;font-weight:700}
+.ac-panel .ac-side .ac-helpc{margin-top:auto;display:flex;align-items:center;gap:10px;background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+.ac-helpc b{display:flex;width:34px;height:34px;border-radius:10px;align-items:center;justify-content:center;background:color-mix(in srgb,var(--accent) 18%,transparent)}
+.ac-helpc span{display:flex;flex-direction:column;line-height:1.3;text-align:start}.ac-helpc small{color:var(--muted);font-size:.7rem}
 </style></head><body><script>
 /* ============ ضع إعدادات Firebase هنا (من لوحة Firebase > Project settings > Your apps) ============ */
 window.FIREBASE_CONFIG = {
@@ -603,8 +654,8 @@ function cardHtml(p,i){
     (o?'<span class="bdg" dir="ltr">-'+o+'%</span>':'')+(p.feat?'<span class="fst">⭐</span>':'')+(out?'<span class="oos">'+t("oos")+'</span>':'')+'</div>'+
     '<div class="body"><h3>'+esc(p.name)+'</h3><div class="muted">'+esc(p.desc)+'</div>'+
     (avg?'<div class="stars">★ '+avg.toFixed(1)+'</div>':'')+
-    '<div class="price">'+money(eff(p))+(o?' <s class="old">'+money(was(p))+'</s>':'')+'</div>'+
-    '<button class="pri" data-act="add" data-id="'+esc(p.id)+'" style="margin-top:auto"'+(out?' disabled':'')+'>'+(out?t("na"):t("add"))+'</button></div></div>';
+    '<div class="prow"><div class="price">'+money(eff(p))+(o?' <s class="old">'+money(was(p))+'</s>':'')+'</div>'+
+    '<button class="pri cartb" data-act="add" data-id="'+esc(p.id)+'" aria-label="'+(out?t("na"):t("add"))+'"'+(out?' disabled':'')+'><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/><path d="M2 3h3l2.6 11.2a1.5 1.5 0 0 0 1.5 1.1h8.6a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/></svg></button></div></div></div>';
 }
 
 function carHtml(){
@@ -625,7 +676,10 @@ function carStep(tk,d){
   document.addEventListener("pointerdown",e=>{ if(e.target.closest&&e.target.closest(".car-track")) pause(); },true);
   document.addEventListener("mouseover",e=>{ if(e.target.closest&&e.target.closest(".car")) pause(); });
   let rm=false; try{ rm = matchMedia("(prefers-reduced-motion: reduce)").matches; }catch(e){}
-  if(!rm) setInterval(()=>{ if(hold||document.hidden||openId||cartOpen) return; document.querySelectorAll(".car-track").forEach(x=>carStep(x,1)); },3500);
+  if(!rm){ let last=0; const loop=ts=>{ requestAnimationFrame(loop); if(hold||document.hidden||openId||cartOpen||A.open||ts-last<30) return; last=ts;
+    document.querySelectorAll(".car-track").forEach(x=>{ const max=x.scrollWidth-x.clientWidth; if(max<=4) return; const rtl=getComputedStyle(x).direction==="rtl";
+      if(Math.abs(x.scrollLeft)>=max-1){ if(!x._w){ x._w=1; setTimeout(()=>{ x.scrollLeft=0; x._w=0; },1200); } return; }
+      x.scrollLeft += rtl?-1:1; }); }; requestAnimationFrame(loop); }
 })();
 function trustHtml(){
   const b = [];
@@ -1324,7 +1378,7 @@ function accRender(keep){
     '<header class="ac-top"><div class="ac-who">'+(av?'<img class="ac-ava" alt="" src="'+esc(av)+'">':'<span class="ac-ava ac-ph">'+(A.uid?esc((pn||"؟").trim().charAt(0)):ic("user"))+'</span>')+
     '<div class="ac-wt"><b>'+esc(pn)+'</b><small>'+esc(S.name)+'</small>'+(badges?'<div>'+badges+'</div>':'')+'</div></div>'+
     '<button class="sec ac-x ac-burger" data-a="navtoggle" aria-label="'+tr("القائمة","Menu")+'">☰</button><button class="sec ac-x" data-a="close" aria-label="'+t("close")+'">'+ic("x")+'</button></header>'+
-    '<div class="ac-nbd" data-a="navtoggle"></div><nav class="ac-side" aria-label="'+tr("أقسام الإعدادات","Settings sections")+'">'+sc.map(s=>s[0]==="-"?'<hr>':'<button data-a="sec" data-s="'+s[0]+'" aria-current="'+(A.sec===s[0])+'">'+ic(s[1])+'<span>'+esc(s[2])+'</span></button>').join("")+'</nav>'+
+    '<div class="ac-nbd" data-a="navtoggle"></div><nav class="ac-side" aria-label="'+tr("أقسام الإعدادات","Settings sections")+'">'+sc.map(s=>(({home:tr("الرئيسية","General"),profile:tr("الحساب","Account"),look:tr("التخصيص","Preferences"),data:tr("البيانات","Data"),orders:tr("التسوق والأعمال","Commerce")})[s[0]]?'<div class="ac-lbl">'+({home:tr("الرئيسية","General"),profile:tr("الحساب","Account"),look:tr("التخصيص","Preferences"),data:tr("البيانات","Data"),orders:tr("التسوق والأعمال","Commerce")})[s[0]]+'</div>':'')+(s[0]==="-"?'':'<button data-a="sec" data-s="'+s[0]+'" aria-current="'+(A.sec===s[0])+'">'+ic(s[1])+'<span>'+esc(s[2])+'</span></button>')).join("")+'<button class="ac-helpc" data-a="sec" data-s="help"><b>'+ic("help")+'</b><span><strong>'+tr("مركز المساعدة","Help center")+'</strong><small>'+tr("دعم على مدار الساعة","Support 24/7")+'</small></span></button></nav>'+
     '<main class="ac-main"><div class="ac-in"><div id="accmsg" class="ac-msg" role="status" aria-live="polite" hidden></div>'+secHtml()+'</div></main></div>';
   const mn = el.querySelector(".ac-main"); if(mn && keep) mn.scrollTop = st;
   const L = flash.last, me2 = $("accmsg");
