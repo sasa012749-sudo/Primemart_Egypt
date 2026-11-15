@@ -779,6 +779,21 @@ button:disabled{cursor:not-allowed}
 .afc main.af-main,.afc .af-body{max-width:none;margin:0;width:auto}.afc .af-main{align-items:stretch}.afc .af-main>*{max-width:1180px;width:100%;margin-inline:auto}
 .afc .af-tb input,.afc .af-tb select{width:auto;flex:1 1 150px}.afc .af-tb .af-ib{flex:none}.afc .af-fm input,.afc .af-fm select,.afc .af-fm textarea,.afc .af-card textarea{width:100%}
 .afc td.af-act{display:table-cell;white-space:nowrap}.afc td.af-act .af-b2{margin:2px}
+/* ===== v25: full-width mobile, no horizontal overflow ===== */
+html,body{width:100%;max-width:100%;overflow-x:clip;margin:0}
+#app,.ann,header,main{max-width:100%;box-sizing:border-box}
+@supports not (overflow:clip){html,body{overflow-x:hidden}}
+@media(max-width:430px){header{padding:8px 8px;gap:4px}header .sec{padding:6px 7px;min-width:0;font-size:.82rem}header h1{font-size:1rem;gap:6px}header h1::before{width:20px;height:20px;border-width:3px}}
+@media(max-width:340px){header h1{display:none}}
+@media(max-width:340px){header{gap:3px;padding:6px 4px}header .sec{padding:6px 5px;font-size:.72rem}}
+
+
+.dsr{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-bottom:1px dashed var(--line);flex-wrap:wrap}.dsr span{display:flex;gap:6px;align-items:center}
+.dsc{display:flex;gap:6px;align-items:center}.dsc input[type=color]{width:44px;min-width:44px;height:40px;padding:2px}.chkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:4px}
+.dsp{margin:8px 0;display:grid;gap:6px}.dsn-prev .ov.dr{display:none!important}#dsnback{position:fixed;bottom:84px;inset-inline-start:12px;z-index:9999;box-shadow:0 8px 24px #0008}
+#adm[data-tab=dsn] .tabc[data-t=dsn]{display:block}
+
+#adm[data-tab=mnu] .tabc[data-t=mnu]{display:block}
 </style></head><body><script>
 /* ============ ضع إعدادات Firebase هنا (من لوحة Firebase > Project settings > Your apps) ============ */
 window.FIREBASE_CONFIG = {
@@ -1029,7 +1044,8 @@ function cardHtml(p,i){
 }
 
 let cmp=lsGet("cmp_v1",[]); if(!Array.isArray(cmp)) cmp=[];
-function PGS(){ return [["about",tr("من نحن","About us")],["contact",tr("اتصل بنا","Contact")],["faq",tr("الأسئلة الشائعة","FAQ")],["ship",tr("الشحن والتوصيل","Shipping & delivery")],["ret",tr("الاسترجاع والاستبدال","Returns & exchange")],["privacy",tr("سياسة الخصوصية","Privacy policy")],["terms",tr("الشروط والأحكام","Terms & conditions")]]; }
+function PGS(){ let x=[]; try{ x=dsnPages().map(p=>["cx_"+p.id,p.t]); }catch(e){} return PGS0().concat(x); }
+function PGS0(){ return [["about",tr("من نحن","About us")],["contact",tr("اتصل بنا","Contact")],["faq",tr("الأسئلة الشائعة","FAQ")],["ship",tr("الشحن والتوصيل","Shipping & delivery")],["ret",tr("الاسترجاع والاستبدال","Returns & exchange")],["privacy",tr("سياسة الخصوصية","Privacy policy")],["terms",tr("الشروط والأحكام","Terms & conditions")]]; }
 let ovFocus=null;
 function showOv(title,html){
   let o=$("pgov"); if(!o){ ovFocus=document.activeElement; o=document.createElement("div"); o.id="pgov"; o.className="pgov"; document.body.appendChild(o); }
@@ -1039,6 +1055,7 @@ function showOv(title,html){
 function ovClose(){ const o=$("pgov"); if(o) o.remove(); try{ if(ovFocus&&ovFocus.focus) ovFocus.focus(); }catch(e){} ovFocus=null; }
 document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&$("pgov")) ovClose(); if(e.key==="Tab"&&$("pgov")){ const f=[...$("pgov").querySelectorAll("button,a[href],input")].filter(x=>!x.disabled); if(!f.length) return; const a=f[0], z=f[f.length-1]; if(e.shiftKey&&document.activeElement===a){ e.preventDefault(); z.focus(); } else if(!e.shiftKey&&document.activeElement===z){ e.preventDefault(); a.focus(); } } });
 function pageBody(k){
+  if(String(k).startsWith("cx_")){ let p; try{ p=dsnPages().find(x=>"cx_"+x.id===k); }catch(e){} if(p) return String(p.b||"").split(/\n\s*\n/).map(x=>"<p>"+esc(x).replace(/\n/g,"<br>")+"</p>").join(""); }
   const P=pol(), nm=esc(S.name), z=zones();
   const sec=(h,b)=>'<h3>'+h+'</h3>'+b;
   if(k==="about") return '<p>'+esc(S.about||tr(S.name+" متجر إلكتروني يقدّم منتجات مختارة بأسعار واضحة وتوصيل إلى باب بيتك. نحرص على وصف دقيق لكل منتج، وعلى خدمة عملاء تتابع معك من الطلب حتى الاستلام.",S.name+" is an online store offering carefully selected products at clear prices, delivered to your door. We aim for accurate product descriptions and support that follows you from order to delivery."))+'</p><div class="pol">'+P.map(x=>'<div class="pl"><span class="pi">'+ic(x[0])+'</span><div><b>'+x[1]+'</b><small>'+esc(x[2])+'</small></div></div>').join("")+'</div>';
@@ -1190,14 +1207,14 @@ function footHtml(){
   const cs=[...new Set(S.products.map(p=>p.cat).filter(Boolean))].slice(0,6);
   return '<footer class="sfoot"><div class="sf-c"><b class="sf-b">'+esc(S.name)+'</b><p class="muted">'+esc(S.heroS||"")+'</p></div>'+
     (cs.length?'<div class="sf-c"><b>'+tr("التصنيفات","Categories")+'</b>'+cs.map(c=>'<button data-act="megacat" data-c="'+esc(c)+'">'+esc(c)+'</button>').join("")+'</div>':'')+
-    '<div class="sf-c"><b>'+tr("الصفحات","Pages")+'</b>'+PGS().map(x=>'<button data-act="page" data-k="'+x[0]+'">'+x[1]+'</button>').join("")+'</div>'+
-    '<div class="sf-c"><b>'+tr("البرامج","Programs")+'</b><button data-act="afopen">'+tr("التسويق بالعمولة","Affiliate program")+'</button></div><div class="sf-c"><b>'+tr("المساعدة","Help")+'</b>'+pol().slice(0,4).map(x=>'<span class="muted">'+ic(x[0])+' '+esc(x[1])+': '+esc(String(x[2]).slice(0,70))+'</span>').join("")+(wn?'<a href="https://wa.me/'+wn+'" target="_blank" rel="noopener">💬 WhatsApp</a>':'')+soc.map(x=>'<a href="'+esc(x[1])+'" target="_blank" rel="noopener">'+x[0]+'</a>').join("")+'</div>'+
+    '<div class="sf-c"><b>'+tr("الصفحات","Pages")+'</b>'+PGSF().map(x=>'<button data-act="page" data-k="'+x[0]+'">'+x[1]+'</button>').join("")+'</div>'+
+    '<div class="sf-c"><b>'+tr("البرامج","Programs")+'</b><button data-act="afopen">'+tr("التسويق بالعمولة","Affiliate program")+'</button>'+(typeof dsnLinks==="function"?dsnLinks():"")+'</div><div class="sf-c"><b>'+tr("المساعدة","Help")+'</b>'+pol().slice(0,4).map(x=>'<span class="muted">'+ic(x[0])+' '+esc(x[1])+': '+esc(String(x[2]).slice(0,70))+'</span>').join("")+(wn?'<a href="https://wa.me/'+wn+'" target="_blank" rel="noopener">💬 WhatsApp</a>':'')+soc.map(x=>'<a href="'+esc(x[1])+'" target="_blank" rel="noopener">'+x[0]+'</a>').join("")+'</div>'+
     '<div class="sf-bt">© '+new Date().getFullYear()+' '+esc(S.name)+' · Primemart-egypt</div></footer>';
 }
 function megaHtml(){
-  const L=S.products.filter(p=>!isOut(p)), cs=[...new Set(S.products.map(p=>p.cat).filter(Boolean))];
+  const L=S.products.filter(p=>!isOut(p)), cs=catList();
   const item=(c,label,list)=>'<button class="mg-i" data-act="megacat" data-c="'+esc(c)+'"><b>'+esc(label)+'</b><span class="muted">'+list.length+' '+tr("منتج","products")+'</span><span class="mg-t">'+list.slice(0,3).map(p=>{ const u=(gallery(p)||[])[0]; return u?'<img alt="" loading="lazy" src="'+esc(u)+'">':'<i>'+esc(p.emoji||"🛍️")+'</i>'; }).join("")+'</span></button>';
-  return item("",t("all"),L)+item("__sale",tr("عروض وخصومات","Deals"),L.filter(p=>off(p)>0))+item("__fav","♥ "+t("fav"),L.filter(p=>fav[p.id]))+cs.map(c=>item(c,c,L.filter(p=>p.cat===c))).join("");
+  return item("",t("all"),L)+item("__sale",tr("عروض وخصومات","Deals"),L.filter(p=>off(p)>0))+item("__fav","♥ "+t("fav"),L.filter(p=>fav[p.id]))+cs.map(c=>item(c,catLbl(c),L.filter(p=>p.cat===c))).join("");
 }
 function carHtml(){ return ""; }
 function carRows(){
@@ -1397,7 +1414,7 @@ function statsHtml(){
   return '<div class="stats"><div><b>'+P.length+'</b>عدد المنتجات</div><div><b>'+out+'</b>نفدت</div><div><b>'+low+'</b>قاربت على النفاد</div><div><b>'+moneyB(avg)+'</b>متوسط السعر</div><div><b>'+moneyB(val)+'</b>قيمة المخزون المحدد</div></div>';
 }
 
-const ADMTABS=[["gen","⚙️ عام والدفع"],["ship","🚚 الشحن والخصم"],["look","🎨 الواجهة والعروض"],["cont","📄 المحتوى والتواصل"],["prod","📦 المنتجات"],["data","💾 استيراد وتصدير"]];
+const ADMTABS=[["gen","⚙️ عام والدفع"],["ship","🚚 الشحن والخصم"],["look","🎨 الواجهة والعروض"],["cont","📄 المحتوى والتواصل"],["prod","📦 المنتجات"],["dsn","🧩 مصمم الموقع"],["mnu","📋 القوائم والمظهر"],["data","💾 استيراد وتصدير"]];
 function adminHtml(){
   const e = editId ? S.products.find(x=>x.id===editId) : null;
   const v = k => e ? (e[k]??"") : "";
@@ -1418,6 +1435,7 @@ function adminHtml(){
       fld("رسوم الشحن حسب المنطقة (سطر لكل منطقة: القاهرة=50)",ta("sz","القاهرة=50\nالإسكندرية=65",S.zones,3))+
       fld("أكواد الخصم (سطر لكل كود: CODE=10 تعني 10%)",ta("sk","WELCOME=10\nVIP=20",S.coupons,3))+
     '</div>'+
+    dsnHtml()+mnLooksHtml()+
     '<div class="tabc" data-t="look">'+
       fld("شريط إعلان أعلى المتجر",inp("sa","",S.announce))+
       '<div class="row">'+fld("عنوان البانر الرئيسي (فارغ = إخفاؤه)",inp("sht","",S.heroT))+fld("نص فرعي",inp("shs","",S.heroS))+fld("نص الزر",inp("shb","",S.heroB))+'</div>'+
@@ -1450,7 +1468,7 @@ function adminHtml(){
 /* ---------- render ---------- */
 function render(){
   applyLang();
-  const cats = [...new Set(S.products.map(p=>p.cat).filter(Boolean))];
+  const cats = catList();
   const wn = wnumber(), rt = rates(), rcodes = Object.keys(rt), tst = revs(S.revs), sale = saleOn();
   const h = (sale?'<div class="ann">'+ic("flame")+' '+esc(S.saleLabel||"")+' -'+esc(S.salePct)+'% — '+t("ends")+' <span class="cd" id="cd"></span></div>':'')+
     (S.announce?'<div class="ann">'+esc(S.announce)+'</div>':'')+
@@ -1458,7 +1476,7 @@ function render(){
     (rcodes.length?'<select id="cur" aria-label="Currency"><option value="">'+esc(S.currency)+'</option>'+rcodes.map(c=>'<option value="'+esc(c)+'"'+(cur===c?' selected':'')+'>'+esc(c)+'</option>').join("")+'</select>':'')+
     (admin?'<button class="sec" data-act="settingsmenu" aria-label="الإعدادات">⚙️</button>':'')+
     '<button class="sec bellb" data-act="bell" aria-label="'+tr("الإشعارات","Notifications")+'">'+ic("bell")+(ntfCount()?'<b class="bdg">'+Math.min(99,ntfCount())+'</b>':'')+'</button><button class="sec" data-act="acct" aria-label="'+tr("حسابي","Account")+'">'+ic("user")+'</button><button class="sec" data-act="lang">'+t("langBtn")+'</button><button class="sec" data-act="theme" aria-label="'+tr("تبديل المظهر","Toggle theme")+'">'+ic("sun")+'</button>'+
-    '<button class="sec" data-act="cart">'+ic("cart")+' '+t("cart")+' ('+count()+')</button></header><main>'+
+    '<button class="sec" data-act="cart">'+ic("cart")+' '+t("cart")+' ('+count()+')</button></header>'+navBarHtml()+'<main>'+
     (S.heroT?'<div class="hero"><h2>'+esc(S.heroT)+'</h2>'+(S.heroS?'<p>'+esc(S.heroS)+'</p>':'')+(S.heroB?'<button data-act="hero">'+esc(S.heroB)+'</button>':'')+'</div>':'')+
     trustHtml()+carHtml()+
     '<div class="shop"><div class="fbd" id="fbd" data-act="fclose"></div><aside class="flt" id="flt" aria-label="'+tr("الفلاتر","Filters")+'"><div class="flth"><b>'+tr("الفلاتر","Filters")+'</b><button class="sec" data-act="fclose" aria-label="'+t("close")+'">✕</button></div>'+
@@ -1474,7 +1492,7 @@ function render(){
     [["def",t("sort")],["sold",tr("الأكثر مبيعاً","Best selling")],["views",tr("الأكثر مشاهدة","Most viewed")],["new",t("newest")],["rate",tr("الأعلى تقييماً","Top rated")],["disc",tr("أكبر خصم","Biggest discount")],["lo",t("lo")],["hi",t("hi")]].map(x=>'<option value="'+x[0]+'"'+(sort===x[0]?' selected':'')+'>'+x[1]+'</option>').join("")+'</select></div>'+
     '<div class="chips"><button class="chip" data-act="cat" data-c="" aria-pressed="'+(cat==="")+'">'+t("all")+'</button>'+
     '<button class="chip" data-act="cat" data-c="__fav" aria-pressed="'+(cat==="__fav")+'">♥ '+t("fav")+'</button>'+
-    cats.map(c=>'<button class="chip" data-act="cat" data-c="'+esc(c)+'" aria-pressed="'+(c===cat)+'">'+esc(c)+'</button>').join("")+'</div>'+
+    cats.map(c=>'<button class="chip" data-act="cat" data-c="'+esc(c)+'" aria-pressed="'+(c===cat)+'">'+esc(catLbl(c))+'</button>').join("")+'</div>'+
     '<div class="actf" id="actf">'+actfHtml(visible().length)+'</div>'+
     '<div class="grid'+(view==="list"?' list':'')+'" id="grid">'+gridHtml()+'</div></div></div>'+recentHtml()+footHtml()+
     (tst.length?'<div class="muted" style="margin-top:18px"><b>'+t("reviews")+'</b></div><div class="tst">'+tst.map(r=>'<div><b>'+esc(r.n)+'</b> <span class="stars">'+stars(r.r)+'</span><div>'+esc(r.t)+'</div></div>').join("")+'</div>':'')+
@@ -1486,7 +1504,7 @@ function render(){
     (admin&&admOpen?'<div class="ov dr" data-act="admclose"><div class="drawer adm" data-act="noop" role="dialog" aria-modal="true"><button class="sec x" data-act="admclose" aria-label="'+t("close")+'">✕</button>'+adminHtml()+'</div></div>':'')+
     (openId?modalHtml():'');
   $("app").innerHTML = h;
-  document.title = S.name;
+  document.title = S.name; try{ menuPost(); }catch(e){}
   let md = document.querySelector('meta[name=description]'); if(!md){ md=document.createElement("meta"); md.name="description"; document.head.appendChild(md); }
   md.content = S.name+(S.heroS?" — "+S.heroS:"");
   { const g0=$("grid"); if(g0 && !(window.__gc===gridCols())){ window.__gc=gridCols(); g0.innerHTML=gridHtml(); } }
@@ -1818,6 +1836,7 @@ function applyPrefs(){
     c += "body{background-image:"+g+",url('"+PR.bg.replace(/['"()\\]/g,"")+"')!important;background-size:cover!important;background-position:center!important;background-attachment:fixed!important}";
   }
   st.textContent = c;
+  try{ applyDesign(); }catch(e){}
 }
 function setPath(o,path,v){ const k=path.split("."); let x=o; for(let i=0;i<k.length-1;i++){ x=x[k[i]]=x[k[i]]||{}; } x[k[k.length-1]]=v; }
 function savePR(){ lsSet(PK,PR); savePriv({prefs:PR}); }
@@ -1995,7 +2014,8 @@ let accOpener=null;
 function accShow(){ ensureAcc(); accOpener=document.activeElement; A.open=true; document.documentElement.style.overflow="hidden"; $("acc").hidden=false; accRender(); setTimeout(()=>{ const x=document.querySelector("#acc .ac-x, #acc .ac-panel button, #acc .ac-panel"); if(x){ if(!x.hasAttribute("tabindex")&&x.tagName!=="BUTTON") x.tabIndex=-1; x.focus(); } },60); }
 document.addEventListener("keydown", e=>{ if(e.key==="Escape" && A.open) accHide(); });
 function accHide(){ A.open=false; document.documentElement.style.overflow=""; const e=$("acc"); if(e) e.hidden=true; if(accOpener&&accOpener.focus&&document.contains(accOpener)){ try{ accOpener.focus(); }catch(_){} } accOpener=null; }
-function secs(){
+function secs(){ return mnApply("acc",secs0(),2,["home","admin"]); }
+function secs0(){
   const l = [["home","home",tr("نظرة عامة","Overview")],["profile","user",tr("المعلومات الشخصية","Personal information")],["addr","home",tr("عناوين الشحن","Shipping addresses")],["account","set",tr("إعدادات الحساب","Account settings")],
     ["privacy","lock",tr("الخصوصية والأمان","Privacy & security")],["notif","bell",tr("الإشعارات","Notifications")],
     ["look","pal",tr("المظهر والتخصيص","Appearance")],["lang","globe",tr("اللغة والمنطقة","Language & region")],
@@ -2901,11 +2921,12 @@ function afTrack(c,p,l){
 }
 (function(){ const m=/^#aff-([a-z0-9]{4,16})$/i.exec(location.hash||""); if(m) lsSet("inv_v1",m[1].toLowerCase()); })();
 /* ---------- open / close ---------- */
-function afOpen(page){ AF.open=true; if(page) AF.page=page; let el=$("afc"); if(!el){ el=document.createElement("div"); el.id="afc"; document.body.appendChild(el); el.addEventListener("click",afClick); el.addEventListener("change",afChange); el.addEventListener("input",afInput); }
+function afOpen(page){ AF.open=true; try{ if(lsGet("affpro_v1",{}).dk===undefined) AF.dk=!!dsn().afcDark; }catch(e){} if(page) AF.page=page; let el=$("afc"); if(!el){ el=document.createElement("div"); el.id="afc"; document.body.appendChild(el); el.addEventListener("click",afClick); el.addEventListener("change",afChange); el.addEventListener("input",afInput); }
   AF.opener=document.activeElement; document.documentElement.style.overflow="hidden"; afSub(); afRender(); }
 function afClose(){ AF.open=false; const el=$("afc"); if(el) el.remove(); document.documentElement.style.overflow=""; try{ if(AF.opener&&AF.opener.focus) AF.opener.focus(); }catch(e){} }
 document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&AF.open&&!$("pgov")) afClose(); });
-const AFNAV = () => [["home","home",tr("الرئيسية","Home")],["products","store",tr("المنتجات المتاحة","Products")],["favs","tag",tr("المفضلة","Favourites")],["links","link",tr("روابط التسويق","Links")],["orders","rec",tr("الطلبات والتحويلات","Orders & conversions")],["comm","wal",tr("العمولات والأرباح","Commissions")],["camps","mega",tr("الحملات","Campaigns")],["assets","pal",tr("المواد الإعلانية","Marketing assets")],["ai","spark",tr("استوديو المحتوى","Content studio")],["refs","user",tr("الإحالات","Referrals")],["levels","trophy",tr("المستويات والمكافآت","Levels & rewards")],["board","flame",tr("المتصدرون","Leaderboard")],["reports","db",tr("التقارير والتحليلات","Reports")],["notif","bell",tr("الإشعارات","Notifications")],["help","help",tr("مركز المساعدة","Help")],["profile","id",tr("الملف الشخصي","Profile")],["settings","set",tr("الإعدادات","Settings")]];
+const AFNAV = () => mnApply("af",AFNAV0(),2,["home"]);
+const AFNAV0 = () => [["home","home",tr("الرئيسية","Home")],["products","store",tr("المنتجات المتاحة","Products")],["favs","tag",tr("المفضلة","Favourites")],["links","link",tr("روابط التسويق","Links")],["orders","rec",tr("الطلبات والتحويلات","Orders & conversions")],["comm","wal",tr("العمولات والأرباح","Commissions")],["camps","mega",tr("الحملات","Campaigns")],["assets","pal",tr("المواد الإعلانية","Marketing assets")],["ai","spark",tr("استوديو المحتوى","Content studio")],["refs","user",tr("الإحالات","Referrals")],["levels","trophy",tr("المستويات والمكافآت","Levels & rewards")],["board","flame",tr("المتصدرون","Leaderboard")],["reports","db",tr("التقارير والتحليلات","Reports")],["notif","bell",tr("الإشعارات","Notifications")],["help","help",tr("مركز المساعدة","Help")],["profile","id",tr("الملف الشخصي","Profile")],["settings","set",tr("الإعدادات","Settings")]];
 function afNtf(){ const seen=num((AF.st||{}).seen); return afCom().filter(e=>num(e.t)>seen).length; }
 function afRender(){
   const el=$("afc"); if(!el) return; const st=el.querySelector(".af-main"), y=st?st.scrollTop:0, ae=document.activeElement, aid=ae&&ae.id&&el.contains(ae)?ae.id:"", car=aid&&ae.selectionStart!=null?ae.selectionStart:0;
@@ -3262,6 +3283,192 @@ function sSellAff(){
    '<div class="ac-card"><h4>'+tr("عمولة منتجاتك","Your products' commission")+'</h4>'+(mine.length?'<div class="ac-tbl">'+mine.slice(0,40).map(p=>'<div><span>'+esc(p.name)+'</span><span>'+(commOf(p)>0?afP(commOf(p)):tr("غير مؤهل","Not eligible"))+'</span></div>').join("")+'</div>':'<p class="muted">'+tr("لا منتجات.","No products.")+'</p>')+'<small class="muted">'+tr("تُحدَّد النسبة من الإدارة (حتى الحد الأقصى "+afP(commCap())+") ولا يرى التاجر بيانات المسوقين الشخصية.","The rate is set by the admin (up to "+afP(commCap())+"); sellers can't see affiliates' personal data.")+'</small></div>';
 }
 function accClose2(){ A.open=false; document.documentElement.style.overflow=""; const e=$("acc"); if(e) e.hidden=true; }
+
+/* ================= SITE DESIGNER (admin) ================= */
+var DSN_DEF={acc:"",acc2:"",bgD:"",bgL:"",cardD:"",cardL:"",rad:"",font:"",hdrSticky:true,hdrBlur:true,hdrLogo:true,order:["hero","trust","shop","foot"],hide:[],heroBg1:"",heroBg2:"",heroImg:"",heroAlign:"center",heroH:"",heroRad:"",colsD:"",colsM:"",ratio:"",hover:true,cardHide:[],pdHide:[],pages:[],links:"",afcOn:true,afcDark:false,css:""};
+function dsn(){ return Object.assign({},DSN_DEF||{},(S&&S.design)||{}); }
+var DSN_SEC = {hero:"البانر الرئيسي",trust:"بطاقات الضمان والتوصيل",shop:"المنتجات والفلاتر",foot:"تذييل الموقع (روابط ومساعدة)"};
+var DSN_CARD = {rate:"التقييم",brand:"التصنيف/العلامة",off:"نسبة الخصم",cmp:"زر المقارنة",heart:"زر المفضلة",qv:"المعاينة السريعة",ribbon:"شريط التمييز",tg:"الشارات",stl:"حالة المخزون"};
+var DSN_CARDSEL = {rate:".card .rt",brand:".card .meta .muted",off:".card .offp",cmp:".card .cmpb",heart:".card .heart",qv:".card .qv",ribbon:".card .ribbon",tg:".card .tg",stl:".card .stl"};
+var DSN_PD = {eta:"موعد التوصيل",pol:"بطاقات الضمان",share:"المشاركة",rel:"منتجات ذات صلة",tabs:"التبويبات (مواصفات/تقييمات)",affbox:"صندوق المسوّق",stk:"حالة المخزون"};
+var DSN_PDSEL = {eta:".mdl .eta",pol:".mdl .pol",share:".mdl .share",rel:".mdl .pdrel",tabs:".mdl .pdtabs,.mdl .pdpan",affbox:".mdl .affbox",stk:".mdl .stk"};
+var DSN_FONT = {"":"الافتراضي",sys:"خط النظام",tahoma:"Tahoma",serif:"Serif (كلاسيكي)",mono:"Monospace"};
+var DSN_FF = {sys:"system-ui,-apple-system,'Segoe UI',Roboto,sans-serif",tahoma:"Tahoma,'Segoe UI',sans-serif",serif:"Georgia,'Times New Roman',serif",mono:"ui-monospace,Menlo,Consolas,monospace"};
+function dsnCol(x){ return /^#[0-9a-f]{6}$/i.test(x||""); }
+function applyDesign(){
+  const d=dsn(); let c="";
+  const rootv=(k,v)=>{ if(dsnCol(v)) c+=":root,:root[data-theme]{"+k+":"+v+"}"; };
+  rootv("--accent",d.acc); if(dsnCol(d.acc)) c+=":root,:root[data-theme]{--blue:"+d.acc+"}.afc{--p:"+d.acc+"}"; rootv("--violet",d.acc2);
+  if(dsnCol(d.bgD)) c+=":root{--bg:"+d.bgD+"}"; if(dsnCol(d.bgL)) c+=':root[data-theme="light"]{--bg:'+d.bgL+'}';
+  if(dsnCol(d.cardD)) c+=":root{--card:"+d.cardD+"}"; if(dsnCol(d.cardL)) c+=':root[data-theme="light"]{--card:'+d.cardL+'}';
+  if(d.rad!==""&&!isNaN(+d.rad)){ const r=Math.max(0,Math.min(32,+d.rad)); c+=".card,.panel,.mdl,.hero,.pl,.drawer,.pdpan,.sfoot,.ac-card{border-radius:"+r+"px}.pri,.sec,.chip{border-radius:"+Math.min(r,16)+"px}"; }
+  if(DSN_FF[d.font]) c+="body,button,input,select,textarea{font-family:"+DSN_FF[d.font]+"}";
+  if(!d.hdrSticky) c+="header{position:static}"; if(!d.hdrBlur) c+="header{backdrop-filter:none;background:var(--card)}"; if(!d.hdrLogo) c+="header h1::before{display:none}";
+  const ord=(d.order||[]).filter(k=>DSN_SEC[k]), all=Object.keys(DSN_SEC), full=ord.concat(all.filter(k=>!ord.includes(k)));
+  const SELS={hero:"main>.hero",trust:"main>.pol",shop:"main>.shop",foot:"main>.sfoot"};
+  c+="main{display:flex;flex-direction:column}main>.ft{order:99}";
+  full.forEach((k,i)=>{ c+=SELS[k]+"{order:"+(i+1)+"}"; if((d.hide||[]).includes(k)) c+=SELS[k]+"{display:none!important}"; });
+  let hc=""; if(dsnCol(d.heroBg1)||dsnCol(d.heroBg2)){ const a=dsnCol(d.heroBg1)?d.heroBg1:"var(--blue)", b=dsnCol(d.heroBg2)?d.heroBg2:a; hc+="background-image:linear-gradient(135deg,"+a+","+b+")!important;"; }
+  if(/^https:\/\//.test(d.heroImg||"")){ const u=d.heroImg.replace(/['"()\\\s]/g,""); hc+="background-image:linear-gradient(#0008,#0008),url('"+u+"')!important;background-size:cover!important;background-position:center!important;color:#fff;"; }
+  if(d.heroAlign==="start") hc+="text-align:start!important;"; if(d.heroH&&!isNaN(+d.heroH)) hc+="min-height:"+Math.max(80,Math.min(600,+d.heroH))+"px;display:flex;flex-direction:column;justify-content:center;";
+  if(d.heroRad!==""&&!isNaN(+d.heroRad)) hc+="border-radius:"+Math.max(0,Math.min(40,+d.heroRad))+"px!important;"; if(hc) c+="main>.hero{"+hc+"}";
+  const userCols=!!(_sv&&_sv.cols);
+  if(!userCols){ if(+d.colsD>=1&&+d.colsD<=8) c+="@media(min-width:700px){.grid:not(.list){grid-template-columns:repeat("+(+d.colsD)+",minmax(0,1fr))!important}}"; if(+d.colsM>=1&&+d.colsM<=3) c+="@media(max-width:699px){.grid:not(.list){grid-template-columns:repeat("+(+d.colsM)+",minmax(0,1fr))!important}}"; }
+  if(/^(1\/1|4\/3|3\/4|16\/9)$/.test(d.ratio||"")) c+=".card .pic{height:auto!important;aspect-ratio:"+d.ratio+"}";
+  if(!d.hover) c+=".card:hover{transform:none!important}";
+  (d.cardHide||[]).forEach(k=>{ if(DSN_CARDSEL[k]) c+=DSN_CARDSEL[k]+"{display:none!important}"; }); (d.pdHide||[]).forEach(k=>{ if(DSN_PDSEL[k]) c+=DSN_PDSEL[k]+"{display:none!important}"; });
+  if(d.afcOn===false) c+='[data-act="afopen"]{display:none!important}.ao-band{display:none!important}';
+  c+=(typeof menuCss==="function"?menuCss(d):"");
+  if(d.css) c+="\n"+String(d.css).replace(/@import[^;]*;?/gi,"").replace(/javascript:|expression\(|<\/?style/gi,"");
+  let st=$("dsncss"); if(st) st.remove(); st=document.createElement("style"); st.id="dsncss"; st.textContent=c; document.head.appendChild(st);
+}
+function dsnPages(){ return (dsn().pages||[]).filter(p=>p&&p.id&&p.t); }
+function dsnLinks(){ return String(dsn().links||"").split("\n").map(x=>x.split("|").map(y=>y.trim())).filter(a=>a[0]&&/^https:\/\//.test(a[1]||"")).map(a=>'<a href="'+esc(a[1])+'" target="_blank" rel="noopener">'+esc(a[0])+'</a>').join(""); }
+var dsnCk = (k,arr,lab) => '<label class="chk"><input type="checkbox" data-dsn-arr="'+k+'" value="'+lab[0]+'"'+((arr||[]).includes(lab[0])?' checked':'')+'> '+lab[1]+'</label>';
+var dsnColor = (id,label,val) => '<label class="fl"><span>'+label+'</span><span class="dsc"><input type="color" data-dsc="'+id+'" value="'+(dsnCol(val)?val:'#6a45f0')+'" aria-label="'+label+'"><input id="'+id+'" data-dsn="'+id+'" placeholder="#------ (افتراضي)" value="'+esc(val||"")+'" dir="ltr" maxlength="7"></span></label>';
+var dsnSel = (id,val,opts) => '<select id="'+id+'" data-dsn="'+id+'">'+opts.map(o=>'<option value="'+o[0]+'"'+(String(val)===String(o[0])?' selected':'')+'>'+o[1]+'</option>').join("")+'</select>';
+var dsnTg = (id,val,label) => '<label class="chk"><input type="checkbox" id="'+id+'" data-dsn="'+id+'"'+(val?' checked':'')+'> '+label+'</label>';
+function dsnListHtml(){
+  const d=dsn(), ord=(d.order||[]).filter(k=>DSN_SEC[k]); Object.keys(DSN_SEC).forEach(k=>{ if(!ord.includes(k)) ord.push(k); });
+  const rows=String(S.rowOrder||"feat,deal,sold,new,top,viewed").split(",").map(x=>x.trim()).filter(Boolean), RN={feat:"المنتجات المميزة",deal:"العروض",sold:"الأكثر مبيعاً",new:"وصل حديثاً",top:"الأعلى تقييماً",viewed:"الأكثر مشاهدة"};
+  const allR=Object.keys(RN);
+  return '<h4>ترتيب أقسام الصفحة الرئيسية (من الأعلى للأسفل)</h4>'+ord.map((k,i)=>'<div class="dsr"><b>'+(i+1)+'. '+DSN_SEC[k]+'</b><span><button class="sec" data-act="dsmv" data-k="'+k+'" data-d="-1" aria-label="up">▲</button><button class="sec" data-act="dsmv" data-k="'+k+'" data-d="1" aria-label="down">▼</button><label class="chk"><input type="checkbox" data-act="dshide" data-k="'+k+'"'+((d.hide||[]).includes(k)?'':' checked')+'> ظاهر</label></span></div>').join("")+
+   '<h4>ترتيب القوائم المتحركة بين الصفوف</h4>'+rows.concat(allR.filter(k=>!rows.includes(k))).map((k,i)=>'<div class="dsr"><b>'+RN[k]+'</b><span><button class="sec" data-act="dsrow" data-k="'+k+'" data-d="-1">▲</button><button class="sec" data-act="dsrow" data-k="'+k+'" data-d="1">▼</button><label class="chk"><input type="checkbox" data-act="dsrowv" data-k="'+k+'"'+(rows.includes(k)?' checked':'')+'> ظاهرة</label></span></div>').join("");
+}
+function dsnPagesHtml(){
+  return dsnPages().map(p=>'<div class="ac-card dsp" data-id="'+esc(p.id)+'"><input data-dsp="t" value="'+esc(p.t)+'" placeholder="عنوان الصفحة" maxlength="60"><textarea data-dsp="b" rows="4" placeholder="محتوى الصفحة (افصل الفقرات بسطر فارغ)">'+esc(p.b||"")+'</textarea><button class="sec" data-act="dspdel" data-id="'+esc(p.id)+'">حذف الصفحة</button></div>').join("")||'<p class="muted">لا صفحات مخصصة بعد.</p>';
+}
+function dsnHtml(){
+  const d=dsn();
+  return '<div class="tabc" data-t="dsn"><p class="muted">كل تغيير يظهر فوراً على الموقع خلف اللوحة. اضغط «حفظ للجميع» ليظهر لكل الزوار. «معاينة» يخفي اللوحة مؤقتاً.</p>'+
+   '<div class="row"><button class="pri" data-act="dsnsave">💾 حفظ للجميع</button><button class="sec" data-act="dsnprev">👁️ معاينة</button><button class="sec" data-act="dsnreset">↺ إعادة الافتراضي</button></div>'+
+   '<h4>الألوان والخطوط والزوايا</h4><div class="row">'+dsnColor("acc","اللون الأساسي",d.acc)+dsnColor("acc2","اللون الثانوي",d.acc2)+'</div><div class="row">'+dsnColor("bgD","خلفية الوضع الداكن",d.bgD)+dsnColor("cardD","كروت الوضع الداكن",d.cardD)+'</div><div class="row">'+dsnColor("bgL","خلفية الوضع الفاتح",d.bgL)+dsnColor("cardL","كروت الوضع الفاتح",d.cardL)+'</div>'+
+   '<div class="row">'+fld("استدارة الزوايا (0–32)",'<input id="rad" data-dsn="rad" type="number" min="0" max="32" value="'+esc(d.rad)+'" placeholder="افتراضي">')+fld("الخط",dsnSel("font",d.font,Object.keys(DSN_FONT).map(k=>[k,DSN_FONT[k]])))+'</div>'+
+   '<h4>الهيدر</h4><div class="row">'+dsnTg("hdrSticky",d.hdrSticky,"ثابت أعلى الشاشة")+dsnTg("hdrBlur",d.hdrBlur,"خلفية شفافة ضبابية")+dsnTg("hdrLogo",d.hdrLogo,"أيقونة الشعار بجانب الاسم")+'</div>'+
+   '<div id="dsnl">'+dsnListHtml()+'</div>'+
+   '<h4>البانر الرئيسي</h4><div class="row">'+dsnColor("heroBg1","لون التدرج 1",d.heroBg1)+dsnColor("heroBg2","لون التدرج 2",d.heroBg2)+'</div>'+fld("صورة خلفية للبانر (رابط https، اختياري)",'<input id="heroImg" data-dsn="heroImg" value="'+esc(d.heroImg)+'" dir="ltr" placeholder="https://...">')+'<div class="row">'+fld("محاذاة النص",dsnSel("heroAlign",d.heroAlign,[["center","وسط"],["start","بداية السطر"]]))+fld("الارتفاع الأدنى (px)",'<input id="heroH" data-dsn="heroH" type="number" min="80" max="600" value="'+esc(d.heroH)+'">')+fld("استدارة البانر",'<input id="heroRad" data-dsn="heroRad" type="number" min="0" max="40" value="'+esc(d.heroRad)+'">')+'</div><p class="muted">نص البانر والزر من تبويب «الواجهة والعروض».</p>'+
+   '<h4>شبكة المنتجات والكروت</h4><div class="row">'+fld("أعمدة الكمبيوتر (1–8)",'<input id="colsD" data-dsn="colsD" type="number" min="1" max="8" value="'+esc(d.colsD)+'">')+fld("أعمدة الموبايل (1–3)",'<input id="colsM" data-dsn="colsM" type="number" min="1" max="3" value="'+esc(d.colsM)+'">')+fld("نسبة صورة المنتج",dsnSel("ratio",d.ratio,[["","الافتراضي"],["1/1","مربع"],["4/3","عريض 4:3"],["3/4","طولي 3:4"],["16/9","سينمائي 16:9"]]))+'</div><div class="row">'+dsnTg("hover",d.hover,"حركة الكرت عند المرور")+'</div><div class="chkgrid">'+Object.keys(DSN_CARD).map(k=>dsnCk("cardHide",d.cardHide,[k,"إخفاء: "+DSN_CARD[k]])).join("")+'</div><p class="muted">أعمدة العميل المحفوظة في تفضيلاته لها الأولوية.</p>'+
+   '<h4>صفحة المنتج</h4><div class="chkgrid">'+Object.keys(DSN_PD).map(k=>dsnCk("pdHide",d.pdHide,[k,"إخفاء: "+DSN_PD[k]])).join("")+'</div>'+
+   '<h4>صفحات مخصصة (تظهر في الفوتر)</h4><div id="dsnp">'+dsnPagesHtml()+'</div><button class="sec" data-act="dspadd">+ إضافة صفحة</button>'+
+   '<h4>روابط إضافية في الفوتر</h4>'+fld("سطر لكل رابط: الاسم | https://الرابط",'<textarea id="links" data-dsn="links" rows="3" dir="ltr">'+esc(d.links)+'</textarea>')+
+   '<h4>برنامج الأفيليت</h4><div class="row">'+dsnTg("afcOn",d.afcOn!==false,"إظهار برنامج التسويق بالعمولة للزوار")+dsnTg("afcDark",d.afcDark,"مركز المسوّق داكن افتراضياً")+'</div>'+
+   '<h4>CSS متقدّم (للمدير فقط)</h4>'+fld("يُطبّق على كل الموقع. تُحذف @import وجافاسكربت تلقائياً",'<textarea id="css" data-dsn="css" rows="5" dir="ltr" placeholder=".card{border-width:2px}">'+esc(d.css)+'</textarea>')+
+   '<h4>نسخ احتياطي للتصميم</h4><textarea id="dsnjson" rows="3" dir="ltr" readonly>'+esc(JSON.stringify(S.design||{}))+'</textarea><div class="row"><button class="sec" data-act="dsnimp">استيراد JSON (الصقه فوق ثم اضغط)</button></div></div>';
+}
+function dsnRead(){
+  const d=Object.assign({},dsn()); const g=id=>$(id);
+  ["acc","acc2","bgD","bgL","cardD","cardL","rad","font","heroBg1","heroBg2","heroImg","heroAlign","heroH","heroRad","colsD","colsM","ratio","links","css"].forEach(k=>{ const e=g(k); if(e) d[k]=String(e.value).trim(); });
+  ["hdrSticky","hdrBlur","hdrLogo","hover","afcOn","afcDark"].forEach(k=>{ const e=g(k); if(e) d[k]=!!e.checked; });
+  ["cardHide","pdHide"].forEach(k=>{ const bx=[...document.querySelectorAll('[data-dsn-arr="'+k+'"]')]; if(bx.length) d[k]=bx.filter(x=>x.checked).map(x=>x.value); });
+  const pg=[...document.querySelectorAll("#dsnp .dsp")].map(e=>({id:e.dataset.id,t:(e.querySelector('[data-dsp="t"]').value||"").trim().slice(0,60),b:(e.querySelector('[data-dsp="b"]').value||"").trim().slice(0,6000)})); if(document.querySelector("#dsnp")) d.pages=pg;
+  S.design=d; return d;
+}
+function dsnRefreshLists(){ const l=$("dsnl"); if(l) l.innerHTML=dsnListHtml(); const p=$("dsnp"); if(p) p.innerHTML=dsnPagesHtml(); const j=$("dsnjson"); if(j) j.value=JSON.stringify(S.design||{}); }
+document.addEventListener("input",e=>{ const t0=e.target; if(!t0||!t0.closest||!t0.closest("#adm")) return;
+  if(t0.dataset.dsc){ const x=$(t0.dataset.dsc); if(x){ x.value=t0.value; } }
+  if(t0.dataset.dsn||t0.dataset.dsc||t0.dataset.dsp||t0.dataset.dsnArr){ dsnRead(); applyDesign(); } });
+document.addEventListener("change",e=>{ const t0=e.target; if(!t0||!t0.closest||!t0.closest("#adm")) return; if(t0.dataset&&(t0.dataset.dsnArr||t0.dataset.dsn)){ dsnRead(); applyDesign(); } });
+document.addEventListener("click",async e=>{
+  const b=e.target.closest("[data-act]"); if(!b||!b.closest("#adm,#dsnback")) return; const a=b.dataset.act, k=b.dataset.k; let hit=true;
+  if(a==="dsmv"){ dsnRead(); const d=dsn(), ord=(d.order||[]).filter(x=>DSN_SEC[x]); Object.keys(DSN_SEC).forEach(x=>{ if(!ord.includes(x)) ord.push(x); }); const i=ord.indexOf(k), j=i+(+b.dataset.d); if(j>=0&&j<ord.length){ ord.splice(j,0,ord.splice(i,1)[0]); } d.order=ord; S.design=d; applyDesign(); dsnRefreshLists(); }
+  else if(a==="dshide"){ dsnRead(); const d=dsn(), h=(d.hide||[]).filter(x=>x!==k); if(!b.checked) h.push(k); d.hide=h; S.design=d; applyDesign(); }
+  else if(a==="dsrow"){ const cur=String(S.rowOrder||"feat,deal,sold,new,top,viewed").split(",").map(x=>x.trim()).filter(Boolean), all=["feat","deal","sold","new","top","viewed"], arr=cur.concat(all.filter(x=>!cur.includes(x))), i=arr.indexOf(k), j=i+(+b.dataset.d); if(j>=0&&j<arr.length){ arr.splice(j,0,arr.splice(i,1)[0]); } const vis=cur; S.rowOrder=arr.filter(x=>vis.includes(x)).join(","); dsnRefreshLists(); try{ const g=$("grid"); if(g) g.innerHTML=gridHtml(); }catch(x){} }
+  else if(a==="dsrowv"){ const all=["feat","deal","sold","new","top","viewed"], cur=String(S.rowOrder||all.join(",")).split(",").map(x=>x.trim()).filter(Boolean).filter(x=>x!==k); if(b.checked) cur.push(k); S.rowOrder=cur.join(","); try{ const g=$("grid"); if(g) g.innerHTML=gridHtml(); }catch(x){} }
+  else if(a==="dspadd"){ dsnRead(); const d=dsn(); d.pages=(d.pages||[]).concat([{id:"p"+Date.now().toString(36),t:"صفحة جديدة",b:""}]); S.design=d; dsnRefreshLists(); }
+  else if(a==="dspdel"){ dsnRead(); const d=dsn(); d.pages=(d.pages||[]).filter(p=>p.id!==b.dataset.id); S.design=d; dsnRefreshLists(); }
+  else if(a==="dsnreset"){ if(confirm("إعادة كل إعدادات التصميم للافتراضي؟")){ S.design={}; applyDesign(); admTab="dsn"; render(); } }
+  else if(a==="dsnprev"){ document.body.classList.add("dsn-prev"); if(!$("dsnback")){ const x=document.createElement("button"); x.id="dsnback"; x.className="pri"; x.dataset.act="dsnback"; x.textContent="⟵ العودة للوحة التصميم"; document.body.appendChild(x); } }
+  else if(a==="dsnback"){ document.body.classList.remove("dsn-prev"); const x=$("dsnback"); if(x) x.remove(); }
+  else if(a==="dsnimp"){ try{ const o=JSON.parse($("dsnjson").value); if(o&&typeof o==="object"){ S.design=o; applyDesign(); admTab="dsn"; render(); toast("تم الاستيراد (لم يُحفظ بعد)"); } }catch(x){ toast("JSON غير صالح"); } }
+  else if(a==="dsnsave"){ dsnRead(); applyDesign(); try{ await save(); toast("تم الحفظ للجميع ✓"); }catch(x){ toast("تعذّر الحفظ"); } }
+  else hit=false;
+  if(hit) e.stopPropagation();
+},true);
+
+try{ applyDesign(); }catch(e){}
+
+/* ================= MENUS + LOOKS (admin) ================= */
+var MN_HDR=[["mega","قائمة التصنيفات"],["cur","اختيار العملة"],["bell","الإشعارات"],["acct","الحساب"],["lang","اللغة"],["theme","الوضع الفاتح/الداكن"],["cart","السلة"]];
+var MN_BN=[["top","الرئيسية"],["bsearch","بحث"],["cart","السلة"],["acct","حسابي"]];
+var MN_HSEL={mega:"header .megab",cur:"header #cur",bell:"header .bellb",acct:'header [data-act="acct"]',lang:'header [data-act="lang"]',theme:'header [data-act="theme"]',cart:'header [data-act="cart"]'};
+var MN_BSEL={top:'.bnav [data-act="top"]',bsearch:'.bnav [data-act="bsearch"]',cart:'.bnav [data-act="cart"]',acct:'.bnav [data-act="acct"]'};
+function mnCfg(id){ return ((dsn().menus||{})[id])||{}; }
+function mnApply(id,items,li,prot){
+  const m=mnCfg(id), o=m.o||[], h=m.h||[], n=m.n||{}; let L=items.slice();
+  if(o.length) L=L.map((x,i)=>[x,i]).sort((a,b)=>{ const i=a[0][0]==="-"?-1:o.indexOf(a[0][0]), j=b[0][0]==="-"?-1:o.indexOf(b[0][0]); return (i<0||j<0)?a[1]-b[1]:i-j; }).map(x=>x[0]);
+  L=L.filter(x=>x[0]==="-"||!h.includes(x[0])||(prot||[]).includes(x[0]));
+  L=L.map(x=>(x[0]!=="-"&&n[x[0]])?x.map((v,i)=>i===li?n[x[0]]:v):x);
+  const out=[]; L.forEach(x=>{ if(x[0]==="-"&&(!out.length||out[out.length-1][0]==="-")) return; out.push(x); }); while(out.length&&out[out.length-1][0]==="-") out.pop(); return out;
+}
+function catList(){ const all=[...new Set(S.products.map(p=>p.cat).filter(Boolean))], m=mnCfg("cat"), o=m.o||[], h=m.h||[];
+  let L=all.filter(c=>!h.includes(c)); if(o.length) L=L.map((c,i)=>[c,i]).sort((a,b)=>{ const i=o.indexOf(a[0]),j=o.indexOf(b[0]); return (i<0||j<0)?a[1]-b[1]:i-j; }).map(x=>x[0]); return L; }
+function catLbl(c){ const n=(mnCfg("cat").n||{})[c]; return n||c; }
+function PGSF(){ return mnApply("ft",PGS(),1); }
+function navBarHtml(){
+  const L=String((dsn().nav)||"").split("\n").map(x=>x.split("|").map(y=>y.trim())).filter(a=>a[0]&&a[1]); if(!L.length) return "";
+  return '<nav class="dsn-nav" aria-label="'+tr("قائمة الموقع","Site menu")+'">'+L.map(a=>{ const t=a[1];
+    if(/^page:/.test(t)) return '<button data-act="page" data-k="'+esc(t.slice(5))+'">'+esc(a[0])+'</button>';
+    if(/^cat:/.test(t)) return '<button data-act="cat" data-c="'+esc(t.slice(4))+'">'+esc(a[0])+'</button>';
+    if(t==="home") return '<button data-act="top">'+esc(a[0])+'</button>';
+    if(/^https:\/\//.test(t)) return '<a href="'+esc(t)+'" target="_blank" rel="noopener">'+esc(a[0])+'</a>'; return ''; }).join("")+'</nav>';
+}
+function menuPost(){ const n=mnCfg("bn").n||{}; Object.keys(n).forEach(k=>{ const b=document.querySelector(MN_BSEL[k]); const s=b&&b.querySelector("span"); if(s&&n[k]) s.textContent=n[k]; }); const mh=(mnCfg("hdr").n||{}).mega, mb=document.querySelector("header .megab"); if(mb&&mh) mb.textContent="☰ "+mh; }
+function menuCss(d){
+  let c=""; const ordCss=(id,SEL,keys)=>{ const m=mnCfg(id), o=(m.o||[]).concat(keys.filter(k=>!(m.o||[]).includes(k))); if(m.o&&m.o.length) o.forEach((k,i)=>{ if(SEL[k]) c+=SEL[k]+"{order:"+(i+1)+"}"; }); (m.h||[]).forEach(k=>{ if(SEL[k]) c+=SEL[k]+"{display:none!important}"; }); };
+  ordCss("hdr",MN_HSEL,MN_HDR.map(x=>x[0])); ordCss("bn",MN_BSEL,MN_BN.map(x=>x[0]));
+  if(d.menuRad!==""&&d.menuRad!=null&&!isNaN(+d.menuRad)){ const r=Math.max(0,Math.min(30,+d.menuRad)); c+="header .sec,.chip,.bnav button,.mg-i,.ac-side button,.af-ni,.dsn-nav a,.dsn-nav button{border-radius:"+r+"px}"; }
+  if(+d.menuFs>=70&&+d.menuFs<=150) c+="header .sec,.chip,.bnav,.mg-i,.ac-side button,.af-ni,.dsn-nav a,.dsn-nav button{font-size:"+(+d.menuFs/100)+"em}";
+  if(d.menuIcons===false) c+=".ac-side .ic,.af-ni .ic,.sf-c .ic,.bnav .ic,.mg-i .ic{display:none}";
+  if(d.bnavStyle==="flat") c+=".bnav{border-radius:0!important;inset-inline:0!important;margin:0!important;max-width:none!important;width:100%!important;bottom:0!important}"; if(d.bnavStyle==="hidden") c+=".bnav{display:none!important}";
+  if(dsnCol(d.afSideBg)) c+=".afc .af-side{background:"+d.afSideBg+"}"; if(dsnCol(d.navBg)) c+=".dsn-nav{background:"+d.navBg+"}";
+  c+=".dsn-nav{display:flex;gap:6px;overflow-x:auto;padding:6px 12px;background:var(--card);border-bottom:1px solid var(--line);scrollbar-width:none}.dsn-nav a,.dsn-nav button{white-space:nowrap;border:1px solid var(--line);background:transparent;color:inherit;padding:6px 12px;border-radius:99px;text-decoration:none;font:inherit;cursor:pointer;min-height:36px;display:inline-flex;align-items:center}.dsn-nav a:hover,.dsn-nav button:hover{border-color:var(--accent);color:var(--accent)}";
+  return c;
+}
+var DSN_PRESETS=[
+ {n:"بنفسجي فاخر (الافتراضي)",v:{acc:"",acc2:"",bgD:"",bgL:"",cardD:"",cardL:"",rad:"",font:""}},
+ {n:"ذهبي وأسود",v:{acc:"#d4a017",acc2:"#b8860b",bgD:"#0b0b0f",cardD:"#16161d",bgL:"#faf7ef",cardL:"#ffffff",rad:"10",font:""}},
+ {n:"أخضر طبيعي",v:{acc:"#16a34a",acc2:"#0d9488",bgD:"#07140e",cardD:"#0f2118",bgL:"#f0faf4",cardL:"#ffffff",rad:"14",font:""}},
+ {n:"أحمر حيوي",v:{acc:"#e11d48",acc2:"#f97316",bgD:"#14080b",cardD:"#201015",bgL:"#fff5f6",cardL:"#ffffff",rad:"12",font:""}},
+ {n:"أزرق احترافي",v:{acc:"#2563eb",acc2:"#0ea5e9",bgD:"#060d1f",cardD:"#0e1a35",bgL:"#eef4ff",cardL:"#ffffff",rad:"8",font:"sys"}},
+ {n:"وردي ناعم",v:{acc:"#db2777",acc2:"#a855f7",bgD:"#170a14",cardD:"#241022",bgL:"#fff1f8",cardL:"#ffffff",rad:"20",font:""}},
+ {n:"فاتح نقي",v:{acc:"#4f46e5",acc2:"#7c3aed",bgD:"#0f1020",cardD:"#191a33",bgL:"#ffffff",cardL:"#f6f7fb",rad:"6",font:"sys"}}
+];
+function mnEditor(id,title,items,note){
+  const m=mnCfg(id), o=m.o||[], h=m.h||[], n=m.n||{}; let L=items.filter(x=>x[0]!=="-");
+  L=L.map((x,i)=>[x,i]).sort((a,b)=>{ const i=o.indexOf(a[0][0]),j=o.indexOf(b[0][0]); return (i<0||j<0)?a[1]-b[1]:i-j; }).map(x=>x[0]);
+  return '<div class="ac-card"><h4>'+title+'</h4>'+(note?'<small class="muted">'+note+'</small>':'')+L.map(x=>'<div class="dsr"><span><input data-mn="'+id+'" data-k="'+esc(x[0])+'" value="'+esc(n[x[0]]||"")+'" placeholder="'+esc(x[x.length-1])+'" maxlength="40"></span><span><button class="sec" data-act="mnmv" data-m="'+id+'" data-k="'+esc(x[0])+'" data-d="-1">▲</button><button class="sec" data-act="mnmv" data-m="'+id+'" data-k="'+esc(x[0])+'" data-d="1">▼</button><label class="chk"><input type="checkbox" data-act="mnhide" data-m="'+id+'" data-k="'+esc(x[0])+'"'+(h.includes(x[0])?'':' checked')+'> ظاهر</label></span></div>').join("")+'</div>';
+}
+function mnAll(){
+  const d=dsn(), cats=[...new Set(S.products.map(p=>p.cat).filter(Boolean))].map(c=>[c,c]);
+  const accAll=secs0().filter(x=>x[0]!=="-").map(x=>[x[0],x[2]]), afAll=AFNAV().map(x=>[x[0],x[2]]), ftAll=PGS().map(x=>[x[0],x[1]]);
+  return mnEditor("hdr","أزرار الهيدر (الترتيب والإظهار)",MN_HDR,"اكتب اسماً جديداً في الحقل لتغيير الاسم حيث يدعم (قائمة التصنيفات).")+
+   '<div class="ac-card"><h4>قائمة علوية مخصصة (تحت الهيدر)</h4><textarea id="nav" data-dsn2="nav" rows="4" dir="ltr" placeholder="الاسم | page:about&#10;الاسم | cat:اسم التصنيف&#10;الاسم | https://...&#10;الرئيسية | home">'+esc(d.nav||"")+'</textarea><small class="muted">لكل سطر: الاسم | الهدف. الهدف: page:مفتاح_صفحة أو cat:تصنيف أو رابط https أو home. مفاتيح الصفحات: about, contact, faq, returns, privacy, terms, delivery, warranty, support.</small></div>'+
+   mnEditor("cat","التصنيفات (قائمة التصنيفات والشرائح)",cats,"إخفاء التصنيف يخفيه من القوائم فقط، المنتجات تبقى.")+
+   mnEditor("bn","القائمة السفلية في الموبايل",MN_BN)+mnEditor("ft","صفحات الفوتر",ftAll)+mnEditor("acc","قائمة حساب العميل/التاجر/المدير",accAll,"لا يمكن إخفاء «نظرة عامة» و«لوحة الإدارة».")+mnEditor("af","قائمة مركز المسوّق",afAll,"لا يمكن إخفاء «الرئيسية».");
+}
+function mnLooksHtml(){
+  const d=dsn();
+  return '<div class="tabc" data-t="mnu"><p class="muted">تحكم كامل في كل القوائم. التغيير فوري، ثم «حفظ للجميع».</p><div class="row"><button class="pri" data-act="dsnsave">💾 حفظ للجميع</button><button class="sec" data-act="dsnprev">👁️ معاينة</button></div>'+
+   '<h4>قوالب جاهزة للمظهر (بضغطة واحدة)</h4><div class="chkgrid">'+DSN_PRESETS.map((p,i)=>'<button class="sec" data-act="dspreset" data-i="'+i+'">🎨 '+p.n+'</button>').join("")+'</div>'+
+   '<h4>شكل القوائم</h4><div class="row">'+fld("استدارة أزرار القوائم (0–30)",'<input id="menuRad" data-dsn2="menuRad" type="number" min="0" max="30" value="'+esc(d.menuRad??"")+'">')+fld("حجم خط القوائم %",'<input id="menuFs" data-dsn2="menuFs" type="number" min="70" max="150" value="'+esc(d.menuFs??"")+'" placeholder="100">')+fld("شكل القائمة السفلية",dsnSel("bnavStyle",d.bnavStyle||"",[["","عائمة (الافتراضي)"],["flat","ملتصقة بالحافة"],["hidden","مخفية"]]).replace('data-dsn=','data-dsn2='))+'</div><div class="row">'+'<label class="chk"><input type="checkbox" id="menuIcons" data-dsn2="menuIcons"'+(d.menuIcons===false?'':' checked')+'> إظهار أيقونات القوائم</label></div><div class="row">'+dsnColor("afSideBg","لون القائمة الجانبية لمركز المسوّق",d.afSideBg).replace(/data-dsn=/,'data-dsn2=')+dsnColor("navBg","لون القائمة العلوية المخصصة",d.navBg).replace(/data-dsn=/,'data-dsn2=')+'</div>'+
+   '<div id="mnl">'+mnAll()+'</div></div>';
+}
+function mnRefresh(){ const l=$("mnl"); if(l) l.innerHTML=mnAll(); }
+function mnSet(id,fn){ const d=Object.assign({},dsn()), mm=Object.assign({},d.menus||{}), m=Object.assign({o:[],h:[],n:{}},mm[id]||{}); fn(m); mm[id]=m; d.menus=mm; S.design=d; applyDesign(); }
+document.addEventListener("input",e=>{ const t0=e.target; if(!t0||!t0.closest||!t0.closest("#adm")) return;
+  if(t0.dataset.mn){ mnSet(t0.dataset.mn,m=>{ m.n=Object.assign({},m.n); if(t0.value.trim()) m.n[t0.dataset.k]=t0.value.trim(); else delete m.n[t0.dataset.k]; }); try{ menuPost(); }catch(x){} }
+  else if(t0.dataset.dsc&&t0.dataset.dsc){ const x=$(t0.dataset.dsc); if(x&&x.dataset.dsn2){ x.value=t0.value; mnRead(); } }
+  else if(t0.dataset.dsn2){ mnRead(); } });
+document.addEventListener("change",e=>{ const t0=e.target; if(t0&&t0.dataset&&t0.dataset.dsn2&&t0.closest("#adm")) mnRead(); });
+function mnRead(){ const d=Object.assign({},dsn()); ["nav","menuRad","menuFs","bnavStyle","afSideBg","navBg"].forEach(k=>{ const e=$(k); if(e) d[k]=String(e.value).trim(); }); const mi=$("menuIcons"); if(mi) d.menuIcons=!!mi.checked; S.design=d; applyDesign(); try{ render(); admOpenKeep(); }catch(x){} }
+function admOpenKeep(){}
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-act]"); if(!b||!b.closest("#adm")) return; const a=b.dataset.act;
+  if(a==="mnmv"){ const id=b.dataset.m, k=b.dataset.k, dd=+b.dataset.d; const base=({hdr:MN_HDR,bn:MN_BN,cat:[...new Set(S.products.map(p=>p.cat).filter(Boolean))].map(c=>[c]),ft:PGS().map(x=>[x[0]]),acc:secs0().filter(x=>x[0]!=="-"),af:AFNAV()})[id].map(x=>x[0]);
+    mnSet(id,m=>{ const o=(m.o||[]).filter(x=>base.includes(x)); base.forEach(x=>{ if(!o.includes(x)) o.push(x); }); const i=o.indexOf(k), j=i+dd; if(j>=0&&j<o.length) o.splice(j,0,o.splice(i,1)[0]); m.o=o; }); mnRefresh(); e.stopPropagation(); }
+  else if(a==="mnhide"){ const k=b.dataset.k; mnSet(b.dataset.m,m=>{ const h=(m.h||[]).filter(x=>x!==k); if(!b.checked) h.push(k); m.h=h; }); e.stopPropagation(); }
+  else if(a==="dspreset"){ const p=DSN_PRESETS[+b.dataset.i]; if(p){ S.design=Object.assign({},dsn(),p.v); applyDesign(); admTab="mnu"; render(); toast("طُبّق قالب: "+p.n+" (اضغط حفظ للجميع)"); } e.stopPropagation(); }
+},true);
 
 Promise.all([claude.use("artifact").catch(()=>null), claude.use("user").catch(()=>null), claude.use("assets").catch(()=>null), claude.use("db").catch(()=>null)]).then(async ([a,u,as,d])=>{
   assets = as; art = a; try{ const pd=d||(window.FB&&FB.ready?await claude.use("pubdb"):null); cfgWatch(pd); if(!a&&u&&window.FB&&FB.ready) art={__fb:true,publish:async()=>{}}; }catch(e){}
