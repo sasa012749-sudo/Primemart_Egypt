@@ -729,6 +729,56 @@ button:disabled{cursor:not-allowed}
 .pill{font-weight:700;letter-spacing:.2px}
 #adm .tabc>*+*{margin-top:10px}
 #adm>b,[dir=rtl] #adm>b{padding:18px 20px 16px;padding-inline-start:70px}
+
+.afc{--b:#f4f5fb;--c:#fff;--i:#14123f;--m:#6b6f8d;--l:#e4e6f2;--p:#6a45f0;--g:#c9a24b;--ok:#16a34a;--wr:#f59e0b;--er:#dc2626;position:fixed;inset:0;z-index:9000;background:var(--b);color:var(--i);display:flex;font-size:.92rem;line-height:1.6}
+.afc.dk{--b:#0d0b26;--c:#15123a;--i:#ece9ff;--m:#a9a6cc;--l:#2b2668}
+.afc *{box-sizing:border-box}.afc button{font:inherit;cursor:pointer}.afc input,.afc select,.afc textarea{font:inherit;color:inherit;background:var(--c);border:1px solid var(--l);border-radius:10px;padding:8px 10px;min-height:40px;max-width:100%}
+.afc .ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px}
+.af-side{width:248px;background:#14123f;color:#e8e6ff;padding:12px 8px;overflow:auto;flex:none;display:flex;flex-direction:column;gap:2px;transition:width .2s}
+.af-brand{display:flex;gap:8px;align-items:center;padding:8px 10px 14px;color:#fff}.af-lg{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#6a45f0,#8b4fe8);color:#fff}.af-lg.big{width:52px;height:52px;border-radius:14px}
+.af-ni{display:flex;align-items:center;gap:10px;background:none;border:0;color:inherit;padding:10px;border-radius:10px;text-align:start;min-height:42px;position:relative}.af-ni:hover{background:#ffffff14}.af-ni.on{background:linear-gradient(135deg,#6a45f0,#8b4fe8);color:#fff}.af-ni em,.af-ib em{background:var(--g);color:#14123f;font-style:normal;border-radius:99px;padding:0 6px;font-size:.7rem;margin-inline-start:auto}
+.afc.col .af-side{width:64px}.afc.col .af-ni span,.afc.col .af-brand b{display:none}.afc.col .af-ni em{position:absolute;top:2px;inset-inline-end:2px}
+.af-body{flex:1;min-width:0;display:flex;flex-direction:column}.af-top{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--c);border-bottom:1px solid var(--l)}.af-ttl{font-size:1rem}.grow{flex:1}
+.af-ib{background:none;border:1px solid var(--l);color:inherit;border-radius:10px;min-width:40px;min-height:40px;display:inline-grid;place-items:center;position:relative}.af-ib em{position:absolute;top:-4px;inset-inline-end:-4px}
+.af-main{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:12px}.af-h{margin:4px 0}.af-mut,.afmut{color:var(--m)}
+.af-card,.af-kpi,.af-pc,.af-wel{background:var(--c);border:1px solid var(--l);border-radius:16px;padding:14px;box-shadow:0 2px 10px #14123f0d}
+.af-kg{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}.af-kpi{display:flex;flex-direction:column;gap:4px;position:relative}.af-kpi b{font-size:1.25rem}.af-kh{display:flex;justify-content:space-between;gap:6px;color:var(--m);font-size:.8rem}
+.afd{font-style:normal;font-size:.75rem;border-radius:99px;padding:0 7px}.afd.u{background:#16a34a22;color:var(--ok)}.afd.d{background:#dc262622;color:var(--er)}.afd.z{color:var(--m)}.afsp{width:100%;height:26px;color:var(--p)}
+.af-lk{background:none;border:0;color:var(--p);padding:0;text-align:start;min-height:32px}
+.af-wel{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:linear-gradient(135deg,#14123f,#3b2a9a);color:#fff;border:0}.af-wel h2{margin:0}.af-wel .afmut{color:#cfcaff}.af-av{width:52px;height:52px;border-radius:50%;background:var(--g);color:#14123f;display:grid;place-items:center;font-weight:700;overflow:hidden}.af-av img{width:100%;height:100%;object-fit:cover}.af-lvb{min-width:170px}
+.af-badge{display:inline-block;padding:2px 12px;border-radius:99px;background:color-mix(in srgb,var(--c) 85%,transparent);border:1.5px solid var(--c);color:#14123f;background:var(--c);font-weight:700;font-size:.8rem;box-shadow:inset 0 0 0 99px color-mix(in srgb,var(--c) 0%,transparent)}
+.af-badge{background:#fff;border-color:var(--c)}.afc.dk .af-badge{color:#14123f}
+.af-bar2{height:8px;border-radius:99px;background:#ffffff33;overflow:hidden;margin:4px 0}.af-card .af-bar2{background:var(--l)}.af-bar2 i{display:block;height:100%;background:linear-gradient(90deg,var(--p),var(--g));border-radius:99px;transition:width .6s}
+.af-pr{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.af-pr button,.af-tab{border:1px solid var(--l);background:var(--c);color:inherit;border-radius:99px;padding:4px 12px;min-height:34px}.af-pr button.on,.af-tab.on{background:var(--p);border-color:var(--p);color:#fff}.af-chips{display:flex;gap:6px;flex-wrap:wrap}
+.af-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.af-b,.af-b2{border-radius:10px;border:1px solid var(--p);padding:8px 14px;min-height:40px;display:inline-flex;align-items:center;gap:6px;text-decoration:none}.af-b{background:linear-gradient(135deg,#6a45f0,#8b4fe8);color:#fff}.af-b.gold{background:var(--g);border-color:var(--g);color:#14123f;font-weight:700}.af-b2{background:var(--c);color:var(--p)}.af-b2.lt{color:#fff;border-color:#ffffff66;background:transparent}
+.af-g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px}.af-g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.af-ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px}.af-ul li{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--l);padding:4px 0}
+.afch{color:var(--m);margin-top:6px}.afbar{fill:var(--p);transform-box:fill-box;transform-origin:bottom;animation:afg .5s both}@keyframes afg{from{transform:scaleY(0)}}
+.af-tb{display:flex;gap:8px;flex-wrap:wrap}.af-tb input[type=search]{flex:1;min-width:150px}
+.af-pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}.af-pl{display:grid;gap:10px}.af-pl .af-pc{display:flex}.af-pl .af-pi{width:110px;flex:none}
+.af-pc{padding:0;overflow:hidden;display:flex;flex-direction:column}.af-pi{position:relative;aspect-ratio:1/1;background:var(--b)}.af-pi img{width:100%;height:100%;object-fit:cover}.af-ofs{position:absolute;top:8px;inset-inline-start:8px;background:var(--er);color:#fff;border-radius:99px;padding:0 8px;font-size:.75rem}
+.af-fv{position:absolute;top:6px;inset-inline-end:6px;width:36px;height:36px;border-radius:50%;border:0;background:#fffe;color:#c0267a;font-size:1.1rem}.af-fv.on{background:#fff;color:#e11d48}
+.af-pb{padding:10px;display:flex;flex-direction:column;gap:4px;flex:1}.af-pn{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.9em}.af-pr2{display:flex;gap:8px;align-items:center;font-weight:700}.af-pr2 em{font-style:normal;background:var(--g);color:#14123f;border-radius:99px;padding:0 8px;font-size:.8rem}.af-cm{color:var(--ok)}
+.af-pb .af-row{margin-top:auto}.af-pb .af-b,.af-pb .af-b2{padding:6px 10px;font-size:.82rem}
+.af-car{display:flex;flex-direction:column;gap:6px}.af-trk{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.af-trk .af-pc{flex:0 0 190px;scroll-snap-align:start}
+.af-pd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:12px}.af-gal{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.af-gal img{width:100%;border-radius:12px;aspect-ratio:1/1;object-fit:cover;border:1px solid var(--l)}
+.af-ks3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}.af-ks3 div{background:var(--b);border-radius:10px;padding:6px;text-align:center}.af-ks3 b{display:block}.af-ks3 span{font-size:.75rem;color:var(--m)}
+.af-fm{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.af-fm .af{display:grid;gap:4px}.af-fm small,.af-card small{color:var(--m)}.afc .af{display:grid;gap:4px}
+.af-link{background:var(--b);border:1px dashed var(--l);border-radius:10px;padding:8px;word-break:break-all;margin:8px 0}.af-pre{white-space:pre-wrap;background:var(--b);border-radius:10px;padding:10px;margin:6px 0;font-family:inherit}
+.af-tw{overflow:auto;border:1px solid var(--l);border-radius:14px;background:var(--c)}.af-t{width:100%;border-collapse:collapse}.af-t th,.af-t td{padding:8px 10px;border-bottom:1px solid var(--l);text-align:start;vertical-align:top}.af-t th{background:var(--b);font-size:.8rem;white-space:nowrap}.af-t tr.af-me{background:#6a45f01a}.af-act{display:flex;gap:4px;flex-wrap:wrap}.af-act .af-b2{padding:2px 8px;min-height:32px;font-size:.78rem}
+.afpill{display:inline-block;border-radius:99px;padding:0 10px;font-size:.76rem;font-style:normal}.afpill.g{background:#16a34a22;color:var(--ok)}.afpill.y{background:#f59e0b22;color:#b45309}.afpill.r{background:#dc262622;color:var(--er)}.afc.dk .afpill.y{color:#fbbf24}
+.af-em{text-align:center;padding:24px;color:var(--m)}.af-q{background:var(--c);border:1px solid var(--l);border-radius:12px;padding:8px 12px;margin:6px 0}.af-q summary{cursor:pointer;font-weight:600}
+.af-tl{margin:8px 0;padding-inline-start:18px}.af-ch{display:grid;gap:2px;margin:6px 0}.af-ch>span{display:inline}.af-nt li{display:grid;grid-template-columns:1fr auto}.af-nt li.un{border-inline-start:3px solid var(--g);padding-inline-start:8px}
+.af-sw{display:flex;gap:8px;align-items:center;margin:8px 0}.af-err{color:var(--er)}.af-cur{border-color:var(--p);box-shadow:0 0 0 2px #6a45f044}.af-n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--p);color:#fff;margin-inline-end:6px}
+.af-pub{flex:1;overflow:auto}.pubtop{position:sticky;top:0;z-index:2}.af-hero{background:linear-gradient(135deg,#14123f,#3b2a9a 60%,#6a45f0);color:#fff;text-align:center;padding:36px 16px;display:grid;gap:10px;justify-items:center}.af-hero h1{margin:0;font-size:1.8rem}.af-hero p{max-width:560px;margin:0;color:#dcd8ff}.af-wrap{max-width:1100px;margin:0 auto;padding:14px;display:flex;flex-direction:column;gap:12px}
+.af-scrim{display:none}.af-bar{display:none}.afc :focus-visible{outline:2px solid var(--g);outline-offset:2px}
+@media(max-width:860px){.af-side{position:fixed;inset-block:0;inset-inline-start:0;width:260px;z-index:3;transform:translateX(-105%);transition:transform .25s}[dir=rtl] .af-side{transform:translateX(105%)}.afc.dr .af-side{transform:none}.afc.dr .af-scrim{display:block;position:fixed;inset:0;background:#0007;z-index:2}.afc.col .af-side{width:260px}.afc.col .af-ni span{display:inline}
+ .af-bar{display:flex;background:var(--c);border-top:1px solid var(--l);padding:4px;gap:2px}.af-bar button{flex:1;background:none;border:0;color:var(--m);display:grid;justify-items:center;gap:0;font-size:.68rem;min-height:48px}.af-bar button.on{color:var(--p)}.af-pd{grid-template-columns:1fr}.af-main{padding:10px}.af-trk .af-pc{flex-basis:160px}}
+@media print{.af-side,.af-top,.af-bar,.af-tb,.af-b,.af-b2,.af-pr{display:none!important}.afc{position:static;display:block}.af-main{overflow:visible}}
+@media(prefers-reduced-motion:reduce){.afbar{animation:none}.af-bar2 i,.af-side{transition:none}}
+.afc main.af-main,.afc .af-body{max-width:none;margin:0;width:auto}.afc .af-main{align-items:stretch}.afc .af-main>*{max-width:1180px;width:100%;margin-inline:auto}
+.afc .af-tb input,.afc .af-tb select{width:auto;flex:1 1 150px}.afc .af-tb .af-ib{flex:none}.afc .af-fm input,.afc .af-fm select,.afc .af-fm textarea,.afc .af-card textarea{width:100%}
+.afc td.af-act{display:table-cell;white-space:nowrap}.afc td.af-act .af-b2{margin:2px}
 </style></head><body><script>
 /* ============ ضع إعدادات Firebase هنا (من لوحة Firebase > Project settings > Your apps) ============ */
 window.FIREBASE_CONFIG = {
@@ -1141,8 +1191,8 @@ function footHtml(){
   return '<footer class="sfoot"><div class="sf-c"><b class="sf-b">'+esc(S.name)+'</b><p class="muted">'+esc(S.heroS||"")+'</p></div>'+
     (cs.length?'<div class="sf-c"><b>'+tr("التصنيفات","Categories")+'</b>'+cs.map(c=>'<button data-act="megacat" data-c="'+esc(c)+'">'+esc(c)+'</button>').join("")+'</div>':'')+
     '<div class="sf-c"><b>'+tr("الصفحات","Pages")+'</b>'+PGS().map(x=>'<button data-act="page" data-k="'+x[0]+'">'+x[1]+'</button>').join("")+'</div>'+
-    '<div class="sf-c"><b>'+tr("المساعدة","Help")+'</b>'+pol().slice(0,4).map(x=>'<span class="muted">'+ic(x[0])+' '+esc(x[1])+': '+esc(String(x[2]).slice(0,70))+'</span>').join("")+(wn?'<a href="https://wa.me/'+wn+'" target="_blank" rel="noopener">💬 WhatsApp</a>':'')+soc.map(x=>'<a href="'+esc(x[1])+'" target="_blank" rel="noopener">'+x[0]+'</a>').join("")+'</div>'+
-    '<div class="sf-bt">© '+new Date().getFullYear()+' '+esc(S.name)+' · Powered by SouqPro</div></footer>';
+    '<div class="sf-c"><b>'+tr("البرامج","Programs")+'</b><button data-act="afopen">'+tr("التسويق بالعمولة","Affiliate program")+'</button></div><div class="sf-c"><b>'+tr("المساعدة","Help")+'</b>'+pol().slice(0,4).map(x=>'<span class="muted">'+ic(x[0])+' '+esc(x[1])+': '+esc(String(x[2]).slice(0,70))+'</span>').join("")+(wn?'<a href="https://wa.me/'+wn+'" target="_blank" rel="noopener">💬 WhatsApp</a>':'')+soc.map(x=>'<a href="'+esc(x[1])+'" target="_blank" rel="noopener">'+x[0]+'</a>').join("")+'</div>'+
+    '<div class="sf-bt">© '+new Date().getFullYear()+' '+esc(S.name)+' · Primemart-egypt</div></footer>';
 }
 function megaHtml(){
   const L=S.products.filter(p=>!isOut(p)), cs=[...new Set(S.products.map(p=>p.cat).filter(Boolean))];
@@ -1664,6 +1714,7 @@ document.addEventListener("click", async e => {
   else if(a==="bell"){ A.sec="notif"; accShow(); }
   else if(a==="page"){ const k=b.dataset.k, nm=(PGS().find(x=>x[0]===k)||[])[1]||""; showOv(nm,pageBody(k)); }
   else if(a==="ovclose"){ ovClose(); }
+  else if(a==="afopen"){ afOpen("home"); }
   else if(a==="ovhelp"){ ovClose(); A.sec="help"; try{ accShow(); }catch(e){} }
   else if(a==="cmp"){ const i=cmp.indexOf(id); if(i>=0) cmp.splice(i,1); else if(cmp.length>=4){ toast(tr("أقصى عدد للمقارنة 4 منتجات","You can compare up to 4 products")); return; } else cmp.push(id); lsSet("cmp_v1",cmp); document.querySelectorAll('[data-act="cmp"][data-id="'+id+'"]').forEach(x=>{ x.classList.toggle("on",cmp.includes(id)); x.setAttribute("aria-pressed",cmp.includes(id)); }); cmpSync(); if($("pgov")) showOv(tr("مقارنة المنتجات","Compare products"),cmpHtml()); }
   else if(a==="cmpopen"){ showOv(tr("مقارنة المنتجات","Compare products"),cmpHtml()); }
@@ -1908,11 +1959,11 @@ async function accInit(u,d){
 
 /* ---------- order + referral capture ---------- */
 let pendingOpen = null;
-(function(){ const m=/^#ref-([a-z0-9]{4,16})(?:\/([a-z0-9_]{2,60}))?$/i.exec(location.hash||""); if(m){ lsSet("ref_v1",m[1].toLowerCase()); if(m[2]){ lsSet("ref_p",m[2]); pendingOpen=m[2]; } } })();
+(function(){ const m=/^#ref-([a-z0-9]{4,16})(?:\/([a-z0-9_]{2,60}))?(?:\/([a-z0-9]{3,12}))?$/i.exec(location.hash||""); if(m){ lsSet("ref_v1",m[1].toLowerCase()); lsSet("ref_t",Date.now()); lsSet("ref_l",(m[3]||"").toLowerCase()); if(m[2]&&m[2]!=="home"){ lsSet("ref_p",m[2]); pendingOpen=m[2]; } setTimeout(()=>{ try{ afTrack(m[1].toLowerCase(),m[2]&&m[2]!=="home"?m[2]:"",(m[3]||"").toLowerCase()); }catch(e){} },0); } })();
 async function recordOrder(no,T,items){
   if(!canW()) return false;
   const rec = {no, uid:A.uid, t:Date.now(), status:"new", method:payM, total:T.g, sub:T.s, discount:T.d, ship:T.sh,
-    ref:lsGet("ref_v1",""), name:co.n, phone:co.p, addr:co.a, zone:co.z, payRef:payM==="wallet"?String(co.t||"").slice(0,20):"", payTo:payM==="wallet"?String(S.payNum||""):"", currency:S.currency,
+    ref:affRefNow(), rl:(affRefNow()?lsGet("ref_l",""):""), name:co.n, phone:co.p, addr:co.a, zone:co.z, payRef:payM==="wallet"?String(co.t||"").slice(0,20):"", payTo:payM==="wallet"?String(S.payNum||""):"", currency:S.currency,
     lines:items.map(i=>({pid:i.p.id,name:i.p.name,qty:i.n,price:eff(i.p),opt:i.o||"",seller:i.p.seller||"",comm:commOf(i.p)})),refp:lsGet("ref_p",""),};
   try{
     await A.db.doc("orders/"+A.uid+"/items/"+no).set(rec);
@@ -1953,6 +2004,8 @@ function secs(){
   if(isSeller()) l.push(["seller","store",tr("لوحة التاجر","Seller dashboard")]);
   if(isSeller()||isAff()) l.push(["wallet","wal",tr("المحفظة والسحب","Wallet & withdrawals")]);
   if(isAff()) l.push(["aff","mega",tr("لوحة المسوّق","Affiliate dashboard")]);
+  if(isSeller()) l.push(["sellaff","mega",tr("التسويق بالعمولة","Affiliate marketing")]);
+  if(admin) l.push(["affadm","mega",tr("إدارة الأفيليت","Affiliate management")]);
   if(admin) l.push(["admin","shield",tr("لوحة الإدارة","Admin")]);
   return l;
 }
@@ -1980,7 +2033,7 @@ const lockCard = () => (window.FB ? FB.card() : lockCardOld());
 function secHtml(){
   const s = A.sec, local = ["home","look","lang","data","help"];
   if(!canW() && !local.includes(s)) return '<h3>'+esc((secs().find(x=>x[0]===s)||[,,""])[2])+'</h3>'+lockCard();
-  const f = {addr:sAddr,home:sHome,profile:sProfile,account:sAccount,privacy:sPrivacy,notif:sNotif,look:sLook,lang:sLang,social:sSocial,data:sData,help:sHelp,orders:sOrders,types:sTypes,seller:sSeller,aff:sAff,wallet:sWallet,admin:sAdmin}[s];
+  const f = {addr:sAddr,home:sHome,profile:sProfile,account:sAccount,privacy:sPrivacy,notif:sNotif,look:sLook,lang:sLang,social:sSocial,data:sData,help:sHelp,orders:sOrders,types:sTypes,seller:sSeller,aff:sAff,sellaff:sSellAff,affadm:sAffAdm,wallet:sWallet,admin:sAdmin}[s];
   return f ? f() : "";
 }
 
@@ -2215,6 +2268,7 @@ function sTypes(){
   return '<h3>'+tr("أنواع الحساب","Account types")+'</h3><div class="ac-card"><div class="ac-row"><span class="muted">'+tr("نوع حسابك الحالي","Your current type")+':</span><b>'+esc(role)+'</b></div></div>'+
    reqCard("seller",tr("تاجر","Seller"),tr("اعرض منتجاتك في المتجر. تظهر بعد موافقة المدير.","List your products in the store. They appear after admin approval."),
      '<div class="ac-grid">'+F(tr("اسم المتجر","Shop name"),IN("r_seller_shop","",' maxlength="50"'))+F(tr("هاتف للتواصل","Contact phone"),IN("r_seller_phone","",' dir="ltr" type="tel"'))+'</div>'+F(tr("نبذة عن نشاطك","About your business"),TA("r_seller_note","",3,' maxlength="400"')))+
+   '<div class="ac-card"><button class="sec" data-a="afopen">'+tr("برنامج الأفيليت: التفاصيل والتسجيل الكامل","Affiliate program: details & full application")+'</button></div>'+
    reqCard("affiliate",tr("مسوّق بالعمولة","Affiliate"),tr("احصل على رابط خاص وعمولة على كل طلب مؤكَّد من خلاله.","Get your own link and a commission on every confirmed order through it."),
      F(tr("كيف ستروّج؟","How will you promote?"),TA("r_affiliate_note","",3,' maxlength="400"')))+(admin?inviteCard():'');
 }
@@ -2329,11 +2383,12 @@ function inviteCard(){
     NOTE(tr("أرسل الرابط لمن تريد. يجب أن يكون الشخص قد أنشأ حساباً في المتجر حتى يُرسل طلبه.","Send the link to whoever you want. They need to have created an account in the store so their request can be saved."))+'</div>';
 }
 function joinHash(){ if(pendingOpen){ const hit=S.products.find(p=>p.id===pendingOpen||p.id.endsWith("_"+pendingOpen)); if(hit){ openId=hit.id; pendingOpen=null; render(); } }
-   if(/^#join-(seller|affiliate)$/.test(location.hash||"")){ A.sec="types"; accShow(); } }
+   if(/^#join-(seller|affiliate)$/.test(location.hash||"")){ A.sec="types"; accShow(); }
+   if(/^#affiliate$/.test(location.hash||"")){ afOpen("home"); } }
 addEventListener("hashchange",joinHash);
 function sAff(){
   const code = (myRole().affiliate||{}).code||"";
-  return '<h3>'+tr("لوحة المسوّق","Affiliate dashboard")+'</h3>'+
+  return '<h3>'+tr("لوحة المسوّق","Affiliate dashboard")+'</h3><div class="ac-card"><button class="pri" data-a="afopen">'+tr("افتح مركز الأفيليت الكامل","Open the full affiliate center")+'</button></div>'+
   '<div class="ac-card"><h4>'+tr("رابطك الخاص","Your link")+'</h4><div class="ac-link" id="afl">'+esc(affLink())+'</div>'+
    '<div class="ac-row"><button class="pri" data-a="copy-aff">'+tr("نسخ الرابط","Copy link")+'</button><span class="muted">'+tr("كودك:","Your code:")+' <b dir="ltr">'+esc(code)+'</b></span></div>'+
    NOTE(tr("يُسجَّل الكود على جهاز الزائر عند فتح رابطك، ويُنسب الطلب إليك إن أتمّه من نفس الجهاز. إن لم يكن رابط المتجر مضبوطاً في إعدادات المتجر فعدّل بداية الرابط إلى رابط متجرك الحقيقي.","The code is saved on the visitor's device when they open your link, and a purchase from the same device is credited to you. If the store URL isn't set in store settings, replace the start of the link with your real store link."))+'</div>'+
@@ -2398,7 +2453,8 @@ async function distribute(rec, status){
   }
   if(af){
     const base = (rec.lines||[]).reduce((x,l)=>x+(cl(l)>0?num(l.price)*num(l.qty):0),0), tot = (rec.lines||[]).reduce((x,l)=>x+cl(l),0);
-    if(tot>0) await db.doc("earnings/"+af+"/items/c_"+no+"_"+cu).set({kind:"commission",order:no,gross:r2(base),amount:r2(tot),sellers:Object.keys(sm),prod:(rec.lines||[]).filter(l=>cl(l)>0).map(l=>l.name).slice(0,6),t:Date.now(),status});
+    if(tot>0) await db.doc("earnings/"+af+"/items/c_"+no+"_"+cu).set({kind:"commission",order:no,gross:r2(base),amount:r2(tot),sellers:Object.keys(sm),prod:(rec.lines||[]).filter(l=>cl(l)>0).map(l=>l.name).slice(0,6),link:rec.rl||"",t:Date.now(),status});
+    await boardSync(af);
   }
 }
 async function markEntries(rec, patch){
@@ -2409,7 +2465,11 @@ async function markEntries(rec, patch){
     const ib = "sellerInbox/"+sid+"/items/"+no+"_"+cu;
     try{ await db.doc(ib).update({status: patch.void ? "cancelled" : "done"}); }catch(e){}
   }
-  if(af) await up("earnings/"+af+"/items/c_"+no+"_"+cu);
+  if(af){ await up("earnings/"+af+"/items/c_"+no+"_"+cu); await boardSync(af); }
+}
+async function boardSync(af){
+  try{ const db=A.db, s=await db.collection("earnings/"+af+"/items").get(), L=s.docs.map(d=>d.data()).filter(e=>e.kind==="commission"&&!e.void&&e.status==="available"); let hide=false; try{ const st=await db.doc("affState/"+af).get(); hide=!!(st.exists&&st.data().hide); }catch(e){}
+    await db.doc("affBoard/"+af).set({orders:L.length,amount:r2(L.reduce((x,e)=>x+num(e.amount),0)),name:pname(af),hide,t:Date.now()}); }catch(e){}
 }
 async function audit(action, data){
   try{
@@ -2668,6 +2728,7 @@ async function accClick(e){
   else if(a==="p-hide"){ const it=(A.items[A.uid]||[]).find(x=>x.id===b.dataset.id); if(it) await A.db.doc("sellerProducts/"+A.uid+"/items/"+it.id).update({hidden:!it.hidden}); }
   else if(a==="p-del"){ await A.db.doc("sellerProducts/"+A.uid+"/items/"+b.dataset.id).delete(); }
   else if(a==="copy-t"){ try{ await navigator.clipboard.writeText(b.dataset.t); toast(t("copied")); }catch(err){ toast(b.dataset.t); } }
+  else if(a==="afopen"){ accClose2(); afOpen("home"); }
   else if(a==="copy-aff"){ try{ await navigator.clipboard.writeText(affLink()); toast(t("copied")); }catch(err){ const r=document.createRange(); r.selectNodeContents($("afl")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); } }
   else if(admin){
     if(["suspend","decide","approve","ost","wdpay"].includes(a)) await audit(a,b.dataset);
@@ -2735,6 +2796,7 @@ async function decide(u,k,ok){
   else cur[k] = {status:"rejected"};
   await A.db.doc("roles/"+u).set(cur);
   await A.db.doc("roleRequests/"+u).update({[k]:{status:ok?"approved":"rejected"}});
+  if(k==="affiliate"&&rq.inv){ try{ await A.db.doc("affRefs/"+rq.inv+"/items/"+u).update({status:ok?"approved":"rejected"}); }catch(e){} }
 }
 async function deleteMine(){
   const db=A.db, u=A.uid;
@@ -2755,6 +2817,452 @@ applyPrefs();
 applyLang(); applyTheme();
 render();
 if(count()>0) setTimeout(()=>toast(t("resume")),900);
+/* ================= PRIMEMART AFFILIATE PRO ================= */
+const AF = {open:false,page:"home",per:"30",from:"",to:"",m:"earn",q:"",sort:"comm",cat:"",sel:"",flt:"all",view:"grid",lim:12,pid:null,side:true,dk:false,drawer:false,
+  links:[],clicks:[],st:{},board:[],refs:[],subKey:"",lq:"",lf:"all",oq:"",of:"all",os:"new",oid:"",cf:"all",rt:"earn",bt:"amount",ai:{},aiOut:"",apq:"",gq:"",aq:""};
+try{ const pf=lsGet("affpro_v1",{}); AF.dk=!!pf.dk; AF.side=pf.side!==false; }catch(e){}
+const afSavePf = () => { try{ lsSet("affpro_v1",{dk:AF.dk,side:AF.side}); }catch(e){} };
+const afI = n => ["home","user","set","lock","bell","pal","globe","link","db","help","store","mega","rec","shield","id","wal","x","truck","ret","chat","cart","cmp","info","spark","flame","trophy","search","tag","sun","clock","pay"].includes(n) ? ic(n) : "";
+const afCode = () => ((myRole().affiliate||{}).code||"");
+const afUrl = (pid,lid) => baseUrl()+"#ref-"+afCode()+(pid||lid?"/"+(pid||"home"):"")+(lid?"/"+lid:"");
+const afN = n => Number(n||0).toLocaleString(lang==="ar"?"ar-EG":"en-US");
+const afP = n => (Math.round(n*10)/10).toLocaleString(lang==="ar"?"ar-EG":"en-US")+"%";
+const afDay = 864e5;
+const afCom = () => A.earn.filter(e=>e.kind==="commission");
+const afLinkOf = id => AF.links.find(l=>l.id===id);
+const afLevels = () => {
+  const th = String(S.affLevels||"0,5,20,50,100,250,500").split(",").map(x=>num(x)); const nm = ["Beginner","Bronze","Silver","Gold","Platinum","Diamond","Elite"], cl = ["#94a3b8","#b4793e","#9ca3af","#c9a24b","#6ee7e0","#60a5fa","#8b5cf6"];
+  const pk = String(S.affLvPerks||"").split("\n").map(x=>x.trim());
+  return nm.map((n,i)=>({n,c:cl[i],min:th[i]!==undefined?th[i]:(th[th.length-1]||0)+i,perk:pk[i]||""}));
+};
+const afDone = () => afCom().filter(e=>!e.void&&e.status==="available");
+const afLevelNow = () => { const L=afLevels(), d=afDone().length; let i=0; L.forEach((l,j)=>{ if(d>=l.min) i=j; }); return {L,i,cur:L[i],next:L[i+1]||null,d}; };
+function afRange(){
+  const now=new Date(), d0=new Date(now.getFullYear(),now.getMonth(),now.getDate()).getTime(), D=afDay; let a,b;
+  switch(AF.per){
+    case "today": a=d0; b=d0+D; break; case "yest": a=d0-D; b=d0; break;
+    case "7": a=d0-6*D; b=d0+D; break; case "month": a=new Date(now.getFullYear(),now.getMonth(),1).getTime(); b=d0+D; break;
+    case "last": a=new Date(now.getFullYear(),now.getMonth()-1,1).getTime(); b=new Date(now.getFullYear(),now.getMonth(),1).getTime(); break;
+    case "custom": a=AF.from?new Date(AF.from).getTime():d0-29*D; b=AF.to?new Date(AF.to).getTime()+D:d0+D; if(!(b>a)) b=a+D; break;
+    default: a=d0-29*D; b=d0+D;
+  }
+  const len=b-a; return {a,b,pa:a-len,pb:a};
+}
+function afM(a,b){
+  const inr=t=>num(t)>=a&&num(t)<b, cm=afCom().filter(e=>inr(e.t)), ck=AF.clicks.filter(c=>inr(c.t));
+  const sum=f=>r2(cm.filter(f).reduce((s,e)=>s+num(e.amount),0)), live=cm.filter(e=>!e.void);
+  return {total:sum(e=>!e.void),appr:sum(e=>!e.void&&e.status==="available"),pend:sum(e=>!e.void&&e.status==="pending"),rej:sum(e=>e.void),clicks:ck.length,uniq:ck.filter(c=>c.u).length,conv:live.length,
+    done:live.filter(e=>e.status==="available").length,gross:live.reduce((s,e)=>s+num(e.gross),0),cm,ck};
+}
+const afRate = m => m.clicks? m.conv/m.clicks*100 : 0;
+const afAvg = m => m.conv? m.gross/m.conv : 0;
+function afSeries(metric,a,b){
+  let n=Math.max(1,Math.ceil((b-a)/afDay)); let s=a; if(n>60){ s=b-60*afDay; n=60; }
+  const v=new Array(n).fill(0), lab=[];
+  for(let i=0;i<n;i++){ const d=new Date(s+i*afDay); lab.push((d.getMonth()+1)+"/"+d.getDate()); }
+  const put=(t,x)=>{ const i=Math.floor((num(t)-s)/afDay); if(i>=0&&i<n) v[i]+=x; };
+  if(metric==="clicks") AF.clicks.forEach(c=>put(c.t,1));
+  else afCom().forEach(e=>{ if(e.void) return; if(metric==="earn") put(e.t,num(e.amount)); else if(metric==="conv") put(e.t,1); else if(metric==="orders"&&e.status==="available") put(e.t,1); });
+  return lab.map((l,i)=>[l,r2(v[i])]);
+}
+const afDelta = (c,p) => { if(!p&&!c) return '<i class="afd z">—</i>'; if(!p) return '<i class="afd u">'+tr("جديد","new")+'</i>'; const d=(c-p)/p*100; return '<i class="afd '+(d>=0?'u':'d')+'" dir="ltr">'+(d>=0?'▲ ':'▼ ')+Math.abs(Math.round(d))+'%</i>'; };
+function afSpark(rows){ const v=rows.map(r=>r[1]), mx=Math.max(1,...v), W=100,H=26; if(v.length<2) return ''; const pts=v.map((x,i)=>(i*W/(v.length-1)).toFixed(1)+","+(H-2-x/mx*(H-4)).toFixed(1)).join(" "); return '<svg class="afsp" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" aria-hidden="true"><polyline points="'+pts+'" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>'; }
+function afChart(rows,fmt,label){
+  const f=fmt||afN, mx=Math.max(1,...rows.map(r=>r[1])), n=rows.length, W=Math.max(320,n*24), H=150, bw=Math.max(6,(W-16)/n-6), step=Math.ceil(n/9);
+  if(!rows.some(r=>r[1]>0)) return '<p class="afmut">'+tr("لا توجد بيانات في هذه الفترة بعد.","No data in this period yet.")+'</p>';
+  return '<svg class="afch" viewBox="0 0 '+W+' '+(H+20)+'" width="100%" role="img" aria-label="'+esc(label||"")+'">'+[0,.5,1].map(q=>'<line x1="6" x2="'+(W-6)+'" y1="'+(H-q*(H-14))+'" y2="'+(H-q*(H-14))+'" stroke="currentColor" opacity=".1"/>').join("")+
+    rows.map((r,i)=>{ const h=Math.max(r[1]>0?3:0,r[1]/mx*(H-14)), x=8+i*(W-16)/n; return '<g><title>'+esc(r[0])+': '+esc(f(r[1]))+'</title><rect class="afbar" style="animation-delay:'+(i*12)+'ms" x="'+x.toFixed(1)+'" y="'+(H-h).toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+h.toFixed(1)+'" rx="3"/></g>'+(i%step===0?'<text x="'+(x+bw/2).toFixed(1)+'" y="'+(H+14)+'" font-size="9" text-anchor="middle" fill="currentColor" opacity=".6">'+esc(r[0])+'</text>':''); }).join("")+'</svg>';
+}
+function afCsv(name,rows){
+  const q=v=>'"'+String(v==null?"":v).replace(/"/g,'""')+'"'; const csv="﻿"+rows.map(r=>r.map(q).join(",")).join("\r\n");
+  try{ const bl=new Blob([csv],{type:"text/csv;charset=utf-8"}), a=document.createElement("a"); a.href=URL.createObjectURL(bl); a.download=name+".csv"; document.body.appendChild(a); a.click(); setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); },500); }catch(e){ toast(tr("تعذّر التصدير","Export failed")); }
+}
+/* ---------- data wiring ---------- */
+function afSub(){
+  if(!A.db||!A.uid) return; const key=A.uid+"|"+afCode()+"|"+(isAff()?1:0); if(AF.subKey===key) return; AF.subKey=key; const db=A.db, rr=()=>{ if(AF.open) afRender(); };
+  try{ db.doc("affState/"+A.uid).onSnapshot(s=>{ AF.st=s.exists?s.data():{}; rr(); },()=>{}); }catch(e){}
+  try{ db.collection("affBoard").onSnapshot(s=>{ AF.board=s.docs.map(d=>Object.assign({id:d.id},d.data())); rr(); },()=>{}); }catch(e){}
+  if(isAff()){
+    try{ db.collection("affLinks/"+A.uid+"/items").onSnapshot(s=>{ AF.links=s.docs.map(d=>Object.assign({id:d.id},d.data())).sort((x,y)=>num(y.t)-num(x.t)); rr(); },()=>{}); }catch(e){}
+    try{ db.collection("affClicks/"+afCode()+"/items").onSnapshot(s=>{ AF.clicks=s.docs.map(d=>Object.assign({id:d.id},d.data())); rr(); },()=>{}); }catch(e){}
+    try{ db.collection("affRefs/"+afCode()+"/items").onSnapshot(s=>{ AF.refs=s.docs.map(d=>Object.assign({id:d.id},d.data())).sort((x,y)=>num(y.t)-num(x.t)); rr(); },()=>{}); }catch(e){}
+  }
+}
+async function afSaveSt(patch){ AF.st=Object.assign({},AF.st,patch); if(canW()){ try{ await A.db.doc("affState/"+A.uid).set(JSON.parse(JSON.stringify(AF.st))); }catch(e){ toast(tr("تعذّر الحفظ","Couldn't save")); } } afRender(); }
+function affRefNow(){ const r=lsGet("ref_v1",""), t=num(lsGet("ref_t",0)), w=Math.max(1,num(S.affWindow)||30); if(r&&t&&Date.now()-t>w*afDay) return ""; return r; }
+function afDev(){ let d=lsGet("dev_v1",""); if(!d){ d=rand(12); lsSet("dev_v1",d); } return d; }
+function afTrack(c,p,l){
+  let n=0; const go=()=>{ n++; if(typeof CFGDB!=="undefined"&&CFGDB){
+      try{ if(A.uid&&((A.roles[A.uid]||{}).affiliate||{}).code===c) return; const k="clk_"+c+"_"+(p||"")+"_"+(l||""), last=num(lsGet(k,0)); if(Date.now()-last<30*60000) return; lsSet(k,Date.now());
+        const u=!lsGet("seen_"+c,0); lsSet("seen_"+c,1); let src=""; try{ src=document.referrer?new URL(document.referrer).hostname.slice(0,60):""; }catch(e){}
+        CFGDB.doc("affClicks/"+c+"/items/k"+Date.now().toString(36)+rand(4)).set({t:Date.now(),p:String(p||"").slice(0,60),l:String(l||"").slice(0,12),d:afDev(),u:u,src}).catch(()=>{}); }catch(e){}
+    } else if(n<30) setTimeout(go,500); };
+  setTimeout(go,800);
+}
+(function(){ const m=/^#aff-([a-z0-9]{4,16})$/i.exec(location.hash||""); if(m) lsSet("inv_v1",m[1].toLowerCase()); })();
+/* ---------- open / close ---------- */
+function afOpen(page){ AF.open=true; if(page) AF.page=page; let el=$("afc"); if(!el){ el=document.createElement("div"); el.id="afc"; document.body.appendChild(el); el.addEventListener("click",afClick); el.addEventListener("change",afChange); el.addEventListener("input",afInput); }
+  AF.opener=document.activeElement; document.documentElement.style.overflow="hidden"; afSub(); afRender(); }
+function afClose(){ AF.open=false; const el=$("afc"); if(el) el.remove(); document.documentElement.style.overflow=""; try{ if(AF.opener&&AF.opener.focus) AF.opener.focus(); }catch(e){} }
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&AF.open&&!$("pgov")) afClose(); });
+const AFNAV = () => [["home","home",tr("الرئيسية","Home")],["products","store",tr("المنتجات المتاحة","Products")],["favs","tag",tr("المفضلة","Favourites")],["links","link",tr("روابط التسويق","Links")],["orders","rec",tr("الطلبات والتحويلات","Orders & conversions")],["comm","wal",tr("العمولات والأرباح","Commissions")],["camps","mega",tr("الحملات","Campaigns")],["assets","pal",tr("المواد الإعلانية","Marketing assets")],["ai","spark",tr("استوديو المحتوى","Content studio")],["refs","user",tr("الإحالات","Referrals")],["levels","trophy",tr("المستويات والمكافآت","Levels & rewards")],["board","flame",tr("المتصدرون","Leaderboard")],["reports","db",tr("التقارير والتحليلات","Reports")],["notif","bell",tr("الإشعارات","Notifications")],["help","help",tr("مركز المساعدة","Help")],["profile","id",tr("الملف الشخصي","Profile")],["settings","set",tr("الإعدادات","Settings")]];
+function afNtf(){ const seen=num((AF.st||{}).seen); return afCom().filter(e=>num(e.t)>seen).length; }
+function afRender(){
+  const el=$("afc"); if(!el) return; const st=el.querySelector(".af-main"), y=st?st.scrollTop:0, ae=document.activeElement, aid=ae&&ae.id&&el.contains(ae)?ae.id:"", car=aid&&ae.selectionStart!=null?ae.selectionStart:0;
+  el.className="afc"+(AF.dk?" dk":"")+(AF.side?"":" col")+(AF.drawer?" dr":""); el.setAttribute("role","dialog"); el.setAttribute("aria-modal","true"); el.setAttribute("aria-label","Primemart-egypt Affiliate");
+  let h;
+  if(!isAff()) h=afPublic(); else{
+    const nav=AFNAV(), cnt=afNtf();
+    const side='<nav class="af-side" aria-label="'+tr("قائمة المسوّق","Affiliate menu")+'"><div class="af-brand"><span class="af-lg">'+afI("mega")+'</span><b>Primemart-egypt</b></div>'+nav.map(x=>'<button class="af-ni'+(AF.page===x[0]?" on":"")+'" data-af="nav" data-v="'+x[0]+'"'+(AF.page===x[0]?' aria-current="page"':'')+' title="'+esc(x[2])+'">'+afI(x[1])+'<span>'+x[2]+'</span>'+(x[0]==="notif"&&cnt?'<em>'+cnt+'</em>':'')+'</button>').join("")+'</nav>';
+    const top='<header class="af-top"><button class="af-ib" data-af="side" aria-label="'+tr("القائمة","Menu")+'">☰</button><b class="af-ttl">'+esc((nav.find(x=>x[0]===AF.page)||[])[2]||"")+'</b><span class="grow"></span><button class="af-ib" data-af="dark" aria-label="'+tr("الوضع الفاتح/الداكن","Light/Dark")+'">'+afI("sun")+'</button><button class="af-ib" data-af="nav" data-v="notif" aria-label="'+tr("الإشعارات","Notifications")+'">'+afI("bell")+(cnt?'<em>'+cnt+'</em>':'')+'</button><button class="af-ib" data-af="close" aria-label="'+t("close")+'">'+afI("x")+'</button></header>';
+    const bar='<nav class="af-bar" aria-label="'+tr("تنقل سريع","Quick nav")+'">'+[["home","home"],["products","store"],["links","link"],["comm","wal"]].map(x=>'<button class="'+(AF.page===x[0]?"on":"")+'" data-af="nav" data-v="'+x[0]+'">'+afI(x[1])+'<span>'+nav.find(n=>n[0]===x[0])[2]+'</span></button>').join("")+'<button data-af="side">'+afI("set")+'<span>'+tr("المزيد","More")+'</span></button></nav>';
+    h=side+'<div class="af-scrim" data-af="side"></div><div class="af-body">'+top+'<main class="af-main" id="afmain">'+afPage()+'</main>'+bar+'</div>';
+  }
+  el.innerHTML=h; const m2=el.querySelector(".af-main")||el.querySelector(".af-pub"); if(m2) m2.scrollTop=y;
+  if(aid){ const n=$(aid); if(n){ n.focus(); try{ n.setSelectionRange(car,car); }catch(e){} } }
+}
+function afPage(){
+  const f={home:afHome,products:afProducts,favs:afFavsPage,links:afLinks,orders:afOrders,comm:afComm,camps:afCamps,assets:afAssets,ai:afAi,refs:afRefs,levels:afLevelsP,board:afBoard,reports:afReports,notif:afNotif,help:afHelp,profile:afProfile,settings:afSettings}[AF.page]||afHome;
+  if(AF.pid) return afProd(AF.pid);
+  return f();
+}
+const afStat = (st) => '<span class="afpill '+st[1]+'">'+st[0]+'</span>';
+const afPer = () => '<div class="af-pr" role="group" aria-label="'+tr("الفترة","Period")+'">'+[["today",tr("اليوم","Today")],["yest",tr("أمس","Yesterday")],["7",tr("آخر 7 أيام","7 days")],["30",tr("آخر 30 يوماً","30 days")],["month",tr("هذا الشهر","This month")],["last",tr("الشهر السابق","Last month")],["custom",tr("فترة مخصصة","Custom")]].map(x=>'<button class="'+(AF.per===x[0]?"on":"")+'" data-af="per" data-v="'+x[0]+'">'+x[1]+'</button>').join("")+(AF.per==="custom"?'<input type="date" id="af_from" value="'+esc(AF.from)+'" aria-label="from"><input type="date" id="af_to" value="'+esc(AF.to)+'" aria-label="to">':'')+'</div>';
+const afEmpty = (t1,t2) => '<div class="af-em"><b>'+t1+'</b><p>'+(t2||"")+'</p></div>';
+/* ---------- home ---------- */
+function afHome(){
+  const r=afRange(), c=afM(r.a,r.b), p=afM(r.pa,r.pb), lv=afLevelNow(), code=afCode(), me=A.me||{}, nm=(AF.st.profile||{}).name||(A.priv.p&&A.priv.p.name)||me.name||tr("مسوّق","Affiliate");
+  const ds=(m)=>afSeries(m,r.a,r.b), links=AF.links.filter(l=>l.on!==false), prods=new Set(AF.links.map(l=>l.pid).filter(Boolean));
+  const K=[["earn",tr("إجمالي الأرباح","Total earnings"),moneyB(c.total),c.total,p.total,"comm"],["appr",tr("الأرباح المعتمدة","Approved"),moneyB(c.appr),c.appr,p.appr,"comm"],["pend",tr("الأرباح المعلقة","Pending"),moneyB(c.pend),c.pend,p.pend,"comm"],["rej",tr("الأرباح المرفوضة/المعكوسة","Rejected / reversed"),moneyB(c.rej),c.rej,p.rej,"comm"],
+   ["clicks",tr("عدد النقرات","Clicks"),afN(c.clicks),c.clicks,p.clicks,"reports"],["uniq",tr("الزيارات الفريدة","Unique visits"),afN(c.uniq),c.uniq,p.uniq,"reports"],["conv",tr("التحويلات","Conversions"),afN(c.conv),c.conv,p.conv,"orders"],["orders",tr("الطلبات المكتملة","Completed orders"),afN(c.done),c.done,p.done,"orders"],
+   ["rate",tr("معدل التحويل","Conversion rate"),afP(afRate(c)),afRate(c),afRate(p),"reports"],["avg",tr("متوسط قيمة الطلب","Avg order value"),moneyB(Math.round(afAvg(c))),afAvg(c),afAvg(p),"orders"],["links",tr("الروابط النشطة","Active links"),afN(links.length),links.length,links.length,"links"],["prods",tr("منتجات تُسوَّق","Products promoted"),afN(prods.size),prods.size,prods.size,"links"]];
+  const prog=lv.next?Math.min(100,Math.round((lv.d-lv.cur.min)/Math.max(1,lv.next.min-lv.cur.min)*100)):100;
+  const tgt=num((AF.st||{}).target), mo=afM(new Date(new Date().getFullYear(),new Date().getMonth(),1).getTime(),Date.now()+afDay), tp=tgt>0?Math.min(100,Math.round(mo.total/tgt*100)):0;
+  const welcome='<section class="af-wel"><div class="af-av">'+(me.avatarUrl?'<img alt="" src="'+esc(me.avatarUrl)+'">':esc((nm||"?").slice(0,1).toUpperCase()))+'</div><div class="grow"><h2>'+tr("مرحباً، ","Welcome, ")+esc(nm)+'</h2><p class="afmut">ID: <b dir="ltr">'+esc(code.toUpperCase())+'</b> · '+afStat([tr("نشط","Active"),"g"])+' · '+(num((myRole().affiliate||{}).t)?tr("انضممت ","Joined ")+esc(fmtDT(num((myRole().affiliate||{}).t))):"")+'</p></div><div class="af-lvb"><span class="af-badge" style="--c:'+lv.cur.c+'">'+lv.cur.n+'</span><div class="af-bar2" role="progressbar" aria-valuenow="'+prog+'" aria-valuemin="0" aria-valuemax="100"><i style="width:'+prog+'%"></i></div><small class="afmut">'+(lv.next?tr("إلى ","To ")+lv.next.n+': '+Math.max(0,lv.next.min-lv.d)+tr(" طلب"," orders"):tr("أعلى مستوى","Top level"))+'</small></div></section>'+
+    (tgt>0?'<div class="af-card"><b>'+tr("هدفك الشهري","Monthly target")+'</b> '+moneyB(mo.total)+' / '+moneyB(tgt)+'<div class="af-bar2"><i style="width:'+tp+'%"></i></div></div>':'');
+  const kp=K.map(k=>'<div class="af-kpi"><div class="af-kh"><span>'+k[1]+'</span>'+afDelta(k[3],k[4])+'</div><b>'+k[2]+'</b>'+afSpark(ds(k[0]==="appr"||k[0]==="pend"||k[0]==="rej"||k[0]==="avg"||k[0]==="rate"?"earn":k[0]==="uniq"?"clicks":k[0]==="links"||k[0]==="prods"?"conv":k[0]))+'<button class="af-lk" data-af="nav" data-v="'+k[5]+'">'+tr("عرض التفاصيل","Details")+' ›</button></div>').join("");
+  const MT=[["earn",tr("الأرباح","Earnings")],["clicks",tr("النقرات","Clicks")],["conv",tr("التحويلات","Conversions")],["orders",tr("الطلبات المكتملة","Orders")]];
+  const chart='<section class="af-card"><div class="af-row"><b>'+tr("الأداء اليومي","Daily performance")+'</b><span class="grow"></span>'+MT.map(x=>'<button class="af-tab'+(AF.m===x[0]?" on":"")+'" data-af="metric" data-v="'+x[0]+'">'+x[1]+'</button>').join("")+'</div>'+afChart(ds(AF.m),AF.m==="earn"?moneyB:afN,tr("الأداء","Performance"))+'</section>';
+  const byProd={}; afCom().filter(e=>!e.void).forEach(e=>(e.prod||[]).forEach(n=>{ byProd[n]=(byProd[n]||0)+1; }));
+  const topP=Object.keys(byProd).sort((a,b)=>byProd[b]-byProd[a]).slice(0,5);
+  const lm={}; AF.clicks.forEach(k=>{ if(k.l) lm[k.l]=(lm[k.l]||0)+1; }); const topL=AF.links.slice().sort((a,b)=>(lm[b.id]||0)-(lm[a.id]||0)).filter(l=>lm[l.id]).slice(0,5);
+  const rec=afCom().slice().sort((a,b)=>num(b.t)-num(a.t)).slice(0,5), camps=afCampList().filter(x=>x.status==="active"&&(AF.st.camps||{})[x.id]);
+  const sec=(t1,b,go)=>'<section class="af-card"><div class="af-row"><b>'+t1+'</b><span class="grow"></span>'+(go?'<button class="af-lk" data-af="nav" data-v="'+go+'">'+tr("الكل","All")+' ›</button>':'')+'</div>'+b+'</section>';
+  const li=a=>a.length?'<ul class="af-ul">'+a.join("")+'</ul>':'<p class="afmut">'+tr("لا شيء بعد.","Nothing yet.")+'</p>';
+  const quick='<div class="af-g2">'+sec(tr("أفضل المنتجات","Top products"),li(topP.map(n=>'<li><span>'+esc(n)+'</span><b>'+byProd[n]+'</b></li>')),"products")+sec(tr("الروابط الأكثر أداءً","Top links"),li(topL.map(l=>'<li><span>'+esc(l.name)+'</span><b>'+lm[l.id]+' '+tr("نقرة","clicks")+'</b></li>')),"links")+
+    sec(tr("آخر الطلبات","Latest orders"),li(rec.map(e=>'<li><span>#'+esc(e.order)+'</span><b>'+moneyB(num(e.gross))+'</b></li>')),"orders")+sec(tr("أحدث العمولات","Latest commissions"),li(rec.map(e=>'<li><span>#'+esc(e.order)+' '+afStat(afCStatus(e))+'</span><b>'+moneyB(num(e.amount))+'</b></li>')),"comm")+
+    sec(tr("الحملات النشطة","Active campaigns"),li(camps.map(x=>'<li><span>'+esc(x.name)+'</span><b>'+esc(x.end||"")+'</b></li>')),"camps")+sec(tr("التحديات","Challenges"),afChallenges(true),"levels")+'</div>';
+  return afPer()+welcome+'<div class="af-kg">'+kp+'</div>'+chart+quick+afTips();
+}
+const afCStatus = e => e.void?[tr("معكوسة/ملغاة","Reversed"),"r"]:e.status==="available"?[tr("معتمدة","Approved"),"g"]:[tr("قيد الانتظار","Pending"),"y"];
+function afTips(){
+  const T=[], c=afM(0,Date.now()+afDay), act=AF.links.filter(l=>l.on!==false);
+  if(!AF.links.length) T.push(tr("لم تنشئ أي رابط بعد: افتح «المنتجات المتاحة» واختر منتجاً بعمولة جيدة لإنشاء أول رابط.","You haven't created a link yet: open Products and pick one with a good commission."));
+  if(c.clicks>=20&&c.conv===0) T.push(tr("لديك "+c.clicks+" نقرة دون أي تحويل: جرّب منتجات أرخص أو أوضح في الوصف، وراجع جودة الزيارات.",c.clicks+" clicks without a conversion: try cheaper or clearer products and review traffic quality."));
+  if(c.pend>0) T.push(tr("لديك عمولات معلقة بقيمة "+moneyB(c.pend)+" تصبح متاحة عند اكتمال الطلبات.","You have "+moneyB(c.pend)+" pending; it becomes available when orders complete."));
+  const used=new Set(AF.links.map(l=>l.pid)), best=S.products.filter(p=>!isOut(p)&&commOf(p)>0&&!used.has(p.id)).sort((a,b)=>commOf(b)*eff(b)-commOf(a)*eff(a))[0];
+  if(best) T.push(tr("منتج بعمولة مرتفعة لم تروّج له بعد: «"+best.name+"» ("+moneyB(eff(best)*commOf(best)/100)+" لكل بيعة).","High-commission product you haven't promoted: “"+best.name+"” ("+moneyB(eff(best)*commOf(best)/100)+" per sale)."));
+  if(act.length&&!AF.clicks.length) T.push(tr("روابطك جاهزة ولم تُسجَّل نقرات بعد: شاركها على قنواتك.","Your links are ready but no clicks yet: share them on your channels."));
+  return '<section class="af-card"><b>'+tr("توصيات النظام","System tips")+'</b> <small class="afmut">'+tr("(قواعد تلقائية على بياناتك، وليست نموذج ذكاء اصطناعي)","(rule-based on your data, not an AI model)")+'</small>'+(T.length?'<ul class="af-ul">'+T.map(x=>'<li>'+x+'</li>').join("")+'</ul>':'<p class="afmut">'+tr("لا توصيات حالياً.","No tips right now.")+'</p>')+'</section>';
+}
+function afChallenges(short){
+  const d=afDone().length, ch=afM(0,Date.now()+afDay), mo=afM(new Date(new Date().getFullYear(),new Date().getMonth(),1).getTime(),Date.now()+afDay);
+  const C=[[tr("أول 10 مبيعات مكتملة","First 10 completed sales"),d,10],[tr("25 تحويلاً","25 conversions"),ch.conv,25],[tr("الترويج لـ 5 منتجات مختلفة","Promote 5 different products"),new Set(AF.links.map(l=>l.pid).filter(Boolean)).size,5],[tr("هدف الشهر","Monthly target"),Math.round(mo.total),num((AF.st||{}).target)||0]].filter(x=>x[2]>0);
+  const out=C.slice(0,short?3:4).map(x=>{ const p=Math.min(100,Math.round(x[1]/x[2]*100)); return '<div class="af-ch"><span>'+x[0]+'</span><b>'+Math.min(x[1],x[2])+'/'+x[2]+'</b><div class="af-bar2"><i style="width:'+p+'%"></i></div></div>'; }).join("");
+  return out+(short?'':'<p class="afmut">'+tr("التحديات تُحسب من بياناتك الفعلية فقط، ولا تُمنح نقاط على النقرات.","Challenges use your real data only; no points for clicks."));
+}
+/* ---------- campaigns ---------- */
+function afCampList(){
+  const now=Date.now();
+  return String(S.affCampaigns||"").split("\n").map(l=>l.trim()).filter(Boolean).map(l=>{ const a=l.split("|").map(x=>x.trim()); const s=a[3]?new Date(a[3]).getTime():0, e=a[4]?new Date(a[4]).getTime()+afDay:0;
+    return {id:(a[0]||"").toLowerCase().replace(/[^a-z0-9]/g,"").slice(0,12)||"c"+afHash(l),name:a[1]||a[0],desc:a[2]||"",start:a[3]||"",end:a[4]||"",pids:(a[5]||"all"),terms:a[6]||"",status:e&&now>e?"ended":s&&now<s?"soon":"active"}; });
+}
+function afHash(s){ let h=0; for(let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))>>>0; return h.toString(36).slice(0,6); }
+function afCamps(){
+  const L=afCampList(), joined=AF.st.camps||{}, SN={active:[tr("نشطة","Active"),"g"],soon:[tr("قادمة","Upcoming"),"y"],ended:[tr("منتهية","Ended"),"r"]};
+  return '<h3 class="af-h">'+tr("الحملات التسويقية","Marketing campaigns")+'</h3>'+(L.length?'<div class="af-g2">'+L.map(c=>{ const j=!!joined[c.id], ls=AF.links.filter(l=>l.camp===c.id), ids=new Set(ls.map(l=>l.id)), ck=AF.clicks.filter(k=>ids.has(k.l)).length, cv=afCom().filter(e=>!e.void&&ids.has(e.link)), am=r2(cv.reduce((s,e)=>s+num(e.amount),0));
+    return '<section class="af-card"><div class="af-row"><b>'+esc(c.name)+'</b><span class="grow"></span>'+afStat(SN[c.status])+'</div><p>'+esc(c.desc)+'</p><p class="afmut">'+(c.start||"—")+' → '+(c.end||"—")+' · '+tr("المنتجات: ","Products: ")+(c.pids==="all"?tr("كل المنتجات","all"):esc(c.pids))+'</p>'+(c.terms?'<p class="afmut">'+esc(c.terms)+'</p>':'')+
+     (j?'<p class="afmut">'+tr("روابطك: ","Your links: ")+ls.length+' · '+tr("نقرات: ","clicks: ")+ck+' · '+tr("تحويلات: ","conv.: ")+cv.length+' · '+moneyB(am)+'</p>':'')+
+     '<div class="af-row">'+(c.status!=="ended"?(j?'<button class="af-b2" data-af="cleave" data-v="'+c.id+'">'+tr("انسحاب","Leave")+'</button><button class="af-b" data-af="cprod" data-v="'+c.id+'">'+tr("إنشاء رابط للحملة","Create campaign link")+'</button>':'<button class="af-b" data-af="cjoin" data-v="'+c.id+'">'+tr("انضمام","Join")+'</button>'):'')+'</div></section>'; }).join("")+'</div>':afEmpty(tr("لا توجد حملات حالياً","No campaigns yet"),tr("تضيف الإدارة الحملات من لوحة إدارة الأفيليت.","The admin adds campaigns from Affiliate management.")))+
+   '<p class="afmut">'+tr("الحملة هنا تجمع روابطك وتقيس أداءها (نقرات وتحويلات). نسبة العمولة تبقى نسبة المنتج.","A campaign groups your links and measures their performance. The commission rate stays the product's rate.")+'</p>';
+}
+/* ---------- products marketplace ---------- */
+const afFavs = () => (AF.st.favs||{});
+function afPool(fl){
+  let L=S.products.filter(p=>commOf(p)>0&&p.seller!==A.uid);
+  const q=AF.q.toLowerCase().trim(); if(q) L=L.filter(p=>(p.name+" "+(p.cat||"")+" "+(p.brand||"")+" "+(p.sellerName||"")).toLowerCase().includes(q));
+  if(AF.cat) L=L.filter(p=>p.cat===AF.cat); if(AF.sel) L=L.filter(p=>(p.sellerName||S.name)===AF.sel);
+  const f=fl||AF.flt; if(f==="avail") L=L.filter(p=>!isOut(p)); else if(f==="disc") L=L.filter(p=>off(p)>0); else if(f==="new") L=L.slice().sort((a,b)=>createdOf(b)-createdOf(a)).slice(0,24); else if(f==="trend") L=L.filter(p=>sold(p)>0||viewsOf(p)>0); else if(f==="top") L=L.filter(p=>commOf(p)>=Math.max(...L.map(commOf))*0.8); else if(f==="fav") L=L.filter(p=>afFavs()[p.id]); else if(f==="feat") L=L.filter(p=>p.feat);
+  const S2={comm:(a,b)=>commOf(b)*eff(b)-commOf(a)*eff(a),pct:(a,b)=>commOf(b)-commOf(a),sold:(a,b)=>sold(b)-sold(a),rate:(a,b)=>(viewsOf(b)?sold(b)/viewsOf(b):0)-(viewsOf(a)?sold(a)/viewsOf(a):0),rating:(a,b)=>avgOf(b)-avgOf(a),new:(a,b)=>createdOf(b)-createdOf(a),views:(a,b)=>viewsOf(b)-viewsOf(a),price:(a,b)=>eff(a)-eff(b)};
+  return L.slice().sort(S2[AF.sort]||S2.comm);
+}
+function afCard(p){
+  const u=gallery(p)[0], cm=commOf(p), fav=!!afFavs()[p.id], used=AF.links.filter(l=>l.pid===p.id).length;
+  return '<article class="af-pc"><div class="af-pi">'+(u?'<img loading="lazy" alt="" src="'+esc(u)+'">':'')+(off(p)>0?'<span class="af-ofs">-'+off(p)+'%</span>':'')+'<button class="af-fv'+(fav?" on":"")+'" data-af="fav" data-v="'+esc(p.id)+'" aria-pressed="'+fav+'" aria-label="'+tr("المفضلة","Favourite")+'">'+(fav?"♥":"♡")+'</button></div><div class="af-pb"><b class="af-pn">'+esc(p.name)+'</b><small class="afmut">'+esc(p.sellerName||S.name)+(p.cat?" · "+esc(p.cat):"")+'</small>'+
+    '<div class="af-pr2"><span>'+money(eff(p))+'</span><em>'+afP(cm)+'</em></div><div class="af-cm">'+tr("عمولتك المتوقعة ","Expected commission ")+'<b>'+moneyB(r2(eff(p)*cm/100))+'</b></div><small class="afmut">'+(avgOf(p)?'★ '+avgOf(p).toFixed(1)+' · ':'')+tr("مبيعات ","sold ")+afN(sold(p))+' · '+(isOut(p)?tr("نفد","Out of stock"):tr("متاح","In stock"))+(used?' · '+tr("روابطك ","your links ")+used:'')+'</small>'+
+    '<div class="af-row"><button class="af-b2" data-af="prod" data-v="'+esc(p.id)+'">'+tr("التفاصيل","Details")+'</button><button class="af-b" data-af="quick" data-v="'+esc(p.id)+'">'+afI("link")+' '+tr("إنشاء رابط","Create link")+'</button></div></div></article>';
+}
+function afRow(title,list,key){
+  if(!list.length) return '';
+  return '<section class="af-car"><div class="af-row"><b>'+title+'</b><span class="grow"></span><button class="af-ib" data-af="scr" data-v="-1" data-k="'+key+'" aria-label="prev">‹</button><button class="af-ib" data-af="scr" data-v="1" data-k="'+key+'" aria-label="next">›</button></div><div class="af-trk" id="car_'+key+'">'+list.slice(0,12).map(afCard).join("")+'</div></section>';
+}
+function afProducts(fav){
+  const all=S.products.filter(p=>commOf(p)>0&&p.seller!==A.uid), cats=[...new Set(all.map(p=>p.cat).filter(Boolean))], sels=[...new Set(all.map(p=>p.sellerName||S.name))];
+  const L=afPool(fav?"fav":null), pg=L.slice(0,AF.lim), top=all.slice().sort((a,b)=>commOf(b)*eff(b)-commOf(a)*eff(a)), trend=all.filter(p=>sold(p)>0||viewsOf(p)>0).sort((a,b)=>sold(b)-sold(a)||viewsOf(b)-viewsOf(a)), neu=all.slice().sort((a,b)=>createdOf(b)-createdOf(a)), feat=all.filter(p=>p.feat);
+  const FL=[["all",tr("الكل","All")],["avail",tr("المتاحة للتسويق","Available")],["top",tr("الأعلى عمولة","Top commission")],["trend",tr("رائجة","Trending")],["new",tr("جديدة","New")],["disc",tr("مخفضة","Discounted")],["feat",tr("مميزة","Featured")],["fav",tr("مفضلتي","Favourites")]];
+  const SO=[["comm",tr("الأعلى عمولة (قيمة)","Highest commission")],["pct",tr("أعلى نسبة","Highest %")],["sold",tr("الأكثر مبيعاً","Best selling")],["rate",tr("الأعلى تحويلاً","Best converting")],["rating",tr("الأعلى تقييماً","Top rated")],["new",tr("الأحدث","Newest")],["views",tr("الأكثر طلباً","Most viewed")],["price",tr("الأقل سعراً","Lowest price")]];
+  const bar='<div class="af-tb"><input id="af_q" type="search" placeholder="'+tr("ابحث عن منتج…","Search products…")+'" value="'+esc(AF.q)+'" aria-label="'+tr("بحث","Search")+'">'+SEL("af_cat",AF.cat,[["",tr("كل الفئات","All categories")]].concat(cats.map(c=>[c,c])))+SEL("af_sel",AF.sel,[["",tr("كل التجار","All sellers")]].concat(sels.map(c=>[c,c])))+SEL("af_sort",AF.sort,SO)+'<button class="af-ib" data-af="view" aria-label="view">'+(AF.view==="grid"?"☰":"▦")+'</button></div><div class="af-chips">'+FL.map(x=>'<button class="af-tab'+(AF.flt===x[0]?" on":"")+'" data-af="flt" data-v="'+x[0]+'">'+x[1]+'</button>').join("")+'</div>';
+  const rows=(AF.q||AF.cat||AF.sel||AF.flt!=="all"||fav)?'':afRow(tr("الأعلى عمولة","Top commission"),top,"top")+afRow(tr("المنتجات الرائجة","Trending"),trend,"trend")+afRow(tr("منتجات جديدة","New"),neu,"new")+afRow(tr("مميزة","Featured"),feat,"feat")+afRow(tr("مقترحة لك","Suggested for you"),top.filter(p=>!AF.links.some(l=>l.pid===p.id)&&!isOut(p)),"sug");
+  return '<h3 class="af-h">'+(fav?tr("المنتجات المفضلة","Favourite products"):tr("المنتجات المتاحة للتسويق","Products available to promote"))+'</h3>'+bar+rows+(pg.length?'<div class="'+(AF.view==="grid"?"af-pg":"af-pl")+'">'+pg.map(afCard).join("")+'</div>'+(L.length>pg.length?'<div class="af-row" style="justify-content:center"><button class="af-b2" data-af="more">'+tr("عرض المزيد","Load more")+' ('+(L.length-pg.length)+')</button></div>':''):afEmpty(tr("لا توجد منتجات مطابقة","No matching products"),tr("المنتجات التي تحمل عمولة فقط تظهر هنا.","Only products with a commission appear here.")));
+}
+function afFavsPage(){ return afProducts(true); }
+function afProd(id){
+  const p=S.products.find(x=>x.id===id); if(!p){ AF.pid=null; return afProducts(); } const cm=commOf(p), imgs=gallery(p).slice(0,4), joined=AF.st.camps||{}, camps=afCampList().filter(c=>c.status!=="ended"&&joined[c.id]);
+  const CH=["Facebook","Instagram","TikTok","YouTube","X","Telegram",tr("موقع/مدونة","Website/blog"),tr("أخرى","Other")];
+  return '<button class="af-b2" data-af="back">‹ '+tr("رجوع","Back")+'</button><div class="af-pd"><div class="af-gal">'+imgs.map(u=>'<img alt="" src="'+esc(u)+'">').join("")+'</div><div class="af-card"><h2>'+esc(p.name)+'</h2><p class="afmut">'+esc(p.sellerName||S.name)+(p.cat?" · "+esc(p.cat):"")+'</p><div class="af-pr2"><span style="font-size:1.3rem">'+money(eff(p))+'</span>'+(off(p)>0?'<s class="afmut">'+money(was(p))+'</s> <em>-'+off(p)+'%</em>':'')+'</div>'+
+    '<div class="af-ks3"><div><b>'+afP(cm)+'</b><span>'+tr("نسبة العمولة","Rate")+'</span></div><div><b>'+moneyB(r2(eff(p)*cm/100))+'</b><span>'+tr("عمولتك المتوقعة","Expected")+'</span></div><div><b>'+afN(sold(p))+'</b><span>'+tr("مبيعات","Sold")+'</span></div><div><b>'+(avgOf(p)?avgOf(p).toFixed(1)+' ★':'—')+'</b><span>'+tr("التقييم","Rating")+'</span></div><div><b>'+(viewsOf(p)>=30?afP(sold(p)/viewsOf(p)*100):'—')+'</b><span>'+tr("معدل التحويل","Conv. rate")+'</span></div><div><b>'+(isOut(p)?tr("نفد","Out"):stockOf(p)===Infinity?tr("متاح","In stock"):stockOf(p))+'</b><span>'+tr("المخزون","Stock")+'</span></div></div>'+
+    '<p>'+esc(String(p.desc||"").slice(0,600))+'</p><p class="afmut">'+tr("شروط التسويق: تُحتسب العمولة بعد اكتمال الطلب وتُعكس عند الإلغاء أو الإرجاع، ولا عمولة على طلباتك الشخصية. المناطق المستهدفة: حيث يوصّل المتجر.","Terms: commission is credited when the order completes and reversed on cancel/return; none on your own orders. Target areas: wherever the store delivers.")+'</p>'+
+    '<h4>'+tr("أدوات التسويق","Marketing tools")+'</h4><div class="af-fm">'+F(tr("اسم الرابط","Link name"),IN("af_ln",p.name.slice(0,30),' maxlength="40"'))+F(tr("القناة","Channel"),SEL("af_ch","Facebook",CH.map(x=>[x,x])))+F(tr("الحملة (اختياري)","Campaign (optional)"),SEL("af_cp","",[["",tr("بدون","None")]].concat(camps.map(c=>[c.id,c.name]))))+F("Sub ID",IN("af_sb","",' maxlength="30" dir="ltr"'))+'</div><div class="af-row"><button class="af-b" data-af="mk" data-v="'+esc(p.id)+'">'+afI("link")+' '+tr("إنشاء رابط تسويقي","Create link")+'</button><button class="af-b2" data-af="cpy" data-u="'+esc(afUrl(p.id))+'">'+tr("نسخ الرابط العام للمنتج","Copy product link")+'</button></div>'+
+    '<div class="af-link" dir="ltr">'+esc(afUrl(p.id))+'</div><p class="afmut">'+tr("رمز QR والروابط المختصرة تحتاج خدمة خارجية ولم تُفعَّل بعد.","QR codes and short links need an external service and aren't enabled yet.")+'</p></div></div>';
+}
+async function afMake(pid,o){
+  if(!canW()) return toast(tr("سجّل الدخول أولاً","Sign in first")); o=o||{}; const p=pid?S.products.find(x=>x.id===pid):null, id="l"+rand(5);
+  const d={name:(o.name||(p?p.name:tr("رابط عام","General link"))).slice(0,40),pid:pid||"",camp:o.camp||"",sub:(o.sub||"").slice(0,30),ch:o.ch||"",t:Date.now(),on:true};
+  try{ await A.db.doc("affLinks/"+A.uid+"/items/"+id).set(d); AF.links.unshift(Object.assign({id},d)); const u=afUrl(pid,id); try{ await navigator.clipboard.writeText(u); toast(tr("أُنشئ الرابط ونُسخ ✓","Link created & copied ✓")); }catch(e){ toast(tr("أُنشئ الرابط ✓","Link created ✓")); } AF.pid=null; AF.page="links"; afRender(); }
+  catch(e){ toast(tr("تعذّر إنشاء الرابط","Couldn't create the link")); }
+}
+/* ---------- links ---------- */
+function afLinkStats(l){ const ck=AF.clicks.filter(k=>k.l===l.id), cv=afCom().filter(e=>e.link===l.id&&!e.void); return {clicks:ck.length,uniq:ck.filter(k=>k.u).length,conv:cv.length,rate:ck.length?cv.length/ck.length*100:0,amt:r2(cv.reduce((s,e)=>s+num(e.amount),0))}; }
+function afLinks(){
+  const q=AF.lq.toLowerCase(); let L=AF.links.filter(l=>(AF.lf==="all"||(AF.lf==="on")===(l.on!==false))&&(!q||(l.name+" "+(l.sub||"")+" "+(l.ch||"")).toLowerCase().includes(q)));
+  const pg=pgs("afl",L,10);
+  return '<h3 class="af-h">'+tr("روابط التسويق","Marketing links")+'</h3><div class="af-tb"><input id="af_lq" type="search" placeholder="'+tr("ابحث عن رابط…","Search links…")+'" value="'+esc(AF.lq)+'">'+SEL("af_lf",AF.lf,[["all",tr("الكل","All")],["on",tr("نشطة","Active")],["off",tr("متوقفة","Paused")]])+'<button class="af-b2" data-af="mkgen">'+tr("رابط عام","General link")+'</button><button class="af-b2" data-af="csvl">CSV</button></div>'+
+    (L.length?'<div class="af-tw"><table class="af-t"><thead><tr><th>'+tr("الرابط","Link")+'</th><th>'+tr("نقرات","Clicks")+'</th><th>'+tr("فريد","Unique")+'</th><th>'+tr("تحويلات","Conv.")+'</th><th>%</th><th>'+tr("أرباح","Earned")+'</th><th>'+tr("الحالة","Status")+'</th><th></th></tr></thead><tbody>'+pg.items.map(l=>{ const s=afLinkStats(l), p=S.products.find(x=>x.id===l.pid); return '<tr><td><b>'+esc(l.name)+'</b><br><small class="afmut">'+esc(p?p.name:tr("عام","General"))+(l.ch?" · "+esc(l.ch):"")+(l.sub?' · '+esc(l.sub):'')+'<br>ID: <span dir="ltr">'+esc(l.id)+'</span> · '+esc(fmtDT(l.t))+'</small></td><td>'+s.clicks+'</td><td>'+s.uniq+'</td><td>'+s.conv+'</td><td>'+afP(s.rate)+'</td><td>'+moneyB(s.amt)+'</td><td>'+afStat(l.on!==false?[tr("نشط","Active"),"g"]:[tr("متوقف","Paused"),"y"])+'</td><td class="af-act"><button class="af-b2" data-af="cpy" data-u="'+esc(afUrl(l.pid,l.id))+'">'+tr("نسخ","Copy")+'</button><button class="af-b2" data-af="shr" data-u="'+esc(afUrl(l.pid,l.id))+'" data-v="'+esc(l.name)+'">'+tr("مشاركة","Share")+'</button><button class="af-b2" data-af="lren" data-v="'+l.id+'">'+tr("تسمية","Rename")+'</button><button class="af-b2" data-af="ltog" data-v="'+l.id+'">'+(l.on!==false?tr("إيقاف","Pause"):tr("تفعيل","Resume"))+'</button>'+(s.clicks===0&&s.conv===0?'<button class="af-b2" data-af="ldel" data-v="'+l.id+'">'+tr("حذف","Delete")+'</button>':'')+'</td></tr>'; }).join("")+'</tbody></table></div>'+pg.bar:afEmpty(tr("لا توجد روابط","No links yet"),tr("أنشئ رابطك الأول من «المنتجات المتاحة».","Create your first link from Products.")))+
+    '<p class="afmut">'+tr("تُسجَّل النقرة عند فتح رابطك (مرة كل 30 دقيقة لكل جهاز ورابط)، والتحويل عند تأكيد الطلب. النقرات التي تأتي من جهازك لا تُحتسب.","A click is recorded when your link is opened (once per 30 minutes per device and link) and a conversion when the order is confirmed. Clicks from your own device aren't counted.")+'</p>';
+}
+/* ---------- orders / commissions ---------- */
+function afOrdRows(){
+  const q=AF.oq.toLowerCase(); let L=afCom().filter(e=>(AF.of==="all"||(AF.of==="pend"&&!e.void&&e.status!=="available")||(AF.of==="ok"&&!e.void&&e.status==="available")||(AF.of==="rev"&&e.void))&&(!q||(String(e.order)+" "+(e.prod||[]).join(" ")).toLowerCase().includes(q)));
+  L.sort((a,b)=>AF.os==="amt"?num(b.amount)-num(a.amount):num(b.t)-num(a.t)); return L;
+}
+function afOrders(){
+  const L=afOrdRows(), pg=pgs("afo",L,10), e0=AF.oid?afCom().find(e=>e.id===AF.oid):null;
+  return '<h3 class="af-h">'+tr("الطلبات والتحويلات","Orders & conversions")+'</h3><div class="af-tb"><input id="af_oq" type="search" placeholder="'+tr("رقم الطلب أو المنتج…","Order no. or product…")+'" value="'+esc(AF.oq)+'">'+SEL("af_of",AF.of,[["all",tr("كل الحالات","All")],["pend",tr("قيد الانتظار","Pending")],["ok",tr("معتمدة","Approved")],["rev",tr("معكوسة","Reversed")]])+SEL("af_os",AF.os,[["new",tr("الأحدث","Newest")],["amt",tr("الأعلى عمولة","Highest")]])+'<button class="af-b2" data-af="csvo">CSV</button></div>'+
+   (L.length?'<div class="af-tw"><table class="af-t"><thead><tr><th>#</th><th>'+tr("المنتجات","Products")+'</th><th>'+tr("التاريخ","Date")+'</th><th>'+tr("قيمة الطلب","Order value")+'</th><th>'+tr("العمولة","Commission")+'</th><th>'+tr("الحالة","Status")+'</th><th>'+tr("المصدر","Source")+'</th><th></th></tr></thead><tbody>'+pg.items.map(e=>{ const l=afLinkOf(e.link); return '<tr><td>#'+esc(e.order)+'</td><td>'+esc((e.prod||[]).join("، "))+'</td><td>'+esc(fmtDT(e.t))+'</td><td>'+moneyB(num(e.gross))+'</td><td><b>'+moneyB(num(e.amount))+'</b></td><td>'+afStat(afCStatus(e))+'</td><td>'+(l?esc(l.name+(l.ch?" · "+l.ch:"")):'<span class="afmut">'+tr("رابط عام/كود","code/general")+'</span>')+'</td><td><button class="af-b2" data-af="od" data-v="'+esc(e.id)+'">'+tr("تفاصيل","Details")+'</button></td></tr>'; }).join("")+'</tbody></table></div>'+pg.bar:afEmpty(tr("لا توجد تحويلات بعد","No conversions yet"),tr("تظهر هنا الطلبات المنسوبة إليك.","Orders credited to you appear here.")))+
+   (e0?afOrdDetail(e0):'');
+}
+function afOrdDetail(e){
+  const l=afLinkOf(e.link), ck=AF.clicks.filter(k=>(!l||k.l===l.id)&&num(k.t)<=num(e.t)).sort((a,b)=>num(b.t)-num(a.t))[0];
+  const ev=[[ck?num(ck.t):0,tr("آخر نقرة على الرابط قبل الطلب","Last click before the order")+(l?" ("+esc(l.name)+")":"")],[num(e.t),tr("تسجيل الطلب وإسناده إليك","Order recorded and credited to you")],[num(e.t),tr("الحالة الحالية: ","Current status: ")+afCStatus(e)[0]]].filter(x=>x[0]);
+  return '<section class="af-card"><div class="af-row"><b>'+tr("تفاصيل الطلب #","Order #")+esc(e.order)+'</b><span class="grow"></span><button class="af-ib" data-af="od" data-v="">×</button></div><ol class="af-tl">'+ev.map(x=>'<li><b>'+esc(fmtDT(x[0],true))+'</b> — '+x[1]+'</li>').join("")+'</ol><p class="afmut">'+tr("لا تُعرض بيانات العميل. وقت اعتماد العمولة لا يُسجَّل حالياً.","Customer data isn't shown. The approval time isn't recorded yet.")+'</p></section>';
+}
+function afComm(){
+  const r=afRange(), c=afM(0,Date.now()+afDay), b=wBal(), L=afCom().slice().sort((a,b2)=>num(b2.t)-num(a.t)), ov=S.products.filter(p=>p.comm!==undefined&&p.comm!==null&&p.comm!=="").length, pg=pgs("afc",L.filter(e=>AF.cf==="all"||(AF.cf==="pend"&&!e.void&&e.status!=="available")||(AF.cf==="ok"&&!e.void&&e.status==="available")||(AF.cf==="rev"&&e.void)),10);
+  return '<h3 class="af-h">'+tr("العمولات والأرباح","Commissions & earnings")+'</h3><div class="af-kg">'+[[tr("إجمالي العمولات","Total"),moneyB(c.total)],[tr("معتمدة","Approved"),moneyB(c.appr)],[tr("معلقة","Pending"),moneyB(c.pend)],[tr("معكوسة/ملغاة","Reversed"),moneyB(c.rej)],[tr("متاح للسحب","Withdrawable"),moneyB(b.free)],[tr("تم تحويله إليك","Paid out"),moneyB(b.paid)]].map(k=>'<div class="af-kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>').join("")+'</div>'+
+   '<div class="af-row"><button class="af-b" data-af="wallet">'+tr("المحفظة وطلب السحب","Wallet & withdrawals")+'</button><button class="af-b2" data-af="csvc">CSV</button>'+SEL("af_cf",AF.cf,[["all",tr("كل الحالات","All")],["pend",tr("قيد الانتظار","Pending")],["ok",tr("معتمدة","Approved")],["rev",tr("معكوسة","Reversed")]])+'</div>'+
+   (pg.items.length?'<div class="af-tw"><table class="af-t"><thead><tr><th>'+tr("العملية","Txn")+'</th><th>'+tr("الطلب","Order")+'</th><th>'+tr("المنتجات","Products")+'</th><th>'+tr("القيمة المؤهلة","Eligible value")+'</th><th>%</th><th>'+tr("العمولة","Commission")+'</th><th>'+tr("التاريخ","Date")+'</th><th>'+tr("الحالة","Status")+'</th></tr></thead><tbody>'+pg.items.map(e=>'<tr><td dir="ltr">'+esc(e.id)+'</td><td>#'+esc(e.order)+'</td><td>'+esc((e.prod||[]).join("، "))+'</td><td>'+moneyB(num(e.gross))+'</td><td>'+(num(e.gross)?afP(num(e.amount)/num(e.gross)*100):'—')+'</td><td><b>'+moneyB(num(e.amount))+'</b></td><td>'+esc(fmtDT(e.t))+'</td><td>'+afStat(afCStatus(e))+'</td></tr>').join("")+'</tbody></table></div>'+pg.bar:afEmpty(tr("لا عمولات بعد","No commissions yet"),""))+
+   '<section class="af-card"><b>'+tr("قواعد العمولة الحالية","Current commission rules")+'</b><ul class="af-ul"><li>'+tr("النسبة الافتراضية: ","Default rate: ")+afP(num(A.market.commissionPct))+'</li><li>'+tr("منتجات بنسبة خاصة: ","Products with their own rate: ")+ov+'</li><li>'+tr("الحد الأقصى للعمولة: ","Max commission: ")+afP(commCap())+'</li><li>'+tr("نافذة الإسناد: ","Attribution window: ")+(num(S.affWindow)||30)+tr(" يوماً (آخر نقرة تفوز)"," days (last click wins)")+'</li><li>'+tr("لا تُحتسب عمولة مرتين لنفس الطلب","A commission is never credited twice for the same order")+'</li></ul><p class="afmut">'+tr("أي تعديل للعمولة يتم بواسطة الإدارة وفق صلاحياتها ويُسجَّل في سجل التدقيق.","Commission changes are made by the admin and recorded in the audit log.")+'</p></section>';
+}
+/* ---------- assets / AI studio ---------- */
+function afGen(o){
+  const p=S.products.find(x=>x.id===o.pid)||S.products.find(x=>commOf(x)>0&&!isOut(x)); if(!p) return tr("لا توجد منتجات بعمولة.","No products with commission.");
+  const ar=o.lang!=="en", link=afUrl(p.id,o.lid||""), price=money(eff(p)), dsc=off(p)>0?(ar?" (خصم "+off(p)+"%)":" ("+off(p)+"% off)"):"", d=String(p.desc||"").replace(/\s+/g," ").slice(0,o.len==="short"?70:o.len==="long"?260:140);
+  const tone={friendly:ar?["😊","يا جماعة"]:["😊","Hey everyone"],pro:["",ar?"نقدّم لكم":"Introducing"],urgent:["⏰",ar?"عرض لفترة محدودة":"Limited offer"]}[o.tone||"friendly"], em=tone[0], op=tone[1];
+  const H=ar?["اكتشف "+p.name,p.name+" بسعر مميز","لماذا يختاره الناس: "+p.name,"جرّب "+p.name+" اليوم","وفّر مع "+p.name]:["Discover "+p.name,p.name+" at a great price","Why people pick "+p.name,"Try "+p.name+" today","Save with "+p.name];
+  const cta=ar?"اطلبه الآن من هنا":"Order here";
+  const T={ad:[op+" "+em+"\n"+p.name+" — "+price+dsc+"\n"+d+"\n"+cta+": "+link],
+    desc:[p.name+": "+d+" "+(ar?"السعر ":"Price ")+price+dsc+"."],title:H,
+    post:[em+" "+op+" "+p.name+"\n"+d+"\n"+(ar?"السعر: ":"Price: ")+price+dsc+"\n"+cta+" 👇\n"+link+(o.plat==="instagram"||o.plat==="tiktok"?"\n#"+String(p.cat||"shop").replace(/\s+/g,"_"):"")],
+    video:[ar?"1) فتح بسؤال عن مشكلة يحلها المنتج ثم إظهار "+p.name+".\n2) عرض أهم ميزة في 5 ثوانٍ من الوصف.\n3) ذكر السعر "+price+" والرابط في التعليق.":"1) Open with the problem the product solves, then reveal "+p.name+".\n2) Show the top feature in 5 seconds.\n3) Mention the price "+price+" and put the link in the comments.",ar?"فيديو مقارنة قبل/بعد استخدام "+p.name:"Before/after video using "+p.name,ar?"تجربة صندوق (Unboxing) لـ "+p.name:"Unboxing of "+p.name],
+    copy:[op+": "+p.name+" "+price+dsc+" — "+cta]}[o.type||"ad"];
+  const aud=ar?"الجمهور المقترح لفئة «"+(p.cat||"المنتج")+"»: المهتمون بهذه الفئة في مصر وفق وصف المنتج وسعره.":"Suggested audience for “"+(p.cat||"this product")+"”: shoppers interested in this category, based on the product's description and price.";
+  return T.join("\n\n")+"\n\n"+aud;
+}
+function afAssets(){
+  const ps=S.products.filter(p=>commOf(p)>0&&!isOut(p)).slice(0,60), pid=AF.ai.apid||(ps[0]||{}).id, p=ps.find(x=>x.id===pid)||ps[0], custom=String(S.affAssets||"").split("\n").map(x=>x.trim()).filter(Boolean).map(x=>x.split("|"));
+  const kinds=[["ad",tr("نص إعلاني","Ad copy")],["post",tr("منشور سوشيال","Social post")],["desc",tr("وصف تسويقي","Description")],["video",tr("أفكار فيديو","Video ideas")]];
+  return '<h3 class="af-h">'+tr("المواد الإعلانية","Marketing assets")+'</h3>'+(p?'<div class="af-tb">'+SEL("af_apid",p.id,ps.map(x=>[x.id,x.name.slice(0,60)]))+'</div><div class="af-g2"><section class="af-card"><b>'+tr("صور المنتج","Product images")+'</b><div class="af-gal">'+gallery(p).slice(0,4).map((u,i)=>'<a href="'+esc(u)+'" download="'+esc(p.id)+'-'+i+'.jpg"><img alt="" src="'+esc(u)+'"></a>').join("")+'</div><p class="afmut">'+tr("اضغط الصورة لتحميلها. استخدمها للترويج لهذا المنتج فقط.","Tap an image to download it. Use it only to promote this product.")+'</p></section>'+kinds.map(k=>{ const tx=afGen({pid:p.id,type:k[0],tone:"friendly",lang:lang==="ar"?"ar":"en",len:"mid"}); return '<section class="af-card"><b>'+k[1]+'</b><pre class="af-pre">'+esc(tx)+'</pre><button class="af-b2" data-af="cpy" data-u="'+esc(tx)+'">'+tr("نسخ","Copy")+'</button></section>'; }).join("")+'</div>':afEmpty(tr("لا منتجات","No products"),""))+
+   (custom.length?'<h4>'+tr("مواد من الإدارة","Materials from the admin")+'</h4><div class="af-g2">'+custom.map(c=>'<section class="af-card"><b>'+esc(c[0])+'</b><pre class="af-pre">'+esc(c.slice(1).join("|"))+'</pre><button class="af-b2" data-af="cpy" data-u="'+esc(c.slice(1).join("|"))+'">'+tr("نسخ","Copy")+'</button></section>').join("")+'</div>':'')+
+   '<p class="afmut">'+tr("النصوص مولَّدة من بيانات المنتج الحقيقية. مكتبة الفيديوهات والبانرات الجاهزة تُضاف من الإدارة لاحقاً.","Texts are generated from the real product data. Ready-made videos and banners can be added by the admin later.")+'</p>';
+}
+function afAi(){
+  const o=AF.ai, ps=S.products.filter(p=>commOf(p)>0&&!isOut(p)).slice(0,60), TY=[["ad",tr("كتابة إعلان","Ad")],["desc",tr("وصف تسويقي","Description")],["title",tr("عناوين جذابة","Headlines")],["post",tr("منشور تواصل","Social post")],["video",tr("أفكار فيديو قصير","Short video ideas")],["copy",tr("نص إعلاني قصير","Short ad copy")]];
+  return '<h3 class="af-h">'+tr("استوديو المحتوى","Content studio")+'</h3>'+NOTE(tr("هذا الاستوديو يبني نصوصاً بقوالب وقواعد من بيانات المنتج الحقيقية (الاسم، السعر، الخصم، الوصف). ليس نموذج ذكاء اصطناعي، والنصوص ليست بيانات أداء.","This studio builds texts from templates and rules over real product data (name, price, discount, description). It is not an AI model and the texts are not performance data."))+
+   '<div class="af-card"><div class="af-fm">'+F(tr("المنتج","Product"),SEL("ai_p",o.pid||(ps[0]||{}).id,ps.map(x=>[x.id,x.name.slice(0,60)])))+F(tr("نوع المحتوى","Content"),SEL("ai_t",o.type||"ad",TY))+F(tr("المنصة","Platform"),SEL("ai_pl",o.plat||"facebook",[["facebook","Facebook"],["instagram","Instagram"],["tiktok","TikTok"],["youtube","YouTube"],["x","X"]]))+F(tr("الأسلوب","Tone"),SEL("ai_to",o.tone||"friendly",[["friendly",tr("ودّي","Friendly")],["pro",tr("احترافي","Professional")],["urgent",tr("عاجل","Urgent")]]))+F(tr("اللغة","Language"),SEL("ai_l",o.lang||(lang==="ar"?"ar":"en"),[["ar","العربية"],["en","English"]]))+F(tr("الطول","Length"),SEL("ai_n",o.len||"mid",[["short",tr("قصير","Short")],["mid",tr("متوسط","Medium")],["long",tr("طويل","Long")]]))+'</div><button class="af-b" data-af="gen">'+afI("spark")+' '+tr("إنشاء","Generate")+'</button></div>'+
+   (AF.aiOut?'<section class="af-card"><b>'+tr("النتيجة","Result")+'</b><pre class="af-pre">'+esc(AF.aiOut)+'</pre><button class="af-b2" data-af="cpy" data-u="'+esc(AF.aiOut)+'">'+tr("نسخ","Copy")+'</button></section>':'')+afTips();
+}
+/* ---------- referrals / levels / board ---------- */
+function afRefs(){
+  const link=baseUrl()+"#aff-"+afCode(), ST={pending:[tr("قيد المراجعة","Pending"),"y"],approved:[tr("مفعّل","Active"),"g"],rejected:[tr("مرفوض","Rejected"),"r"]};
+  return '<h3 class="af-h">'+tr("الإحالات","Referrals")+'</h3><section class="af-card"><b>'+tr("رابط دعوتك","Your invite link")+'</b><div class="af-link" dir="ltr">'+esc(link)+'</div><div class="af-row"><button class="af-b" data-af="cpy" data-u="'+esc(link)+'">'+tr("نسخ","Copy")+'</button><button class="af-b2" data-af="shr" data-u="'+esc(link)+'" data-v="Primemart">'+tr("مشاركة","Share")+'</button></div><p class="afmut">'+tr("من يسجّل كمسوّق عبر رابطك يظهر هنا. الإحالة الذاتية غير مسموحة، وهي منفصلة تماماً عن عمولات البيع. ",
+   "Anyone who applies as an affiliate through your link appears here. Self-referral isn't allowed and it is separate from sales commissions. ")+(S.affRefReward?esc(S.affRefReward):tr("لا توجد مكافأة إحالة مفعّلة حالياً.","No referral reward is enabled right now."))+'</p></section>'+
+   '<div class="af-kg"><div class="af-kpi"><span>'+tr("المسجَّلون","Registered")+'</span><b>'+AF.refs.length+'</b></div><div class="af-kpi"><span>'+tr("المفعّلون","Active")+'</span><b>'+AF.refs.filter(r=>r.status==="approved").length+'</b></div></div>'+
+   (AF.refs.length?'<div class="af-tw"><table class="af-t"><thead><tr><th>'+tr("الاسم","Name")+'</th><th>'+tr("التاريخ","Date")+'</th><th>'+tr("الحالة","Status")+'</th></tr></thead><tbody>'+AF.refs.map(r=>'<tr><td>'+esc(r.name||"—")+'</td><td>'+esc(fmtDT(r.t))+'</td><td>'+afStat(ST[r.status]||ST.pending)+'</td></tr>').join("")+'</tbody></table></div>':afEmpty(tr("لا إحالات بعد","No referrals yet"),""));
+}
+function afLevelsP(){
+  const lv=afLevelNow();
+  return '<h3 class="af-h">'+tr("المستويات والمكافآت","Levels & rewards")+'</h3><section class="af-card"><div class="af-row"><span class="af-badge" style="--c:'+lv.cur.c+'">'+lv.cur.n+'</span><b>'+lv.d+' '+tr("طلب مكتمل","completed orders")+'</b><span class="afmut">'+tr("النقاط: ","Points: ")+(lv.d*10)+'</span></div><div class="af-bar2"><i style="width:'+(lv.next?Math.min(100,Math.round((lv.d-lv.cur.min)/Math.max(1,lv.next.min-lv.cur.min)*100)):100)+'%"></i></div></section>'+
+   '<div class="af-g2">'+lv.L.map((l,i)=>'<section class="af-card'+(i===lv.i?' af-cur':'')+'"><span class="af-badge" style="--c:'+l.c+'">'+l.n+'</span><p>'+tr("الشرط: ","Requires: ")+l.min+tr(" طلب مكتمل"," completed orders")+'</p><p class="afmut">'+(l.perk?esc(l.perk):tr("المزايا تحددها الإدارة.","Perks are set by the admin."))+'</p></section>').join("")+'</div><h4>'+tr("التحديات","Challenges")+'</h4><section class="af-card">'+afChallenges(false)+'</section>';
+}
+function afBoard(){
+  const key=AF.bt, B=AF.board.filter(b=>!b.hide&&num(b[key])>0).sort((a,b)=>num(b[key])-num(a[key])), me=AF.board.find(b=>b.id===A.uid), rk=B.findIndex(b=>b.id===A.uid);
+  return '<h3 class="af-h">'+tr("لوحة المتصدرين","Leaderboard")+'</h3><div class="af-chips">'+[["amount",tr("أعلى الأرباح المعتمدة","Top approved earnings")],["orders",tr("أعلى طلبات مكتملة","Most completed orders")]].map(x=>'<button class="af-tab'+(AF.bt===x[0]?" on":"")+'" data-af="bt" data-v="'+x[0]+'">'+x[1]+'</button>').join("")+'</div>'+
+   (B.length?'<div class="af-tw"><table class="af-t"><thead><tr><th>#</th><th>'+tr("المسوّق","Affiliate")+'</th><th>'+tr("الطلبات","Orders")+'</th><th>'+tr("الأرباح","Earnings")+'</th></tr></thead><tbody>'+B.slice(0,20).map((b,i)=>'<tr'+(b.id===A.uid?' class="af-me"':'')+'><td>'+(i+1)+'</td><td>'+esc(b.name||tr("مسوّق","Affiliate"))+(b.id===A.uid?' ('+tr("أنت","you")+')':'')+'</td><td>'+afN(b.orders)+'</td><td>'+moneyB(num(b.amount))+'</td></tr>').join("")+'</tbody></table></div>':afEmpty(tr("لا بيانات بعد","No data yet"),tr("تُحدَّث اللوحة عند اعتماد العمولات من الإدارة.","The board updates when the admin settles commissions.")))+
+   '<p class="afmut">'+(rk>=0?tr("ترتيبك: ","Your rank: ")+(rk+1)+' · ':'')+(me&&me.hide?tr("اسمك مخفي من اللوحة.","You're hidden from the board."):tr("يمكنك إخفاء اسمك من «الإعدادات».","You can hide your name in Settings."))+'</p>';
+}
+/* ---------- reports ---------- */
+function afReportData(){
+  const r=afRange(), c=afM(r.a,r.b), t=AF.rt;
+  const gb=(arr,kf)=>{ const m={}; arr.forEach(x=>{ const k=kf(x)||"—"; (m[k]=m[k]||[]).push(x); }); return m; };
+  if(t==="earn"||t==="daily"||t==="conv"||t==="rate"){ const s=afSeries(t==="conv"?"conv":t==="clicks"?"clicks":"earn",r.a,r.b), cs=afSeries("clicks",r.a,r.b), cv=afSeries("conv",r.a,r.b);
+    return {head:[tr("اليوم","Day"),tr("نقرات","Clicks"),tr("تحويلات","Conv."),tr("معدل التحويل","Rate"),tr("الأرباح","Earnings")],rows:s.map((x,i)=>[x[0],cs[i][1],cv[i][1],cs[i][1]?Math.round(cv[i][1]/cs[i][1]*1000)/10+"%":"—",afSeries("earn",r.a,r.b)[i][1]]),chart:t==="conv"?cv:t==="rate"?cs.map((x,i)=>[x[0],x[1]?Math.round(cv[i][1]/x[1]*1000)/10:0]):s,fmt:t==="earn"||t==="daily"?moneyB:afN}; }
+  if(t==="clicks"){ const s=afSeries("clicks",r.a,r.b); return {head:[tr("اليوم","Day"),tr("نقرات","Clicks")],rows:s,chart:s,fmt:afN}; }
+  if(t==="month"){ const m=gb(afCom().filter(e=>!e.void),e=>{ const d=new Date(num(e.t)); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0"); }), rows=Object.keys(m).sort().map(k=>[k,m[k].length,r2(m[k].reduce((s,e)=>s+num(e.amount),0))]); return {head:[tr("الشهر","Month"),tr("تحويلات","Conv."),tr("الأرباح","Earnings")],rows,chart:rows.map(x=>[x[0],x[2]]),fmt:moneyB}; }
+  if(t==="prod"){ const m={}; c.cm.filter(e=>!e.void).forEach(e=>(e.prod||[]).forEach(n=>{ (m[n]=m[n]||{n:0,a:0}).n++; m[n].a+=num(e.amount)/Math.max(1,(e.prod||[]).length); })); const rows=Object.keys(m).sort((a,b)=>m[b].a-m[a].a).map(k=>[k,m[k].n,r2(m[k].a)]); return {head:[tr("المنتج","Product"),tr("تحويلات","Conv."),tr("الأرباح","Earnings")],rows,chart:rows.slice(0,12).map(x=>[x[0].slice(0,10),x[2]]),fmt:moneyB}; }
+  if(t==="links"){ const rows=AF.links.map(l=>{ const s=afLinkStats(l); return [l.name,s.clicks,s.conv,Math.round(s.rate*10)/10+"%",s.amt]; }); return {head:[tr("الرابط","Link"),tr("نقرات","Clicks"),tr("تحويلات","Conv."),tr("المعدل","Rate"),tr("الأرباح","Earnings")],rows,chart:rows.map(x=>[x[0].slice(0,10),x[4]]),fmt:moneyB}; }
+  if(t==="src"){ const m=gb(c.ck,k=>k.src||tr("مباشر/غير معروف","Direct/unknown")), rows=Object.keys(m).sort((a,b)=>m[b].length-m[a].length).map(k=>[k,m[k].length,m[k].filter(x=>x.u).length]); return {head:[tr("المصدر","Source"),tr("نقرات","Clicks"),tr("فريد","Unique")],rows,chart:rows.slice(0,12).map(x=>[x[0].slice(0,10),x[1]]),fmt:afN}; }
+  if(t==="camp"){ const rows=afCampList().map(cm=>{ const ids=new Set(AF.links.filter(l=>l.camp===cm.id).map(l=>l.id)); const cv=afCom().filter(e=>!e.void&&ids.has(e.link)); return [cm.name,AF.clicks.filter(k=>ids.has(k.l)).length,cv.length,r2(cv.reduce((s,e)=>s+num(e.amount),0))]; }); return {head:[tr("الحملة","Campaign"),tr("نقرات","Clicks"),tr("تحويلات","Conv."),tr("الأرباح","Earnings")],rows,chart:rows.map(x=>[x[0].slice(0,10),x[3]]),fmt:moneyB}; }
+  return {head:[],rows:[],chart:[],fmt:afN};
+}
+function afReports(){
+  const R=[["earn",tr("الأرباح","Earnings")],["clicks",tr("النقرات","Clicks")],["conv",tr("التحويلات","Conversions")],["prod",tr("المنتجات","Products")],["camp",tr("الحملات","Campaigns")],["links",tr("الروابط","Links")],["src",tr("مصادر الزيارات","Traffic sources")],["rate",tr("معدل التحويل","Conv. rate")],["daily",tr("الأداء اليومي","Daily")],["month",tr("الأداء الشهري","Monthly")]], d=afReportData(), r=afRange(), c=afM(r.a,r.b), p=afM(r.pa,r.pb);
+  const susp=(()=>{ const m={}; AF.clicks.forEach(k=>{ const key=k.d+"|"+new Date(num(k.t)).toDateString(); m[key]=(m[key]||0)+1; }); return Object.keys(m).filter(k=>m[k]>20).length; })();
+  return '<h3 class="af-h">'+tr("التقارير والتحليلات","Reports & analytics")+'</h3>'+afPer()+'<div class="af-chips">'+R.map(x=>'<button class="af-tab'+(AF.rt===x[0]?" on":"")+'" data-af="rt" data-v="'+x[0]+'">'+x[1]+'</button>').join("")+'</div>'+
+   '<div class="af-kg"><div class="af-kpi"><span>'+tr("أرباح الفترة","Period earnings")+'</span><b>'+moneyB(c.total)+'</b>'+afDelta(c.total,p.total)+'</div><div class="af-kpi"><span>'+tr("نقرات","Clicks")+'</span><b>'+afN(c.clicks)+'</b>'+afDelta(c.clicks,p.clicks)+'</div><div class="af-kpi"><span>'+tr("تحويلات","Conversions")+'</span><b>'+afN(c.conv)+'</b>'+afDelta(c.conv,p.conv)+'</div><div class="af-kpi"><span>'+tr("نشاط يستحق المراجعة","Activity to review")+'</span><b>'+susp+'</b></div></div>'+
+   '<section class="af-card">'+afChart(d.chart,d.fmt,tr("التقرير","Report"))+'</section>'+(d.rows.length?'<div class="af-tw"><table class="af-t"><thead><tr>'+d.head.map(h=>'<th>'+h+'</th>').join("")+'</tr></thead><tbody>'+d.rows.slice(0,60).map(x=>'<tr>'+x.map(v=>'<td>'+esc(typeof v==="number"&&/ج|EGP|earn/.test("")?v:v)+'</td>').join("")+'</tr>').join("")+'</tbody></table></div>':'')+
+   '<div class="af-row"><button class="af-b" data-af="csvr">CSV / Excel</button><button class="af-b2" data-af="print">'+tr("طباعة / PDF","Print / PDF")+'</button></div><p class="afmut">'+tr("ملف CSV يُفتح في Excel. PDF عبر نافذة الطباعة. «نشاط يستحق المراجعة» = أكثر من 20 نقرة من جهاز واحد في يوم، وهو سبب للمراجعة وليس دليل مخالفة.","CSV opens in Excel. PDF via the print dialog. “Activity to review” = more than 20 clicks from one device in a day; it is a reason to review, not proof of a violation.")+'</p>';
+}
+/* ---------- notifications / help / profile / settings ---------- */
+function afNotif(){
+  const L=afCom().slice().sort((a,b)=>num(b.t)-num(a.t)).slice(0,40), seen=num((AF.st||{}).seen), ref=AF.refs.slice(0,10);
+  const items=L.map(e=>({t:num(e.t),k:e.void?tr("عمولة معكوسة","Commission reversed"):e.status==="available"?tr("عمولة معتمدة","Commission approved"):tr("عمولة جديدة قيد الانتظار","New pending commission"),m:"#"+e.order+" · "+moneyB(num(e.amount))})).concat(ref.map(r=>({t:num(r.t),k:tr("إحالة جديدة","New referral"),m:r.name||""}))).sort((a,b)=>b.t-a.t);
+  return '<h3 class="af-h">'+tr("الإشعارات","Notifications")+'</h3><div class="af-row"><button class="af-b2" data-af="seen">'+tr("تحديد الكل كمقروء","Mark all read")+'</button></div>'+(items.length?'<ul class="af-ul af-nt">'+items.map(x=>'<li class="'+(x.t>seen?'un':'')+'"><b>'+x.k+'</b><span>'+esc(x.m)+'</span><small class="afmut">'+esc(fmtDT(x.t,true))+'</small></li>').join("")+'</ul>':afEmpty(tr("لا إشعارات","No notifications"),""))+'<p class="afmut">'+tr("الإشعارات داخل المنصة فقط؛ البريد والإشعارات الفورية تحتاج خادماً ولم تُفعَّل.","In-app only; email and push need a server and aren't enabled.")+'</p>';
+}
+function afHelp(){
+  const Q=[[tr("كيف أنشئ رابطاً تسويقياً؟","How do I create a link?"),tr("من «المنتجات المتاحة» اضغط «إنشاء رابط» على أي منتج، أو افتح تفاصيله واختر القناة والحملة. الرابط يُنسخ تلقائياً ويظهر في «روابط التسويق».","From Products, press Create link on any product, or open its details and choose channel/campaign. The link is copied and listed under Links.")],[tr("كيف تُحسب العمولة؟","How is commission calculated?"),tr("نسبة المنتج × سعر البيع × الكمية. تظهر معلقة ثم تُعتمد عند اكتمال الطلب.","Product rate × price × quantity. Pending, then approved when the order completes.")],[tr("متى تُعكس العمولة؟","When is a commission reversed?"),tr("عند إلغاء الطلب أو إرجاعه.","When the order is cancelled or returned.")],[tr("كيف أتابع طلباتي؟","How do I track orders?"),tr("من «الطلبات والتحويلات» مع الحالة والمصدر.","From Orders & conversions, with status and source.")],[tr("كيف أسحب أرباحي؟","How do I withdraw?"),tr("من «العمولات والأرباح» ← المحفظة. الحد الأدنى: ","From Commissions → Wallet. Minimum: ")+moneyB(num(A.market.minWithdraw))],[tr("ما سياسة التسويق؟","Marketing policy?"),tr("ممنوع التلاعب بالنقرات أو الإحالة الذاتية أو الإعلانات المضللة. تخضع الحسابات المشبوهة للمراجعة.","No click manipulation, self-referral or misleading ads. Suspicious accounts are reviewed.")]];
+  return '<h3 class="af-h">'+tr("مركز المساعدة","Help center")+'</h3>'+Q.map(x=>'<details class="af-q"><summary>'+x[0]+'</summary><p>'+x[1]+'</p></details>').join("")+'<div class="af-row"><button class="af-b" data-af="support">'+tr("فتح تذكرة دعم","Open a support ticket")+'</button></div>';
+}
+function afProfile(){
+  const p=AF.st.profile||{};
+  return '<h3 class="af-h">'+tr("الملف الشخصي","Profile")+'</h3><section class="af-card"><div class="af-fm">'+F(tr("الاسم","Name"),IN("pf_n",p.name||"",' maxlength="60"'))+F(tr("اسم المستخدم","Username"),IN("pf_u",p.user||"",' maxlength="30" dir="ltr"'))+F(tr("الهاتف","Phone"),IN("pf_p",p.phone||"",' dir="ltr" type="tel"'))+F(tr("الدولة","Country"),IN("pf_c",p.country||""))+F(tr("المدينة","City"),IN("pf_t",p.city||""))+F(tr("مجال التسويق","Niche"),IN("pf_nc",p.niche||""))+F(tr("رابط الموقع/القناة","Site/channel"),IN("pf_s",p.site||"",' dir="ltr"'))+F(tr("روابط التواصل","Social links"),IN("pf_so",p.soc||"",' dir="ltr"'))+'</div>'+F(tr("نبذة","Bio"),TA("pf_b",p.bio||"",3,' maxlength="300"'))+'<button class="af-b" data-af="psave">'+tr("حفظ","Save")+'</button></section><p class="afmut">'+tr("البريد: ","Email: ")+esc((A.user&&A.user.email)||"")+' · ID: <b dir="ltr">'+esc(afCode().toUpperCase())+'</b></p>';
+}
+function afSettings(){
+  const s=AF.st;
+  return '<h3 class="af-h">'+tr("الإعدادات","Settings")+'</h3><section class="af-card"><label class="af-sw"><input type="checkbox" id="st_hide"'+(s.hide?" checked":"")+'> '+tr("إخفاء اسمي من لوحة المتصدرين","Hide my name from the leaderboard")+'</label><div class="af-fm">'+F(tr("هدفك الشهري من الأرباح","Monthly earnings target")+" ("+esc(S.currency)+")",IN("st_tg",s.target||"",' type="number" min="0"'))+'</div><div class="af-row"><button class="af-b" data-af="ssave">'+tr("حفظ","Save")+'</button><button class="af-b2" data-af="lang">'+tr("English / العربية","English / العربية")+'</button><button class="af-b2" data-af="dark">'+tr("الوضع الفاتح / الداكن","Light / Dark")+'</button></div></section><p class="afmut">'+tr("تغيير كلمة المرور والتحقق الثنائي وإدارة الجلسات والأجهزة تتم من حساب Google المرتبط، ولا يخزّن الموقع كلمات مرور. تفضيلات الإشعارات والعملة والمنطقة الزمنية من «إعدادات حسابي».","Password, two-step verification and sessions/devices are managed in the linked Google account; the site doesn't store passwords. Notification, currency and timezone preferences live in My account settings.")+'</p>';
+}
+/* ---------- public landing + registration ---------- */
+function afPublic(){
+  const st=(A.req&&A.req.affiliate&&A.req.affiliate.status)||"", rs=(myRole().affiliate||{}).status||"", status=myRole().suspended&&rs==="active"?"suspended":rs==="banned"?"banned":rs==="rejected"||st==="rejected"?"rejected":st==="pending"?"pending":"";
+  const all=S.products.filter(p=>commOf(p)>0&&!isOut(p)), top=all.slice().sort((a,b)=>commOf(b)*eff(b)-commOf(a)*eff(a)).slice(0,6), cats=[...new Set(all.map(p=>p.cat).filter(Boolean))].slice(0,10), mx=all.length?Math.max(...all.map(commOf)):0;
+  const stories=String(S.affStories||"").split("\n").map(x=>x.trim()).filter(Boolean);
+  const SN={pending:[tr("طلبك قيد المراجعة","Your application is under review"),"y"],rejected:[tr("تم رفض الطلب","Application rejected"),"r"],suspended:[tr("حسابك موقوف مؤقتاً","Account suspended"),"y"],banned:[tr("الحساب محظور","Account banned"),"r"]};
+  const hero='<section class="af-hero"><span class="af-lg big">'+afI("mega")+'</span><h1>'+tr("Primemart-egypt Affiliate","Primemart-egypt Affiliate")+'</h1><p>'+tr("حوّل جمهورك إلى دخل: روابط تتبع دقيقة، عمولات واضحة، ولوحة تحكم احترافية.","Turn your audience into income: accurate tracking links, clear commissions and a professional dashboard.")+'</p><div class="af-row" style="justify-content:center">'+(A.uid?(status?'<span class="afpill '+SN[status][1]+'">'+SN[status][0]+'</span>':'<a class="af-b gold" href="#afreg" data-af="goreg">'+tr("سجّل كمسوّق","Join now")+'</a>'):'<button class="af-b gold" data-af="login">'+tr("تسجيل الدخول للانضمام","Sign in to join")+'</button>')+'<button class="af-b2 lt" data-af="close">'+tr("العودة للمتجر","Back to store")+'</button></div></section>';
+  const kp='<div class="af-kg">'+[[all.length,tr("منتج بعمولة","Products with commission")],[mx?afP(mx):"—",tr("أعلى عمولة","Top rate")],[moneyB(num(A.market.minWithdraw)),tr("حد السحب الأدنى","Minimum withdrawal")],[(num(S.affWindow)||30)+tr(" يوماً"," days"),tr("نافذة الإسناد","Attribution window")]].map(k=>'<div class="af-kpi"><b>'+k[0]+'</b><span>'+k[1]+'</span></div>').join("")+'</div>';
+  const how='<h3 class="af-h">'+tr("كيف يعمل؟","How it works")+'</h3><div class="af-g4">'+[["id",tr("سجّل","Apply"),tr("أرسل طلبك وتوافق على الشروط.","Send your application and accept the terms.")],["link",tr("أنشئ روابطك","Create links"),tr("روابط لكل منتج وقناة وحملة.","Links per product, channel and campaign.")],["mega",tr("روّج","Promote"),tr("شارك الروابط وتابع النقرات.","Share links and watch clicks.")],["wal",tr("اربح","Earn"),tr("عمولة عند اكتمال الطلب ثم سحب.","Commission on completed orders, then withdraw.")]].map((s,i)=>'<div class="af-card"><span class="af-n">'+(i+1)+'</span>'+afI(s[0])+'<b>'+s[1]+'</b><p class="afmut">'+s[2]+'</p></div>').join("")+'</div>';
+  const ben='<h3 class="af-h">'+tr("لماذا برنامج Primemart-egypt؟","Why Primemart-egypt?")+'</h3><div class="af-g4">'+[[tr("تتبع النقرات والتحويلات","Click & conversion tracking"),tr("لكل رابط إحصاءاته.","Stats for every link.")],[tr("عمولات شفافة","Transparent commissions"),tr("قيد الانتظار ← معتمدة ← معكوسة عند الإلغاء.","Pending → approved → reversed on cancel.")],[tr("مستويات وتحديات","Levels & challenges"),tr("7 مستويات من الأداء الفعلي.","7 levels from real performance.")],[tr("حماية من التلاعب","Fraud protection"),tr("لا عمولة مرتين، ولا إحالة ذاتية.","No double commission, no self-referral.")]].map(s=>'<div class="af-card"><b>'+s[0]+'</b><p class="afmut">'+s[1]+'</p></div>').join("")+'</div>';
+  const prods=top.length?'<h3 class="af-h">'+tr("منتجات متاحة للتسويق","Products to promote")+'</h3><div class="af-pg">'+top.map(p=>{ const u=gallery(p)[0]; return '<article class="af-pc"><div class="af-pi">'+(u?'<img loading="lazy" alt="" src="'+esc(u)+'">':'')+'</div><div class="af-pb"><b class="af-pn">'+esc(p.name)+'</b><div class="af-pr2"><span>'+money(eff(p))+'</span><em>'+afP(commOf(p))+'</em></div><div class="af-cm">'+tr("عمولة ","Commission ")+'<b>'+moneyB(r2(eff(p)*commOf(p)/100))+'</b></div></div></article>'; }).join("")+'</div>':'';
+  const lv='<h3 class="af-h">'+tr("مستويات المسوقين","Levels")+'</h3><div class="af-row" style="flex-wrap:wrap">'+afLevels().map(l=>'<span class="af-badge" style="--c:'+l.c+'">'+l.n+' · '+l.min+'+</span>').join("")+'</div>';
+  const fq=[[tr("هل الانضمام مجاني؟","Is it free?"),tr("نعم، ويخضع لموافقة المدير.","Yes; subject to admin approval.")],[tr("متى تُعتمد العمولة؟","When is commission approved?"),tr("عند اكتمال الطلب، وتُعكس عند الإلغاء أو الإرجاع.","When the order completes; reversed on cancel/return.")],[tr("هل أستطيع الترويج لأي منتج؟","Can I promote any product?"),tr("المنتجات التي تحمل عمولة.","Products that carry a commission.")]];
+  const terms='<h3 class="af-h">'+tr("شروط الانضمام","Terms")+'</h3><ul class="af-ul"><li>'+tr("ممنوع الإحالة الذاتية والتلاعب بالنقرات والإعلانات المضللة.","No self-referral, click manipulation or misleading ads.")+'</li><li>'+tr("تُحتسب العمولة بعد اكتمال الطلب ولا تُحتسب مرتين.","Commission is credited after order completion and never twice.")+'</li><li>'+tr("للإدارة حق إيقاف الحسابات المشبوهة بعد المراجعة.","The admin may suspend suspicious accounts after review.")+'</li></ul>'+(S.affTerms?'<p class="afmut">'+esc(S.affTerms)+'</p>':'');
+  const succ='<h3 class="af-h">'+tr("قصص نجاح","Success stories")+'</h3>'+(stories.length?'<div class="af-g2">'+stories.map(x=>'<div class="af-card">'+esc(x)+'</div>').join("")+'</div>':'<p class="afmut">'+tr("لا توجد قصص نجاح موثّقة بعد — لن نعرض أي قصص غير حقيقية.","No verified success stories yet — we won't show made-up ones.")+'</p>');
+  const reg=(A.uid&&!status)?afRegForm():(A.uid?'':'<div class="af-card" id="afreg"><b>'+tr("سجّل الدخول أولاً","Sign in first")+'</b><p class="afmut">'+tr("التسجيل بحساب Google، ولا يخزّن الموقع كلمات مرور.","Sign-up uses your Google account; the site stores no passwords.")+'</p><button class="af-b" data-af="login">'+tr("تسجيل الدخول","Sign in")+'</button></div>');
+  return '<div class="af-pub"><header class="af-top pubtop"><b>Primemart-egypt Affiliate</b><span class="grow"></span><button class="af-ib" data-af="dark" aria-label="theme">'+afI("sun")+'</button><button class="af-ib" data-af="close" aria-label="'+t("close")+'">'+afI("x")+'</button></header>'+hero+'<div class="af-wrap">'+kp+how+ben+prods+lv+succ+'<h3 class="af-h">'+tr("أسئلة شائعة","FAQ")+'</h3>'+fq.map(x=>'<details class="af-q"><summary>'+x[0]+'</summary><p>'+x[1]+'</p></details>').join("")+terms+reg+'</div></div>';
+}
+function afRegForm(){
+  const u=A.user||{}, p=(AF.st&&AF.st.profile)||{}, inv=lsGet("inv_v1","");
+  return '<section class="af-card" id="afreg"><h3 class="af-h">'+tr("طلب الانضمام","Application")+'</h3><div class="af-fm">'+F(tr("الاسم الكامل","Full name"),IN("r_nm",p.name||u.displayName||"",' maxlength="60"'))+F(tr("البريد الإلكتروني","Email"),IN("r_em",u.email||"",' readonly dir="ltr"'))+F(tr("رقم الهاتف","Phone"),IN("r_ph",p.phone||"",' dir="ltr" type="tel"'))+F(tr("اسم المستخدم","Username"),IN("r_un",p.user||"",' maxlength="30" dir="ltr"'))+F(tr("الدولة","Country"),IN("r_co",p.country||tr("مصر","Egypt")))+F(tr("المدينة","City"),IN("r_ci",p.city||""))+
+   F(tr("نوع التسويق","Marketing type"),SEL("r_ty","social",[["social",tr("سوشيال ميديا","Social media")],["site",tr("موقع/مدونة","Website/blog")],["ads",tr("إعلانات مدفوعة","Paid ads")],["email",tr("قوائم/مجموعات","Lists/groups")],["other",tr("أخرى","Other")]]))+F(tr("رابط الموقع أو القناة","Site/channel URL"),IN("r_ur","",' dir="ltr" placeholder="https://"'))+F(tr("روابط التواصل الاجتماعي","Social links"),IN("r_so","",' dir="ltr"'))+F(tr("مجال التسويق","Niche"),IN("r_ni",""))+F(tr("مصدر الزيارات المتوقع","Expected traffic source"),IN("r_tr",""))+'</div>'+
+   F(tr("كيف ستروّج؟ (نبذة)","How will you promote? (about)"),TA("r_ab","",3,' maxlength="400"'))+'<label class="af-sw"><input type="checkbox" id="r_tm"> '+tr("أوافق على شروط البرنامج وسياسة التسويق","I accept the program terms and marketing policy")+'</label>'+(inv?'<p class="afmut">'+tr("دُعيت عبر رابط إحالة.","You were invited via a referral link.")+'</p>':'')+'<p id="afrmsg" class="afmut" role="alert"></p><button class="af-b gold" data-af="apply">'+tr("إرسال الطلب","Submit application")+'</button><p class="afmut">'+tr("تحقق البريد والهاتف: البريد مُتحقَّق عبر Google، والتحقق من الهاتف برسالة غير مفعّل بعد.","Email is verified via Google; SMS phone verification isn't enabled yet.")+'</p></section>';
+}
+async function afApply(){
+  const v=id=>g(id), er=[]; const nm=v("r_nm"), ph=v("r_ph"), ab=v("r_ab"), ur=v("r_ur"), msg=$("afrmsg");
+  if(nm.length<3) er.push(tr("اكتب الاسم الكامل","Enter your full name")); if(!/^\+?[0-9\s-]{7,18}$/.test(ph)) er.push(tr("رقم هاتف صحيح مطلوب","A valid phone is required")); if(ur&&!/^https:\/\//i.test(ur)) er.push(tr("الرابط يجب أن يبدأ بـ https://","URL must start with https://")); if(ab.length<10) er.push(tr("اكتب نبذة (10 أحرف على الأقل)","Add a short description (10+ chars)")); if(!v("r_tm")) er.push(tr("يجب الموافقة على الشروط","You must accept the terms"));
+  if(er.length){ if(msg){ msg.textContent=er.join(" • "); msg.className="af-err"; } return; }
+  if(!canW()){ afClose(); try{ accShow(); }catch(e){} return; }
+  const f={name:nm,phone:ph,user:v("r_un"),country:v("r_co"),city:v("r_ci"),type:v("r_ty"),site:ur,soc:v("r_so"),niche:v("r_ni"),traffic:v("r_tr")}, inv=lsGet("inv_v1","");
+  const note=[ab,tr("نوع: ","type: ")+f.type,f.niche&&tr("مجال: ","niche: ")+f.niche,f.site&&f.site,f.traffic&&tr("زيارات: ","traffic: ")+f.traffic,f.country+(f.city?" / "+f.city:"")].filter(Boolean).join(" | ").slice(0,400);
+  try{
+    await A.db.doc("roleRequests/"+A.uid).set(Object.assign({},A.req||{},{affiliate:{status:"pending",shop:"",phone:ph,note,inv:inv||"",t:Date.now()}}));
+    await afSaveSt({profile:Object.assign({},(AF.st||{}).profile||{},f)});
+    if(inv&&inv!==afCode()){ try{ await A.db.doc("affRefs/"+inv+"/items/"+A.uid).set({t:Date.now(),name:nm.split(" ")[0].slice(0,20),status:"pending"}); }catch(e){} }
+    A.req=Object.assign({},A.req||{},{affiliate:{status:"pending"}}); toast(tr("استلمنا طلبك ✓","Application received ✓")); afRender();
+  }catch(e){ if(msg){ msg.textContent=tr("تعذّر إرسال الطلب","Couldn't send the application"); msg.className="af-err"; } }
+}
+/* ---------- events ---------- */
+async function afClick(e){
+  const b=e.target.closest("[data-af]"); if(!b) return; const a=b.dataset.af, v=b.dataset.v, R=()=>afRender();
+  if(a==="close") afClose(); else if(a==="nav"){ AF.page=v; AF.pid=null; AF.drawer=false; AF.lim=12; R(); }
+  else if(a==="side"){ if(innerWidth<=860) AF.drawer=!AF.drawer; else AF.side=!AF.side; afSavePf(); R(); }
+  else if(a==="dark"){ AF.dk=!AF.dk; afSavePf(); R(); } else if(a==="lang"){ lang=lang==="ar"?"en":"ar"; try{ lsSet("lang_v1",lang); }catch(x){} applyLang(); R(); try{ render(); }catch(x){} }
+  else if(a==="per"){ AF.per=v; R(); } else if(a==="metric"){ AF.m=v; R(); } else if(a==="rt"){ AF.rt=v; R(); } else if(a==="bt"){ AF.bt=v; R(); }
+  else if(a==="flt"){ AF.flt=v; AF.lim=12; R(); } else if(a==="view"){ AF.view=AF.view==="grid"?"list":"grid"; R(); } else if(a==="more"){ AF.lim+=12; R(); }
+  else if(a==="prod"){ AF.pid=v; R(); const m=$("afmain"); if(m) m.scrollTop=0; } else if(a==="back"){ AF.pid=null; R(); }
+  else if(a==="fav"){ const f=Object.assign({},afFavs()); if(f[v]) delete f[v]; else f[v]=1; await afSaveSt({favs:f}); }
+  else if(a==="quick") await afMake(v,{ch:"",name:(S.products.find(p=>p.id===v)||{}).name});
+  else if(a==="mk") await afMake(v,{name:g("af_ln"),ch:g("af_ch"),camp:g("af_cp"),sub:g("af_sb")});
+  else if(a==="mkgen") await afMake("",{name:tr("رابط عام","General link")});
+  else if(a==="cpy"){ try{ await navigator.clipboard.writeText(b.dataset.u); toast(t("copied")); }catch(x){ toast(tr("تعذّر النسخ","Copy failed")); } }
+  else if(a==="shr"){ try{ if(navigator.share) await navigator.share({title:b.dataset.v||"Primemart",url:b.dataset.u}); else{ await navigator.clipboard.writeText(b.dataset.u); toast(t("copied")); } }catch(x){} }
+  else if(a==="ltog"||a==="lren"||a==="ldel"){ const l=afLinkOf(v); if(!l||!canW()) return; const p="affLinks/"+A.uid+"/items/"+v;
+    if(a==="ltog"){ await A.db.doc(p).update({on:l.on===false}); l.on=l.on===false; } else if(a==="lren"){ const n=prompt(tr("اسم الرابط","Link name"),l.name); if(n&&n.trim()){ await A.db.doc(p).update({name:n.trim().slice(0,40)}); l.name=n.trim().slice(0,40); } }
+    else{ const s=afLinkStats(l); if(s.clicks||s.conv) return toast(tr("لا يمكن حذف رابط له نقرات","Can't delete a link with activity")); await A.db.doc(p).delete(); AF.links=AF.links.filter(x=>x.id!==v); } R(); }
+  else if(a==="od"){ AF.oid=v; R(); } else if(a==="wallet"){ afClose(); A.sec="wallet"; accShow(); } else if(a==="support"){ afClose(); A.sec="help"; accShow(); }
+  else if(a==="cjoin"||a==="cleave"){ const c=Object.assign({},AF.st.camps||{}); if(a==="cjoin") c[v]=1; else delete c[v]; await afSaveSt({camps:c}); }
+  else if(a==="cprod"){ AF.page="products"; AF.flt="all"; R(); toast(tr("اختر منتجاً ثم الحملة في تفاصيله","Pick a product, then the campaign in its details")); }
+  else if(a==="scr"){ const t2=$("car_"+b.dataset.k); if(t2){ const d=getComputedStyle(t2).direction==="rtl"?-1:1; t2.scrollBy({left:(+v)*d*(t2.clientWidth*.8),behavior:"smooth"}); } }
+  else if(a==="seen"){ await afSaveSt({seen:Date.now()}); } else if(a==="gen"){ AF.ai={pid:g("ai_p"),type:g("ai_t"),plat:g("ai_pl"),tone:g("ai_to"),lang:g("ai_l"),len:g("ai_n")}; AF.aiOut=afGen(AF.ai); R(); }
+  else if(a==="psave"){ await afSaveSt({profile:{name:g("pf_n"),user:g("pf_u"),phone:g("pf_p"),country:g("pf_c"),city:g("pf_t"),niche:g("pf_nc"),site:g("pf_s"),soc:g("pf_so"),bio:g("pf_b")}}); toast(tr("تم الحفظ ✓","Saved ✓")); }
+  else if(a==="ssave"){ await afSaveSt({hide:!!g("st_hide"),target:num(g("st_tg"))}); toast(tr("تم الحفظ ✓","Saved ✓")); }
+  else if(a==="csvl") afCsv("links",[["name","product","channel","campaign","clicks","unique","conversions","earnings","status"]].concat(AF.links.map(l=>{ const s=afLinkStats(l); return [l.name,l.pid,l.ch,l.camp,s.clicks,s.uniq,s.conv,s.amt,l.on!==false?"active":"paused"]; })));
+  else if(a==="csvo"||a==="csvc") afCsv(a==="csvo"?"conversions":"commissions",[["id","order","products","eligible_value","commission","date","status"]].concat(afCom().map(x=>[x.id,x.order,(x.prod||[]).join(" / "),x.gross,x.amount,new Date(num(x.t)).toISOString(),afCStatus(x)[0]])));
+  else if(a==="csvr"){ const d=afReportData(); afCsv("report-"+AF.rt,[d.head].concat(d.rows)); } else if(a==="print") window.print();
+  else if(a==="login"){ afClose(); try{ accShow(); }catch(x){} } else if(a==="goreg"){ e.preventDefault(); const r=$("afreg"); if(r) r.scrollIntoView({behavior:"smooth"}); }
+  else if(a==="apply") await afApply();
+  else if(a==="asusp"||a==="aban"||a==="aact"||a==="aclk"||a==="afsave") await afAdmAct(a,v,b);
+}
+function afChange(e){
+  const t2=e.target, id=t2.id, val=t2.value; let hit=true;
+  if(id==="af_cat") AF.cat=val; else if(id==="af_sel") AF.sel=val; else if(id==="af_sort") AF.sort=val; else if(id==="af_lf") AF.lf=val; else if(id==="af_of") AF.of=val; else if(id==="af_os") AF.os=val; else if(id==="af_cf") AF.cf=val; else if(id==="af_from") AF.from=val; else if(id==="af_to") AF.to=val; else if(id==="af_apid") AF.ai=Object.assign({},AF.ai,{apid:val}); else hit=false;
+  if(hit){ AF.lim=12; afRender(); }
+}
+let _afT=0;
+function afInput(e){
+  const id=e.target.id, m={af_q:"q",af_lq:"lq",af_oq:"oq"}[id]; if(!m) return; AF[m]=e.target.value; AF.lim=12; clearTimeout(_afT); _afT=setTimeout(afRender,250);
+}
+/* ---------- admin: affiliate management ---------- */
+function sAffAdm(){
+  const roles=Object.keys(A.roles).filter(u=>A.roles[u].affiliate), q=(AF.aq||"").toLowerCase(), by=s=>roles.filter(u=>{ const r=A.roles[u]; return s==="active"?r.affiliate.status==="active"&&!r.suspended:s==="susp"?r.suspended:r.affiliate.status===s; }).length;
+  const pend=Object.keys(A.reqs).filter(u=>A.reqs[u].affiliate&&A.reqs[u].affiliate.status==="pending").length;
+  const lst=roles.filter(u=>!q||(pname(u)+" "+(A.roles[u].affiliate.code||"")).toLowerCase().includes(q));
+  const sel=AF.asel, selC=sel?(A.roles[sel]||{}).affiliate:null, ck=AF.admClicks||[];
+  const fld=(k,l,rows,h)=>'<div class="ac-card"><h4>'+l+'</h4>'+(rows?TA("afa_"+k,S[k]||"",rows):IN("afa_"+k,S[k]||"",' dir="ltr"'))+(h?'<small class="muted">'+h+'</small>':'')+'</div>';
+  return '<h3>'+tr("إدارة الأفيليت","Affiliate management")+'</h3><div class="ac-card"><div class="ac-kpis"><div><b>'+roles.length+'</b><span>'+tr("إجمالي المسوقين","Total")+'</span></div><div><b>'+by("active")+'</b><span>'+tr("نشطون","Active")+'</span></div><div><b>'+pend+'</b><span>'+tr("طلبات بانتظار المراجعة (من تبويب الطلبات)","Pending requests (Requests tab)")+'</span></div><div><b>'+by("susp")+'</b><span>'+tr("موقوفون","Suspended")+'</span></div></div></div>'+
+   '<div class="ac-card"><h4>'+tr("المسوقون","Affiliates")+'</h4><input id="af_aq" placeholder="'+tr("بحث…","Search…")+'" value="'+esc(AF.aq||"")+'" data-afadm="q">'+(lst.length?'<div class="ac-tbl">'+lst.slice(0,30).map(u=>{ const r=A.roles[u], a=r.affiliate, s=r.suspended?[tr("موقوف","Suspended"),"y"]:a.status==="active"?[tr("نشط","Active"),"g"]:a.status==="banned"?[tr("محظور","Banned"),"r"]:[a.status,"y"]; return '<div><span><b>'+esc(pname(u))+'</b> <small class="muted" dir="ltr">'+esc(a.code||"")+'</small><br><span class="pill '+s[1]+'">'+s[0]+'</span></span><span class="ac-row"><button class="sec" data-afadm="clk" data-u="'+u+'">'+tr("النقرات","Clicks")+'</button><button class="sec" data-afadm="susp" data-u="'+u+'">'+(r.suspended?tr("إعادة تفعيل","Reactivate"):tr("إيقاف","Suspend"))+'</button><button class="sec" data-afadm="ban" data-u="'+u+'">'+(a.status==="banned"?tr("رفع الحظر","Unban"):tr("حظر","Ban"))+'</button></span></div>'; }).join("")+'</div>':'<p class="muted">'+tr("لا مسوقين.","None.")+'</p>')+'</div>'+
+   (sel?'<div class="ac-card"><h4>'+tr("نقرات المسوّق","Affiliate clicks")+': '+esc(pname(sel))+'</h4><p>'+tr("النقرات: ","Clicks: ")+ck.length+' · '+tr("أجهزة مختلفة: ","Distinct devices: ")+new Set(ck.map(c=>c.d)).size+' · '+tr("أجهزة بأكثر من 20 نقرة/يوم: ","Devices >20 clicks/day: ")+(()=>{ const m={}; ck.forEach(c=>{ const k=c.d+"|"+new Date(num(c.t)).toDateString(); m[k]=(m[k]||0)+1; }); return Object.keys(m).filter(k=>m[k]>20).length; })()+'</p><small class="muted">'+tr("الاشتباه سبب للمراجعة وليس دليل مخالفة.","Suspicion is a reason to review, not proof.")+'</small></div>':'')+
+   '<div class="ac-card"><h4>'+tr("إعدادات البرنامج","Program settings")+'</h4><small class="muted">'+tr("نسبة العمولة الافتراضية وحد السحب في تبويب «السوق» من لوحة الإدارة، ونسبة كل منتج من بيانات المنتج.","Default rate and minimum withdrawal live under the Market tab; per-product rate in product data.")+'</small></div>'+
+   fld("affWindow",tr("نافذة الإسناد (أيام)","Attribution window (days)"),0,tr("افتراضي 30. آخر نقرة تفوز.","Default 30. Last click wins."))+fld("affLevels",tr("حدود المستويات (طلبات مكتملة، 7 قيم)","Level thresholds (completed orders, 7 values)"),0,"0,5,20,50,100,250,500")+fld("affLvPerks",tr("مزايا المستويات (سطر لكل مستوى)","Level perks (one line per level)"),5,"")+
+   fld("affCampaigns",tr("الحملات (سطر لكل حملة)","Campaigns (one per line)"),5,"id | "+tr("الاسم","name")+" | "+tr("الوصف","description")+" | 2026-12-01 | 2026-12-31 | all | "+tr("شروط","terms"))+fld("affAssets",tr("مواد إعلانية (عنوان | نص)","Assets (title | text)"),4,"")+fld("affStories",tr("قصص نجاح موثقة (سطر لكل قصة)","Verified success stories (one per line)"),3,"")+fld("affRefReward",tr("مكافأة الإحالة (نص)","Referral reward (text)"),0,"")+fld("affTerms",tr("شروط إضافية","Extra terms"),3,"")+
+   '<div class="ac-row"><button class="pri" data-afadm="save">'+tr("حفظ إعدادات الأفيليت","Save affiliate settings")+'</button></div><div class="ac-note">'+tr("تُحفظ للجميع وللمدير فقط. تحتاج قواعد Firestore المحدّثة.","Saved globally; admin only. Requires the updated Firestore rules.")+'</div>';
+}
+async function afAdmAct(){}
+document.addEventListener("click",async e=>{
+  const b=e.target.closest("[data-afadm]"); if(!b||!admin) return; const a=b.dataset.afadm, u=b.dataset.u;
+  if(a==="susp"){ const r=Object.assign({},A.roles[u]||{}); r.suspended=!r.suspended; await A.db.doc("roles/"+u).set(r); }
+  else if(a==="ban"){ const r=JSON.parse(JSON.stringify(A.roles[u]||{})); if(r.affiliate) r.affiliate.status=r.affiliate.status==="banned"?"active":"banned"; await A.db.doc("roles/"+u).set(r); }
+  else if(a==="clk"){ const c=((A.roles[u]||{}).affiliate||{}).code; AF.asel=u; AF.admClicks=[]; try{ const s=await A.db.collection("affClicks/"+c+"/items").get(); AF.admClicks=s.docs.map(d=>d.data()); }catch(x){} accRender(true); }
+  else if(a==="save"){ ["affWindow","affLevels","affLvPerks","affCampaigns","affAssets","affStories","affRefReward","affTerms"].forEach(k=>{ const el=$("afa_"+k); if(el) S[k]=String(el.value).trim(); }); try{ await cfgPush(); flash(tr("تم الحفظ ✓","Saved ✓"),true); }catch(x){ flash(tr("تعذّر الحفظ (قواعد/صلاحيات)","Couldn't save (rules/permissions)"),false); } }
+});
+document.addEventListener("input",e=>{ if(e.target&&e.target.dataset&&e.target.dataset.afadm==="q"){ AF.aq=e.target.value; clearTimeout(_afT); _afT=setTimeout(()=>accRender(true),300); } });
+/* ---------- merchant: affiliate marketing ---------- */
+function sSellAff(){
+  const ib=(A.inbox||[]), via=ib.filter(o=>o.ref&&o.status!=="cancelled"), by={}; via.forEach(o=>{ const k=String(o.ref).toUpperCase(); (by[k]=by[k]||{n:0,c:0}).n++; by[k].c+=num(o.affComm); });
+  const mine=S.products.filter(p=>p.seller===A.uid), ok=mine.filter(p=>commOf(p)>0);
+  return '<h3>'+tr("التسويق بالعمولة","Affiliate marketing")+'</h3><div class="ac-card"><div class="ac-kpis"><div><b>'+via.length+'</b><span>'+tr("طلبات عبر مسوّقين","Orders via affiliates")+'</span></div><div><b>'+moneyB(r2(via.reduce((s,o)=>s+num(o.affComm),0)))+'</b><span>'+tr("عمولات خُصمت من نصيبك","Commissions deducted")+'</span></div><div><b>'+ok.length+'/'+mine.length+'</b><span>'+tr("منتجاتك المؤهلة للتسويق","Your promotable products")+'</span></div></div></div>'+
+   '<div class="ac-card"><h4>'+tr("أداء المسوقين (بالكود فقط)","Affiliates (by code only)")+'</h4>'+(Object.keys(by).length?'<div class="ac-tbl">'+Object.keys(by).map(k=>'<div><span dir="ltr"><b>'+esc(k)+'</b></span><span>'+by[k].n+' '+tr("طلب","orders")+' · '+moneyB(r2(by[k].c))+'</span></div>').join("")+'</div>':'<p class="muted">'+tr("لا طلبات منسوبة لمسوقين بعد.","No affiliate-attributed orders yet.")+'</p>')+'</div>'+
+   '<div class="ac-card"><h4>'+tr("عمولة منتجاتك","Your products' commission")+'</h4>'+(mine.length?'<div class="ac-tbl">'+mine.slice(0,40).map(p=>'<div><span>'+esc(p.name)+'</span><span>'+(commOf(p)>0?afP(commOf(p)):tr("غير مؤهل","Not eligible"))+'</span></div>').join("")+'</div>':'<p class="muted">'+tr("لا منتجات.","No products.")+'</p>')+'<small class="muted">'+tr("تُحدَّد النسبة من الإدارة (حتى الحد الأقصى "+afP(commCap())+") ولا يرى التاجر بيانات المسوقين الشخصية.","The rate is set by the admin (up to "+afP(commCap())+"); sellers can't see affiliates' personal data.")+'</small></div>';
+}
+function accClose2(){ A.open=false; document.documentElement.style.overflow=""; const e=$("acc"); if(e) e.hidden=true; }
+
 Promise.all([claude.use("artifact").catch(()=>null), claude.use("user").catch(()=>null), claude.use("assets").catch(()=>null), claude.use("db").catch(()=>null)]).then(async ([a,u,as,d])=>{
   assets = as; art = a; try{ const pd=d||(window.FB&&FB.ready?await claude.use("pubdb"):null); cfgWatch(pd); if(!a&&u&&window.FB&&FB.ready) art={__fb:true,publish:async()=>{}}; }catch(e){}
   let ce = false; try{ ce = u ? await u.canEdit() : false; }catch(e){}
