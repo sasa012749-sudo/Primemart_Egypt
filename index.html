@@ -1299,6 +1299,14 @@ header h1::before{display:none!important}
 .pm-ni{margin-inline-end:6px;vertical-align:-3px;color:var(--violet)}
 .pmall{border-radius:20px;padding:6px 16px;min-height:34px;border-color:var(--accent);color:var(--violet)}
 .pmfl{font-size:.86rem;font-family:inherit}.pmfl small{font-size:.74rem}
+/* login: keep the animated border, but make it safe for in-app webviews */
+.lg-cw{-webkit-mask-image:-webkit-radial-gradient(#fff,#000);transform:translateZ(0)}
+.lg-cw::before{inset:-55%;will-change:transform;backface-visibility:hidden}
+@media(max-width:900px),(pointer:coarse){
+ .lgn *,.lgn *::before,.lgn *::after{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+ .lg-orb i,.lg-orb.o2 i{filter:none!important}
+ .lg-card{background:linear-gradient(165deg,#161a3e,#0d0f23 60%)!important}
+}
 </style></head><body><script>
 /* ============ ضع إعدادات Firebase هنا (من لوحة Firebase > Project settings > Your apps) ============ */
 window.FIREBASE_CONFIG = {
