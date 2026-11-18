@@ -1434,6 +1434,20 @@ header h1::before{display:none!important}
 #adm .tabc.savebar{background:rgba(20,18,40,.94);border:1px solid rgba(139,92,246,.4);padding:12px 14px;margin-top:6px;margin-bottom:12px}
 #adm[data-tab=gen] .tabc.savebar,#adm[data-tab=ship] .tabc.savebar,#adm[data-tab=look] .tabc.savebar,#adm[data-tab=cont] .tabc.savebar{display:flex}
 :root[data-theme=light] #adm .tabc.savebar{background:rgba(255,255,255,.96)}
+
+/* tap-on-product fixes: no accidental zoom, no sideways drift, full-screen product page without :has() and in desktop-site mode */
+html,body{max-width:100%;overflow-x:hidden}
+a,button,.card,[data-act],input,select,textarea{touch-action:manipulation}
+.pmtb{overflow:hidden;max-width:100vw;contain:paint}
+@media(max-width:900px),(hover:none) and (pointer:coarse){
+ .ov.pdov{padding:0!important;align-items:stretch!important;justify-content:stretch!important;background:var(--bg)!important;backdrop-filter:none!important}
+ .ov.pdov .mdl.pd{max-width:none!important;width:100%!important;height:100%!important;max-height:none!important;border-radius:0!important;box-shadow:none!important;border:0!important;margin:0!important;animation:none!important;transform:none!important;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+ .ov.pdov .pd .x{position:fixed!important;top:calc(10px + env(safe-area-inset-top,0px))!important;z-index:5}
+ .ov.pdov .pd .crumb{padding:56px 14px 8px}
+ .ov.pdov .pd .pdi,.ov.pdov .pd .pdinfo{padding-inline:14px}
+}
+.ov.pdov~*{}
+body:has(.ov.pdov) .aifab,body:has(.ov.pdov) .wab,body:has(.ov.pdov) .totop{display:none!important}
 </style></head><body><script>
 /* ============ ضع إعدادات Firebase هنا (من لوحة Firebase > Project settings > Your apps) ============ */
 window.FIREBASE_CONFIG = {
@@ -1977,7 +1991,7 @@ function modalHtml(){
   const zl = zones();
   const shipTxt = (zl.length||S.ship>0) ? (tr("شحن لجميع المناطق","Delivery available")+(S.freeFrom>0?' — '+tr("شحن مجاني فوق ","Free over ")+money(S.freeFrom):'')) : "";
   const tab = (k,l)=>'<button role="tab" data-act="ptab" data-t="'+k+'" aria-selected="'+(pdTab===k)+'">'+l+'</button>';
-  return '<div class="ov" data-act="close"><div class="mdl pd" data-act="noop" role="dialog" aria-modal="true">'+
+  return '<div class="ov pdov" data-act="close"><div class="mdl pd" data-act="noop" role="dialog" aria-modal="true">'+
     '<button class="sec x" data-act="close" aria-label="'+t("close")+'">✕</button>'+
     '<nav class="crumb" aria-label="breadcrumb"><button data-act="crumb" data-c="">'+esc(S.name||tr("المتجر","Store"))+'</button><i>/</i>'+(p.cat?'<button data-act="crumb" data-c="'+esc(p.cat)+'">'+esc(p.cat)+'</button><i>/</i>':'')+'<span>'+esc(p.name)+'</span></nav>'+
     '<div class="pdg"><div class="pdm"><div class="mpic" style="background:'+tiles[0]+'">'+(g[0]?'<img id="mimg" data-act="zoom" alt="'+esc(p.name)+'" src="'+esc(g[0])+'">':esc(p.emoji||"🛍️"))+(o?'<span class="bdg" dir="ltr" style="font-size:.8rem">-'+o+'%</span>':'')+'</div>'+
