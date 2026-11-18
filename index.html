@@ -1448,6 +1448,17 @@ a,button,.card,[data-act],input,select,textarea{touch-action:manipulation}
 }
 .ov.pdov~*{}
 body:has(.ov.pdov) .aifab,body:has(.ov.pdov) .wab,body:has(.ov.pdov) .totop{display:none!important}
+/* remove the blue tap halo (Android tap-highlight) + sticky hover on touch */
+*,*::before,*::after{-webkit-tap-highlight-color:transparent!important;-webkit-touch-callout:none}
+img{-webkit-user-drag:none}
+.card:focus:not(:focus-visible),.ov:focus,.mdl:focus,[data-act]:focus:not(:focus-visible){outline:0!important}
+@media(hover:none){
+ .card:hover{transform:none!important;box-shadow:none!important;border-color:var(--line)!important}
+ .card:hover .pic img{transform:none!important}
+ .card:hover .pic img.alt{opacity:0!important}
+ .card:active{transform:scale(.985)}
+ .card:hover .qv{opacity:1;transform:none}
+}
 </style></head><body><script>
 /* ============ ضع إعدادات Firebase هنا (من لوحة Firebase > Project settings > Your apps) ============ */
 window.FIREBASE_CONFIG = {
