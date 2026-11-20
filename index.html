@@ -1577,63 +1577,6 @@ header .sec,header .favb{background:var(--nc-glass)!important;border-color:var(-
 #afc .af-kpi:nth-child(4n+2){border-top:2px solid #19d3ff!important}
 #afc .af-kpi:nth-child(4n+3){border-top:2px solid #ff3d8b!important}
 #afc .af-kpi:nth-child(4n+4){border-top:2px solid #b05cff!important}
-/* ===== products board (design E) ===== */
-.shop .bar{gap:10px;align-items:center;margin-bottom:12px}
-.shop .bar #q{height:46px;border-radius:23px;background:#130e26;border:1px solid #2a2050;padding-inline:18px}
-.shop .bar #q:focus{border-color:#ff3d8b;box-shadow:0 0 0 3px #ff3d8b33}
-.shop .bar .fob,.shop .bar #so{height:46px;border-radius:23px}
-.shop .bar .fob{background:linear-gradient(135deg,#ff3d8b,#7a2cff)!important;color:#fff!important;border:0!important;font-weight:700}
-.shop .vtg button[aria-pressed=true]{background:#ff3d8b55!important;border-color:#ff3d8b!important;color:#fff!important}
-.flt{background:#0f0b1d;border:1px solid #2a2050;border-radius:18px}
-.flt h4,.flt summary,.flt .fh{display:flex;align-items:center;gap:8px}
-.flt h4::before,.flt summary::before{content:"";width:3px;height:14px;border-radius:2px;background:#ff3d8b;flex:none}
-.flt input[type=range]::-webkit-slider-thumb{background:#fff;box-shadow:0 0 10px #ff3d8b}
-.achip{border-radius:20px;background:#130e26;border:1px solid #2a2050}
-.achip.clr{border-color:#ff3d8b99;color:#ff7fb0}
-.grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
-@media(max-width:479px){.grid{grid-template-columns:repeat(2,1fr);gap:8px}}
-@media(min-width:480px) and (max-width:760px){.grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}}
-.grid .card{flex:initial!important;border-radius:18px!important;transition:transform .18s,box-shadow .18s}
-.grid .card:hover{transform:translateY(-3px);box-shadow:0 10px 30px #7a2cff33,0 0 0 1px #ff3d8b55}
-.grid .card .pic{background-color:#150f2e}
-.grid .card .ribbon{background:#ff3d8b!important;color:#fff!important;border-radius:10px!important}
-.grid .card .offp{background:#ff3d8b}
-.grid .card .heart{background:#07050fcc;border:1px solid #2a2050;color:#ff3d8b}
-.grid .card .heart[aria-pressed=true]{box-shadow:0 0 12px #ff3d8b88}
-.grid .card .cmpb.on{background:#19d3ff;color:#06121a;box-shadow:0 0 12px #19d3ff88}
-.card .cvs{display:flex;gap:4px;flex-wrap:wrap;margin-top:2px}
-.card .cvs i{font-style:normal;font-size:.68rem;padding:2px 8px;border-radius:10px;border:1px solid #2a2050;color:#cfc8ee;background:#130e26;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.grid .card .acts{gap:6px;margin-top:auto;padding-top:6px}
-.grid .card .cartb{flex:1;min-width:0;white-space:nowrap;justify-content:center;background:linear-gradient(135deg,#19d3ff,#7a2cff)!important;color:#fff!important;border:0!important;border-radius:12px;font-weight:700;padding-inline:8px}
-.grid .card .cartb:disabled{background:#1b1536!important;color:#9d93bd!important}
-.grid .card .cartb span{overflow:hidden;text-overflow:ellipsis}
-.grid .card .detb{flex:none;padding-inline:10px;white-space:nowrap;border-radius:12px;background:#130e26;border:1px solid #2a2050}
-@media(max-width:479px){.grid .card .detb{display:none}}
-.cmpbar{border:1px solid #ff3d8b66;background:#130e26;box-shadow:0 0 24px #ff3d8b33;border-radius:16px}
-@media(min-width:761px){.grid:not(.list):not(.big){grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}}
-@media(min-width:480px) and (max-width:760px){.grid:not(.list){grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}}
-@media(max-width:479px){.grid:not(.list){grid-template-columns:repeat(2,minmax(0,1fr))}}
-/* mobile: 3 per row, compact cards */
-@media(max-width:479px){
-.grid:not(.list):not(.big){grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
-.grid:not(.list) .card{border-radius:12px!important}
-.grid:not(.list) .card .pic{aspect-ratio:1/1}
-.grid:not(.list) .card .body{padding:6px;gap:2px}
-.grid:not(.list) .card h3{font-size:.68rem;line-height:1.3;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:0}
-.grid:not(.list) .card .meta,.grid:not(.list) .card .muted,.grid:not(.list) .card .cvs,.grid:not(.list) .card .stl,.grid:not(.list) .card .cmm,.grid:not(.list) .card .rt small{display:none!important}
-.grid:not(.list) .card .rt{font-size:.62rem;gap:2px}
-.grid:not(.list) .card .prow{gap:3px;flex-wrap:wrap}
-.grid:not(.list) .card .price{font-size:.74rem}
-.grid:not(.list) .card .old{font-size:.6rem}
-.grid:not(.list) .card .offp{font-size:.58rem;padding:0 4px}
-.grid:not(.list) .card .acts{padding-top:2px}
-.grid:not(.list) .card .cartb{height:26px;padding:0;border-radius:8px}
-main .grid:not(.list) .card .acts .cartb span{display:none!important}
-.grid:not(.list) .card .cartb svg{width:15px;height:15px}
-.grid:not(.list) .card .ribbon,.grid:not(.list) .card .stk,.grid:not(.list) .card .tg{font-size:.56rem;padding:1px 5px}
-.grid:not(.list) .card .heart,.grid:not(.list) .card .cmpb{width:24px;height:24px;font-size:.8rem}
-.grid:not(.list) .card .qv{display:none}
-}
 </style></head><body><script>
 /* ============ ضع إعدادات Firebase هنا (من لوحة Firebase > Project settings > Your apps) ============ */
 window.FIREBASE_CONFIG = {
@@ -1894,7 +1837,6 @@ function cardHtml(p,i){
     '<button class="qv" data-act="open" data-id="'+esc(p.id)+'" aria-label="'+tr("عرض سريع","Quick view")+'"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>'+
     '<div class="body"><h3>'+esc(p.name)+'</h3><div class="meta">'+(p.brand?'<b class="brd">'+esc(p.brand)+'</b> · ':'')+esc(p.cat||"")+(p.sellerName?' · '+esc(p.sellerName):'')+'</div><div class="muted">'+esc(p.desc)+'</div>'+
     (avg?'<div class="rt"><span class="stars">'+stars(Math.round(avg))+'</span> <b>'+avg.toFixed(1)+'</b> <small>('+nrv+')</small></div>':'')+
-    (vrs(p).length?'<div class="cvs" aria-label="'+tr("الخيارات","Options")+'">'+vrs(p).slice(0,3).map(v=>'<i>'+esc(v.n)+'</i>').join("")+(vrs(p).length>3?'<i>+'+(vrs(p).length-3)+'</i>':'')+'</div>':'')+
     (sk[0]==="in"?'<div class="stl">● '+sk[1]+'</div>':'')+
     '<div class="prow"><div class="price">'+money(eff(p))+'</div>'+(o?'<s class="old">'+money(was(p))+'</s><span class="offp" dir="ltr">-'+o+'%</span>':'')+'</div>'+
     (cm>0?'<div class="cmm">'+tr("عمولتك ","Your commission ")+cm+'%</div>':'')+
