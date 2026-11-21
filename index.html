@@ -1577,6 +1577,80 @@ header .sec,header .favb{background:var(--nc-glass)!important;border-color:var(-
 #afc .af-kpi:nth-child(4n+2){border-top:2px solid #19d3ff!important}
 #afc .af-kpi:nth-child(4n+3){border-top:2px solid #ff3d8b!important}
 #afc .af-kpi:nth-child(4n+4){border-top:2px solid #b05cff!important}
+/* ===== products board (design E) ===== */
+.shop .bar{gap:10px;align-items:center;margin-bottom:12px}
+.shop .bar #q{height:46px;border-radius:23px;background:#130e26;border:1px solid #2a2050;padding-inline:18px}
+.shop .bar #q:focus{border-color:#ff3d8b;box-shadow:0 0 0 3px #ff3d8b33}
+.shop .bar .fob,.shop .bar #so{height:46px;border-radius:23px}
+.shop .bar .fob{background:linear-gradient(135deg,#ff3d8b,#7a2cff)!important;color:#fff!important;border:0!important;font-weight:700}
+.shop .vtg button[aria-pressed=true]{background:#ff3d8b55!important;border-color:#ff3d8b!important;color:#fff!important}
+.flt{background:#0f0b1d;border:1px solid #2a2050;border-radius:18px}
+.flt h4,.flt summary,.flt .fh{display:flex;align-items:center;gap:8px}
+.flt h4::before,.flt summary::before{content:"";width:3px;height:14px;border-radius:2px;background:#ff3d8b;flex:none}
+.flt input[type=range]::-webkit-slider-thumb{background:#fff;box-shadow:0 0 10px #ff3d8b}
+.achip{border-radius:20px;background:#130e26;border:1px solid #2a2050}
+.achip.clr{border-color:#ff3d8b99;color:#ff7fb0}
+.grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+@media(max-width:479px){.grid{grid-template-columns:repeat(2,1fr);gap:8px}}
+@media(min-width:480px) and (max-width:760px){.grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}}
+:is(.grid,.car-track)>.card{flex:initial!important;border-radius:18px!important;transition:transform .18s,box-shadow .18s}
+:is(.grid,.car-track)>.card:hover{transform:translateY(-3px);box-shadow:0 10px 30px #7a2cff33,0 0 0 1px #ff3d8b55}
+:is(.grid,.car-track)>.card .pic{background-color:#150f2e}
+:is(.grid,.car-track)>.card .ribbon{background:#ff3d8b!important;color:#fff!important;border-radius:10px!important}
+:is(.grid,.car-track)>.card .offp{background:#ff3d8b}
+:is(.grid,.car-track)>.card .heart{background:#07050fcc;border:1px solid #2a2050;color:#ff3d8b}
+:is(.grid,.car-track)>.card .heart[aria-pressed=true]{box-shadow:0 0 12px #ff3d8b88}
+:is(.grid,.car-track)>.card .cmpb.on{background:#19d3ff;color:#06121a;box-shadow:0 0 12px #19d3ff88}
+.card .cvs{display:flex;gap:4px;flex-wrap:wrap;margin-top:2px}
+.card .cvs i{font-style:normal;font-size:.68rem;padding:2px 8px;border-radius:10px;border:1px solid #2a2050;color:#cfc8ee;background:#130e26;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+:is(.grid,.car-track)>.card .acts{gap:6px;margin-top:auto;padding-top:6px}
+:is(.grid,.car-track)>.card .cartb{flex:1;min-width:0;white-space:nowrap;justify-content:center;background:linear-gradient(135deg,#19d3ff,#7a2cff)!important;color:#fff!important;border:0!important;border-radius:12px;font-weight:700;padding-inline:8px}
+:is(.grid,.car-track)>.card .cartb:disabled{background:#1b1536!important;color:#9d93bd!important}
+:is(.grid,.car-track)>.card .cartb span{overflow:hidden;text-overflow:ellipsis}
+:is(.grid,.car-track)>.card .detb{flex:none;padding-inline:10px;white-space:nowrap;border-radius:12px;background:#130e26;border:1px solid #2a2050}
+@media(max-width:479px){:is(.grid,.car-track)>.card .detb{display:none}}
+.cmpbar{border:1px solid #ff3d8b66;background:#130e26;box-shadow:0 0 24px #ff3d8b33;border-radius:16px}
+@media(min-width:761px){.grid:not(.list):not(.big){grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}}
+@media(min-width:480px) and (max-width:760px){.grid:not(.list){grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}}
+@media(max-width:479px){.grid:not(.list){grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* mobile: 3 per row, compact cards */
+@media(max-width:479px){
+.grid:not(.list):not(.big){grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+:is(.grid:not(.list),.car-track)>.card{border-radius:12px!important}
+:is(.grid:not(.list),.car-track)>.card .pic{aspect-ratio:1/1}
+:is(.grid:not(.list),.car-track)>.card .body{padding:6px;gap:2px}
+:is(.grid:not(.list),.car-track)>.card h3{font-size:.68rem;line-height:1.3;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:0}
+:is(.grid:not(.list),.car-track)>.card .meta,:is(.grid:not(.list),.car-track)>.card .muted,:is(.grid:not(.list),.car-track)>.card .cvs,:is(.grid:not(.list),.car-track)>.card .stl,:is(.grid:not(.list),.car-track)>.card .cmm,:is(.grid:not(.list),.car-track)>.card .rt small{display:none!important}
+:is(.grid:not(.list),.car-track)>.card .rt{font-size:.62rem;gap:2px}
+:is(.grid:not(.list),.car-track)>.card .prow{gap:3px;flex-wrap:wrap}
+:is(.grid:not(.list),.car-track)>.card .price{font-size:.74rem}
+:is(.grid:not(.list),.car-track)>.card .old{font-size:.6rem}
+:is(.grid:not(.list),.car-track)>.card .offp{font-size:.58rem;padding:0 4px}
+:is(.grid:not(.list),.car-track)>.card .acts{padding-top:2px}
+:is(.grid:not(.list),.car-track)>.card .cartb{height:26px;padding:0;border-radius:8px}
+main :is(.grid:not(.list),.car-track)>.card .acts .cartb span{display:none!important}
+:is(.grid:not(.list),.car-track)>.card .cartb svg{width:15px;height:15px}
+:is(.grid:not(.list),.car-track)>.card .ribbon,:is(.grid:not(.list),.car-track)>.card .stk,:is(.grid:not(.list),.car-track)>.card .tg{font-size:.56rem;padding:1px 5px}
+:is(.grid:not(.list),.car-track)>.card .heart,:is(.grid:not(.list),.car-track)>.card .cmpb{width:24px;height:24px;font-size:.8rem}
+:is(.grid:not(.list),.car-track)>.card .qv{display:none}
+}
+
+/* --- products board v2: carousels like grid cards, filters as icon drawer, 5 per row --- */
+@media(min-width:900px){.grid:not(.list):not(.big){grid-template-columns:repeat(5,minmax(0,1fr))}.car-track{gap:14px}.car-track>.card{flex:0 0 calc((100% - 56px)/5)!important}}
+@media(min-width:700px) and (max-width:899px){.grid:not(.list):not(.big){grid-template-columns:repeat(4,minmax(0,1fr))}.car-track>.card{flex:0 0 calc((100% - 30px)/4)!important}}
+@media(min-width:480px) and (max-width:699px){.grid:not(.list):not(.big){grid-template-columns:repeat(3,minmax(0,1fr))}.car-track>.card{flex:0 0 calc((100% - 20px)/3)!important}}
+@media(max-width:479px){.car-track{gap:6px}.car-track>.card{flex:0 0 calc((100% - 12px)/3)!important}}
+@media(min-width:480px){.car-track .card .rt{display:flex!important}.car-track .card .stl,.car-track .card .meta{display:block!important}.car-track .card .body{padding:12px}.car-track .card .body h3{font-size:.9rem;min-height:2.6em}.car-track .card .price{font-size:1rem}.car-track .card .acts .cartb{height:36px}}
+.car-track>.card .pic{aspect-ratio:1/1}
+.shop{display:block!important}
+.shop .flt{position:fixed!important;top:0;bottom:0;inset-inline-end:0;width:min(340px,88%);max-height:none!important;z-index:60!important;border-radius:0!important;transform:translateX(105%)!important}
+[dir=rtl] .shop .flt{transform:translateX(-105%)!important}
+.shop .flt.open{transform:none!important}
+.shop .fob{display:inline-flex!important}
+.shop .flth .sec,.shop .fbt .pri{display:inline-flex!important}
+.shop .fbd.on{display:block!important}
+.shop .bar .fob{width:46px;min-width:46px;padding:0!important;justify-content:center;align-items:center}
+.shop .bar .fob svg{width:20px;height:20px}
 </style></head><body><script>
 /* ============ ضع إعدادات Firebase هنا (من لوحة Firebase > Project settings > Your apps) ============ */
 window.FIREBASE_CONFIG = {
@@ -1837,6 +1911,7 @@ function cardHtml(p,i){
     '<button class="qv" data-act="open" data-id="'+esc(p.id)+'" aria-label="'+tr("عرض سريع","Quick view")+'"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>'+
     '<div class="body"><h3>'+esc(p.name)+'</h3><div class="meta">'+(p.brand?'<b class="brd">'+esc(p.brand)+'</b> · ':'')+esc(p.cat||"")+(p.sellerName?' · '+esc(p.sellerName):'')+'</div><div class="muted">'+esc(p.desc)+'</div>'+
     (avg?'<div class="rt"><span class="stars">'+stars(Math.round(avg))+'</span> <b>'+avg.toFixed(1)+'</b> <small>('+nrv+')</small></div>':'')+
+    (vrs(p).length?'<div class="cvs" aria-label="'+tr("الخيارات","Options")+'">'+vrs(p).slice(0,3).map(v=>'<i>'+esc(v.n)+'</i>').join("")+(vrs(p).length>3?'<i>+'+(vrs(p).length-3)+'</i>':'')+'</div>':'')+
     (sk[0]==="in"?'<div class="stl">● '+sk[1]+'</div>':'')+
     '<div class="prow"><div class="price">'+money(eff(p))+'</div>'+(o?'<s class="old">'+money(was(p))+'</s><span class="offp" dir="ltr">-'+o+'%</span>':'')+'</div>'+
     (cm>0?'<div class="cmm">'+tr("عمولتك ","Your commission ")+cm+'%</div>':'')+
@@ -2321,7 +2396,7 @@ function render(){
     '<div class="shop"><div class="fbd" id="fbd" data-act="fclose"></div><aside class="flt" id="flt" aria-label="'+tr("الفلاتر","Filters")+'"><div class="flth"><b>'+tr("الفلاتر","Filters")+'</b><button class="sec" data-act="fclose" aria-label="'+t("close")+'">✕</button></div>'+
     pmFilters()+'</aside>'+
     '<div class="shopm"><div class="bar"><input id="q" type="search" list="qsug" autocomplete="off" aria-label="'+t("search")+'" placeholder="'+t("search")+'" value="'+esc(q)+'">'+sugHtml()+
-    '<button class="sec fob" data-act="fopen" aria-label="'+tr("الفلاتر","Filters")+'">☰ '+tr("فلاتر","Filters")+'</button>'+
+    '<button class="sec fob" data-act="fopen" aria-label="'+tr("الفلاتر","Filters")+'" title="'+tr("الفلاتر","Filters")+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg></button>'+
     '<div class="vtg" role="group" aria-label="'+tr("طريقة العرض","View")+'"><button data-act="view" data-v="grid" aria-pressed="'+(view!=="list"&&view!=="big")+'" aria-label="Grid">▦</button><button data-act="view" data-v="big" aria-pressed="'+(view==="big")+'" aria-label="Large">◫</button><button data-act="view" data-v="list" aria-pressed="'+(view==="list")+'" aria-label="List">☰</button></div>'+
     '<select id="so" aria-label="'+t("sort")+'">'+
     [["def",t("sort")],["sold",tr("الأكثر مبيعاً","Best selling")],["views",tr("الأكثر مشاهدة","Most viewed")],["new",t("newest")],["rate",tr("الأعلى تقييماً","Top rated")],["disc",tr("أكبر خصم","Biggest discount")],["lo",t("lo")],["hi",t("hi")]].map(x=>'<option value="'+x[0]+'"'+(sort===x[0]?' selected':'')+'>'+x[1]+'</option>').join("")+'</select></div>'+
