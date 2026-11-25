@@ -1651,6 +1651,12 @@ main :is(.grid:not(.list),.car-track)>.card .acts .cartb span{display:none!impor
 .shop .fbd.on{display:block!important}
 .shop .bar .fob{width:46px;min-width:46px;padding:0!important;justify-content:center;align-items:center}
 .shop .bar .fob svg{width:20px;height:20px}
+/* login fix: remove fragile 3D/mask scene and conic border that rendered as a giant blank wedge in in-app browsers */
+.lg-scene{display:none!important}
+.lg-cw::before{display:none!important}
+.lg-cw{background:linear-gradient(135deg,#713bfa,#326bff 60%,#a66bff)!important}
+.lg-card{background:#12142e!important}
+.lg-mid{min-height:0!important}
 </style></head><body><script>
 /* ============ ضع إعدادات Firebase هنا (من لوحة Firebase > Project settings > Your apps) ============ */
 window.FIREBASE_CONFIG = {
