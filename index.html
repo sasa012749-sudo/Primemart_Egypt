@@ -1660,6 +1660,38 @@ main :is(.grid:not(.list),.car-track)>.card .acts .cartb span{display:none!impor
 /* perf */
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 footer{content-visibility:auto;contain-intrinsic-size:auto 400px}
+
+/* ===== affiliate panel: design A (white + gold) ===== */
+.afc,.afc.dk{--b:#f6f5f1;--c:#fff;--i:#15171a;--m:#6b6a65;--l:#e8e6e0;--p:#0b6e5f;--g:#b8862b;--ok:#0b6e5f;color-scheme:light;font-family:"IBM Plex Sans Arabic","Cairo",system-ui,sans-serif}
+.afc [data-af="dark"]{display:none!important}
+.afc .af-side{background:#fff!important;color:#55534d!important;border-inline-end:1px solid #e8e6e0}
+.afc .af-brand b{color:#15171a!important}.afc .af-lg{background:#15171a!important;color:#fff!important}
+.afc .af-ni{color:#55534d!important;border-radius:10px!important}.afc .af-ni:hover{background:#f4f3ef!important;color:#15171a!important}
+.afc .af-ni.on{background:#15171a!important;color:#fff!important;box-shadow:none!important}
+.afc .af-ni em{background:#b4432c!important;color:#fff!important}
+.afc .af-top{background:#fff!important;border-bottom:1px solid #e8e6e0!important}
+.afc .af-ib{background:#f4f3ef!important;color:#15171a!important;border:0!important}
+.afc .af-wel{background:#fff!important;color:#15171a!important;border:1px solid #e8e6e0!important}
+.afc .af-wel h2{color:#15171a!important}.afc .afmut,.afc .af-wel p{color:#6b6a65!important}
+.afc .af-badge{background:#b8862b!important;border-color:#b8862b!important;color:#fff!important}
+.afc .af-av{background:#15171a!important;color:#fff!important}
+.afc .af-bar2{background:#ece9e1!important}.afc .af-bar2 i{background:linear-gradient(90deg,#0b6e5f,#b8862b)!important}
+.afc .af-rn{display:block;margin-top:2px;font-size:.72rem}
+#afc .af-kpi,#afc .af-kpi:nth-child(n){background:#fff!important;color:#15171a!important;border:1px solid #e8e6e0!important;border-top:1px solid #e8e6e0!important;box-shadow:none!important}
+#afc .af-kpi b{color:#15171a!important}#afc .af-kpi span{color:#6b6a65!important}
+#afc .af-kpi:nth-child(4n+1){border-top:3px solid #b8862b!important}
+#afc .af-kpi:nth-child(4n+2),#afc .af-kpi:nth-child(4n+3),#afc .af-kpi:nth-child(4n+4){border-top:3px solid #0b6e5f!important}
+.afc .af-card,.afc .af-pc{background:#fff!important;border-color:#e8e6e0!important;box-shadow:none!important}
+.afc .af-pr button{background:#fff!important;color:#55534d!important;border:1px solid #e8e6e0!important;border-radius:99px!important}
+.afc .af-pr button.on{background:#15171a!important;color:#fff!important;border-color:#15171a!important}
+.afc .af-lk,.afc a{color:#0b6e5f!important}
+.afc button.pri,.afc .af-btn,.afc .af-go{background:#15171a!important;color:#fff!important;border:0!important;border-radius:10px!important}
+.afc .af-link,.afc .af-lkbox{background:#f4f3ef!important;border-color:#e8e6e0!important}
+.afc .af-side button.af-ni{color:#55534d!important}.afc .af-side button.af-ni:hover{background:#f4f3ef!important;color:#15171a!important}
+.afc .af-side button.af-ni.on,.afc .af-side button.af-ni[aria-current]{background:#15171a!important;color:#fff!important;box-shadow:none!important}
+.afc .af-url{background:#f4f3ef!important;color:#15171a!important;border:1px solid #e8e6e0!important;border-radius:10px!important}
+.afc .af-b2{background:#fff!important;color:#15171a!important;border:1px solid #15171a!important;border-radius:10px!important}
+.afc .af-wel{box-shadow:none!important}.afc .af-side{background:#fff!important}
 </style></head><body><script>
 /* ============ ضع إعدادات Firebase هنا (من لوحة Firebase > Project settings > Your apps) ============ */
 window.FIREBASE_CONFIG = {
@@ -1848,9 +1880,9 @@ function vcur(p,vs){ if(vselFor!==p.id){ vselFor=p.id; vsel=0; } return Math.min
 function varTxt(p){ return vrs(p).map(v=>[v.n,v.price,v.img,v.stock===undefined?"":v.stock].join(" | ").replace(/( \| )+$/,"")).join("\n"); }
 function parseVars(txt){ const o=[]; let bad=0; lines(txt).forEach(l=>{ const a=l.split("|").map(x=>x.trim()), price=parseFloat(a[1]); if(!a[0]||!(price>0)){ bad++; return; } const r={n:a[0].replace(/::|[\/]/g,"-"),price:price}; if(a[2]) r.img=a[2]; if(a[3]!==undefined&&a[3]!==""){ r.stock=Math.max(0,parseInt(a[3],10)||0); } o.push(r); }); return {list:o,bad:bad}; }
 const inCart = id => Object.keys(cart).reduce((a,k)=>a+(k.split("::")[0]===id?cart[k]:0),0);
-const loc = () => lang==="ar"?"ar-EG":"en-US";
+const loc = () => lang==="ar"?"ar-EG-u-nu-latn":"en-US";
 function money(n){ const r=rates(); if(cur && r[cur]) return (n*r[cur]).toLocaleString(loc(),{maximumFractionDigits:2})+" "+cur; return Number(n).toLocaleString(loc())+" "+S.currency; }
-const moneyB = n => Number(n).toLocaleString("ar-EG")+" "+S.currency;
+const moneyB = n => Number(n).toLocaleString("ar-EG-u-nu-latn")+" "+S.currency;
 
 function cartItems(){
   return Object.keys(cart).map(key=>{
@@ -2152,7 +2184,7 @@ function pol(){
 function polGrid(){ return '<section class="pol" aria-label="'+tr("ضمانات وخدمات المتجر","Store guarantees and services")+'">'+pol().map(x=>'<div class="pl"><span class="pi">'+ic(x[0])+'</span><div><b>'+x[1]+'</b><small>'+esc(x[2])+'</small></div></div>').join("")+'</section>'; }
 function bizAdd(n){ const d=new Date(); let k=0; while(k<n){ d.setDate(d.getDate()+1); const w=d.getDay(); if(w!==5&&w!==6) k++; } return d; }
 function dlRange(){ const s=String(S.delivery||"").replace(/[٠-٩]/g,c=>"٠١٢٣٤٥٦٧٨٩".indexOf(c)), m=s.match(/\d+/g)||["2","5"]; let a=parseInt(m[0],10)||2, b=parseInt(m[1]||m[0],10)||a; if(b<a) b=a; return [Math.min(a,30),Math.min(b,30)]; }
-function etaTxt(){ const r=dlRange(), f=d=>d.toLocaleDateString(lang==="ar"?"ar-EG":"en-GB",{day:"numeric",month:"long"}); return tr("يصلك بين ","Arrives between ")+f(bizAdd(r[0]))+tr(" و "," and ")+f(bizAdd(r[1])); }
+function etaTxt(){ const r=dlRange(), f=d=>d.toLocaleDateString(lang==="ar"?"ar-EG-u-nu-latn":"en-GB",{day:"numeric",month:"long"}); return tr("يصلك بين ","Arrives between ")+f(bizAdd(r[0]))+tr(" و "," and ")+f(bizAdd(r[1])); }
 function waBtn(p,out){
   const st=stockOf(p), low=!out&&st>0&&st<=5;
   return '<div class="eta">'+(out?'':'<span>'+ic("truck")+' '+etaTxt()+'</span>')+(low?'<span class="low">'+ic("clock")+' '+tr("متبقي "+st+" فقط — اطلبه قبل نفاده","Only "+st+" left — order soon")+'</span>':'')+'</div>';
@@ -2835,7 +2867,8 @@ function syncMP(){
     const okh = (A.approvals[sid] && A.approvals[sid].h) || {};
     (A.items[sid]||[]).forEach(it=>{
       if(it.hidden || okh[it.id]!==hsh(it)) return;
-      out.push(Object.assign({},it,{id:"m_"+sid+"_"+it.id,mp:true,seller:sid,sellerName:r.seller.shop||""}));
+      const cl={}; ["name","price","desc","img","imgs","cat","emoji","stock","comm","lu","sku","lowAt","hidden","t"].forEach(k=>{ if(it[k]!==undefined) cl[k]=it[k]; });
+      out.push(Object.assign(cl,{id:"m_"+sid+"_"+it.id,mp:true,seller:sid,sellerName:r.seller.shop||""}));
     });
   });
   S.products = S.products.filter(p=>!p.mp).concat(out);
@@ -2894,7 +2927,7 @@ async function recordOrder(no,T,items){
   if(!canW()) return false;
   const rec = {no, uid:A.uid, t:Date.now(), status:"new", method:payM, total:T.g, sub:T.s, discount:T.d, ship:T.sh,
     ref:affRefNow(), rl:(affRefNow()?lsGet("ref_l",""):""), name:co.n, phone:co.p, addr:co.a, zone:co.z, payRef:payM==="wallet"?String(co.t||"").slice(0,20):"", payTo:payM==="wallet"?String(S.payNum||""):"", currency:S.currency,
-    lines:items.map(i=>({pid:i.p.id,name:i.p.name,qty:i.n,price:eff(i.p),opt:i.o||"",seller:i.p.seller||"",comm:commOf(i.p)})),refp:lsGet("ref_p",""),};
+    lines:items.map(i=>({pid:i.p.id,name:i.p.name,qty:i.n,price:eff(i.p),opt:i.o||"",seller:i.p.seller||"",comm:commOf(i.p,refRate()),lu:i.p.lu?1:0})),refp:lsGet("ref_p",""),};
   try{
     await A.db.doc("orders/"+A.uid+"/items/"+no).set(rec);
     const ref = A.db.doc("orderIndex/"+A.uid), s = await ref.get(), cur = s.exists ? s.data() : {};
@@ -3295,7 +3328,8 @@ function sSellerProd(){
   '<div class="ac-card"><h4>'+(e?tr("تعديل منتج","Edit product"):tr("إضافة منتج","Add a product"))+'</h4><div class="ac-grid">'+
    F(tr("اسم المنتج","Name"),IN("p_name",v("name"),' maxlength="80"'))+F(tr("السعر","Price")+" ("+esc(S.currency)+")",IN("p_price",v("price"),' type="number" min="0" step="any"'))+
    F(tr("الكمية (فارغ = غير محدودة)","Stock (empty = unlimited)"),IN("p_stock",v("stock"),' type="number" min="0"'))+F(tr("التصنيف","Category"),IN("p_cat",v("cat"),' maxlength="30"'))+
-   F("SKU",IN("p_sku",v("sku"),' maxlength="40" dir="ltr"'))+F(tr("سعر التكلفة (اختياري)","Cost price (optional)"),IN("p_cost",v("cost"),' type="number" min="0" step="any"'),tr("لحساب هامش الربح فقط، لا يظهر للعملاء.","Used for your margin only; never shown to customers."))+F(tr("تنبيه انخفاض المخزون عند","Low-stock alert at"),IN("p_low",v("lowAt"),' type="number" min="0" placeholder="5"'))+F(tr("عمولة المسوّق %","Affiliate commission %"),IN("p_comm",v("comm"),' type="number" min="0" max="'+commCap()+'" step="any" placeholder="'+num(A.market.commissionPct)+'"'),tr("فارغ = الافتراضي ("+num(A.market.commissionPct)+"%)، 0 = بدون تسويق بالعمولة. تُخصم من نصيبك عند البيع عبر مسوّق.","Empty = default ("+num(A.market.commissionPct)+"%), 0 = no affiliates. Deducted from your share on affiliate sales."))+'</div>'+
+   F("SKU",IN("p_sku",v("sku"),' maxlength="40" dir="ltr"'))+F(tr("سعر التكلفة (اختياري)","Cost price (optional)"),IN("p_cost",v("cost"),' type="number" min="0" step="any"'),tr("لحساب هامش الربح فقط، لا يظهر للعملاء.","Used for your margin only; never shown to customers."))+F(tr("تنبيه انخفاض المخزون عند","Low-stock alert at"),IN("p_low",v("lowAt"),' type="number" min="0" placeholder="5"'))+F(tr("عمولة المسوّق %","Affiliate commission %"),IN("p_comm",v("comm"),' type="number" min="0" max="'+afMaxC()+'" step="any" placeholder="'+num(A.market.commissionPct)+'"'),tr("فارغ = الافتراضي ("+num(A.market.commissionPct)+"%)، 0 = بدون تسويق بالعمولة. تُخصم من نصيبك عند البيع عبر مسوّق.","Empty = default ("+num(A.market.commissionPct)+"%), 0 = no affiliates. Deducted from your share on affiliate sales."))+'</div>'+
+   '<label class="pm-lu" style="display:flex;gap:8px;align-items:flex-start;margin:10px 0;font-size:.86rem"><input type="checkbox" id="p_lu"'+(v("lu")?' checked':'')+' style="margin-top:3px"><span>'+tr("أوافق على زيادة عمولة المسوّق حسب مستواه (حتى 15%). الزيادة فوق النسبة الأساسية تُخصم من نصيبي.","I agree to pay level-based affiliate rates (up to 15%). The uplift above the base rate is deducted from my share.")+'</span></label>'+
    F(tr("الوصف","Description"),TA("p_desc",v("desc"),3,' maxlength="400"'))+
    '<div class="pmupfld">'+pmUpHtml("sel",e?[e.img].concat(e.imgs||[]):[],tr("صور المنتج","Product images"))+'</div>'+
    NOTE(tr("أي تعديل على الاسم أو السعر أو الوصف أو الصورة يحتاج موافقة المدير من جديد قبل ظهوره.","Any change to name, price, description or image needs the admin's approval again before it shows."))+
@@ -3348,7 +3382,7 @@ function sWallet(){
    F(tr("رقم المحفظة أو الحساب","Wallet or account number"),IN("w_n","",' dir="ltr" maxlength="34"'))+'</div>'+
    '<div class="ac-row"><button class="pri" data-a="wd-req">'+tr("إرسال الطلب","Send request")+'</button></div></div>'+
   '<div class="ac-card"><h4>'+tr("طلبات السحب","Withdrawal requests")+'</h4>'+(A.wd.length?'<div class="ac-tbl">'+pgs("wd",A.wd).items.map(w=>'<div><span><b>'+moneyB(w.amount)+'</b> · '+esc(fmtDT(w.t))+'<br><small class="muted" dir="ltr">'+esc(w.number||"")+'</small></span><span class="pill '+(w.status==="paid"?"g":w.status==="rejected"?"r":"y")+'">'+(w.status==="paid"?tr("تم التحويل","Paid"):w.status==="rejected"?tr("مرفوض","Rejected"):tr("قيد المعالجة","Processing"))+'</span></div>').join("")+'</div>'+pgs("wd",A.wd).bar:'<p class="muted">'+tr("لا طلبات سحب.","No requests.")+'</p>')+'</div>'+
-  '<div class="ac-card"><h4>'+tr("سجل الحركات","Ledger")+'</h4>'+(A.earn.length?'<div class="ac-tbl">'+pgs("earn",A.earn).items.map(e=>'<div><span>'+(kind[e.kind]||e.kind)+(e.order?' · #'+esc(e.order):'')+(e.affComm?' · <small class="muted">'+tr("عمولة مسوّق −","affiliate −")+moneyB(e.affComm)+'</small>':'')+(e.prod?' · <small class="muted">'+esc(e.prod.join("، "))+'</small>':'')+'<br><small class="muted">'+esc(fmtDT(e.t))+'</small></span><span><b dir="ltr" style="color:'+(e.amount<0?'#f87171':'#34d399')+'">'+(e.amount>0?'+':'')+num(e.amount).toLocaleString("ar-EG")+'</b> <span class="pill '+(e.void?'r':e.status==="available"?'g':'y')+'">'+(e.void?tr("ملغي","Void"):e.status==="available"?tr("متاح","Available"):tr("معلّق","Pending"))+'</span></span></div>').join("")+'</div>'+pgs("earn",A.earn).bar:'<p class="muted">'+tr("لا حركات بعد.","No activity yet.")+'</p>')+'</div>';
+  '<div class="ac-card"><h4>'+tr("سجل الحركات","Ledger")+'</h4>'+(A.earn.length?'<div class="ac-tbl">'+pgs("earn",A.earn).items.map(e=>'<div><span>'+(kind[e.kind]||e.kind)+(e.order?' · #'+esc(e.order):'')+(e.affComm?' · <small class="muted">'+tr("عمولة مسوّق −","affiliate −")+moneyB(e.affComm)+'</small>':'')+(e.prod?' · <small class="muted">'+esc(e.prod.join("، "))+'</small>':'')+'<br><small class="muted">'+esc(fmtDT(e.t))+'</small></span><span><b dir="ltr" style="color:'+(e.amount<0?'#f87171':'#34d399')+'">'+(e.amount>0?'+':'')+num(e.amount).toLocaleString("ar-EG-u-nu-latn")+'</b> <span class="pill '+(e.void?'r':e.status==="available"?'g':'y')+'">'+(e.void?tr("ملغي","Void"):e.status==="available"?tr("متاح","Available"):tr("معلّق","Pending"))+'</span></span></div>').join("")+'</div>'+pgs("earn",A.earn).bar:'<p class="muted">'+tr("لا حركات بعد.","No activity yet.")+'</p>')+'</div>';
 }
 async function requestWd(){
   const amt = num(g("w_amt")), m = g("w_m"), nb = g("w_n"), b = wBal(), min = num(A.market.minWithdraw), er = [];
@@ -3368,8 +3402,20 @@ async function requestWd(){
 
 /* ---------- admin: payment confirmation, ledger, payouts ---------- */
 const commCap = () => Math.max(0, 100 - num(A.market.platformPct));
-const commOf = p => { const d = p && p.comm; const v = (d===undefined||d===null||d==="") ? num(A.market.commissionPct) : num(d); return Math.min(Math.max(v,0),commCap()); };
-const lineComm = l => (l.comm===undefined||l.comm===null) ? Math.min(num(A.market.commissionPct),commCap()) : Math.min(Math.max(num(l.comm),0),commCap());
+const afRates = () => String(S.affRates||"10,10.5,11,12,13,14,15").split(",").map(x=>num(x));
+const afMaxC = () => Math.min(commCap(), Math.max(0, num(S.affMax)||15));
+const afSellerComm = () => { const m={}; String(S.affSellerComm||"").split("\n").forEach(l=>{ const x=l.split("|").map(y=>y.trim()); if(x[0]&&x[1]!==undefined&&x[1]!==""&&!isNaN(parseFloat(x[1]))) m[x[0]]=parseFloat(x[1]); }); return m; };
+const afRateFor = n => { const L=afLevels(), R=afRates(); let i=0; L.forEach((l,j)=>{ if(n>=l.min) i=j; }); return Math.min(Math.max(R[i]!==undefined?R[i]:R[R.length-1],0),afMaxC()); };
+const myAfRate = () => { try{ return afRateFor(afDone().length); }catch(e){ return null; } };
+const refRate = () => { try{ const c=affRefNow(); if(!c) return null; const b=(AF.board||[]).find(x=>x.code===c); return b&&b.rate!==undefined?num(b.rate):null; }catch(e){ return null; } };
+/* priority: product custom > seller custom > level (seller-approved) > default; capped; never summed */
+const commOf = (p, rate) => { if(rate===undefined) rate = (typeof isAff==="function"&&isAff()) ? myAfRate() : null;
+  const cap=afMaxC(), d=p&&p.comm; if(d!==undefined&&d!==null&&d!=="") return Math.min(Math.max(num(d),0),cap);
+  const sc=afSellerComm()[p&&p.seller]; if(sc!==undefined&&sc!==null&&sc!=="") return Math.min(Math.max(num(sc),0),cap);
+  const base=Math.min(Math.max(num(A.market.commissionPct),0),cap);
+  if(rate!==null&&rate!==undefined&&p&&p.lu&&num(rate)>base) return Math.min(num(rate),cap);
+  return base; };
+const lineComm = l => (l.comm===undefined||l.comm===null) ? Math.min(num(A.market.commissionPct),afMaxC()) : Math.min(Math.max(num(l.comm),0),afMaxC());
 const sellersOf = rec => { const m={}; (rec.lines||[]).forEach(l=>{ if(l.seller) (m[l.seller]=m[l.seller]||[]).push(l); }); return m; };
 const affOf = rec => Object.keys(A.roles).find(u=>{ const r=A.roles[u]; return r.affiliate&&r.affiliate.status==="active"&&!r.suspended&&rec.ref&&r.affiliate.code===rec.ref&&u!==rec.uid; });
 const r2 = n => Math.round(n*100)/100;
@@ -3400,7 +3446,8 @@ async function markEntries(rec, patch){
 }
 async function boardSync(af){
   try{ const db=A.db, s=await db.collection("earnings/"+af+"/items").get(), L=s.docs.map(d=>d.data()).filter(e=>e.kind==="commission"&&!e.void&&e.status==="available"); let hide=false; try{ const st=await db.doc("affState/"+af).get(); hide=!!(st.exists&&st.data().hide); }catch(e){}
-    await db.doc("affBoard/"+af).set({orders:L.length,amount:r2(L.reduce((x,e)=>x+num(e.amount),0)),name:pname(af),hide,t:Date.now()}); }catch(e){}
+    const cd=(((A.roles||{})[af]||{}).affiliate||{}).code||""; const bd={orders:L.length,amount:r2(L.reduce((x,e)=>x+num(e.amount),0)),name:pname(af),hide,t:Date.now(),rate:afRateFor(L.length)}; if(cd) bd.code=cd;
+    await db.doc("affBoard/"+af).set(bd,{merge:true}); }catch(e){}
 }
 async function audit(action, data){
   try{
@@ -3409,20 +3456,82 @@ async function audit(action, data){
     await A.db.doc("auditLogs/"+id).set({t:Date.now(),by:A.uid,byName:pname(A.uid),action,detail,target:String(d.u||d.id||d.n||"").slice(0,80)});
   }catch(e){}
 }
+const afRateOfCode = c => { try{ const b=(AF.board||[]).find(x=>x.code===c); return b&&b.rate!==undefined?num(b.rate):null; }catch(e){ return null; } };
+function verifyOrder(rec){
+  const issues=[], fatal=[], rs=(rec.lines||[]).reduce((x,l)=>x+num(l.price)*num(l.qty),0);
+  const lines=(rec.lines||[]).map(l=>{
+    const n=Object.assign({},l), base=String(l.pid||"").split("::")[0], p=S.products.find(x=>x.id===base), nm=String(l.name||base).slice(0,40);
+    if(!p){ fatal.push(nm+": "+tr("المنتج غير موجود في الكتالوج","product not in catalog")); return n; }
+    const qty=Math.floor(num(l.qty)); if(!(qty>=1&&qty<=99)){ fatal.push(nm+": "+tr("كمية غير صحيحة","invalid quantity")); return n; }
+    n.qty=qty;
+    const v=l.opt?vrs(p).find(x=>x.n===String(l.opt).split("/")[0]):null, q=v?vProd(p,v):p, price=eff(q), seller=p.mp?p.seller:"";
+    if(Math.abs(num(l.price)-price)>0.5){ issues.push(nm+": "+tr("السعر المسجّل ","recorded price ")+num(l.price)+tr(" ≠ الكتالوج ","≠ catalog ")+price); n.price=price; }
+    if(String(l.seller||"")!==String(seller)){ issues.push(nm+": "+tr("التاجر يختلف عن الكتالوج","seller differs from catalog")); n.seller=seller; }
+    const cap=commOf(q,afRateOfCode(rec.ref));
+    if(l.comm!==undefined&&l.comm!==null&&num(l.comm)>cap+0.001) issues.push(nm+": "+tr("عمولة أعلى من المسموح","commission above allowed"));
+    n.comm=(l.comm===undefined||l.comm===null)?cap:Math.min(Math.max(num(l.comm),0),cap);
+    if(stockOf(q)<qty) issues.push(nm+": "+tr("الكمية المتاحة أقل من المطلوبة","insufficient stock")+" ("+stockOf(q)+")");
+    return n; });
+  if(rec.sub!==undefined&&Math.abs(num(rec.sub)-rs)>1) issues.push(tr("مجموع الطلب لا يطابق مجموع السطور","order subtotal doesn't match its lines"));
+  return {lines,issues,fatal};
+}
+async function orderDistributed(rec){
+  const af=affOf(rec), P=Object.keys(sellersOf(rec)).map(sid=>"earnings/"+sid+"/items/s_"+rec.no+"_"+rec.uid).concat(af?["earnings/"+af+"/items/c_"+rec.no+"_"+rec.uid]:[]);
+  for(const p of P){ try{ const d=await A.db.doc(p).get(); if(d.exists&&!(d.data()||{}).void) return true; }catch(e){} }
+  return false;
+}
+function stockPatch(item,vn,qty,dir){
+  const has=x=>x!==undefined&&x!==null&&x!=="";
+  if(vn&&Array.isArray(item.variants)){ const vs=item.variants.map(x=>Object.assign({},x)), v=vs.find(x=>String((x&&x.n)||"").replace(/::|[\/|]/g,"-").trim()===vn); if(v&&has(v.stock)){ v.stock=Math.max(0,parseInt(v.stock,10)+dir*qty); return {variants:vs}; } return null; }
+  if(has(item.stock)) return {stock:Math.max(0,parseInt(item.stock,10)+dir*qty)};
+  return null;
+}
+async function stockOnce(rec,dir){
+  const db=A.db, id=rec.uid+"_"+rec.no, K=(p,n)=>"auditLogs/"+p+n+"_"+id; let mk=null;
+  try{
+    let cyc=0; for(let n=1;n<=6;n++){ if((await db.doc(K("stk",n)).get()).exists) cyc=n; else break; }
+    if(dir<0){ if(cyc>0&&!(await db.doc(K("stkr",cyc)).get()).exists) return; if(cyc>=6) return; mk=db.doc(K("stk",cyc+1)); }
+    else { if(cyc===0||(await db.doc(K("stkr",cyc)).get()).exists) return; mk=db.doc(K("stkr",cyc)); }
+  }catch(e){ return; }
+  try{ await mk.set({t:Date.now(),by:A.uid,byName:pname(A.uid),action:dir<0?"stock-deduct":"stock-restore",detail:("id="+rec.no).slice(0,200),target:String(rec.no)}); }catch(e){ return; }
+  let own=false;
+  for(const l of (rec.lines||[])){
+    const base=String(l.pid||"").split("::")[0], p=S.products.find(x=>x.id===base); if(!p) continue;
+    const qty=Math.floor(num(l.qty)), vn=l.opt?String(l.opt).split("/")[0]:"";
+    if(p.mp){ const sid=p.seller, iid=base.slice(("m_"+sid+"_").length), it=(A.items[sid]||[]).find(x=>x.id===iid), pt=it&&stockPatch(it,vn,qty,dir); if(pt){ try{ await db.doc("sellerProducts/"+sid+"/items/"+iid).update(pt); }catch(e){} } }
+    else { const pt=stockPatch(p,vn,qty,dir); if(pt){ Object.assign(p,pt); own=true; } }
+  }
+  if(own){ try{ await save(); }catch(e){} }
+}
 async function setOrderStatus(uid,no,st){
   const db = A.db, ref = db.doc("orderIndex/"+uid), snap = await ref.get(), rec = ((snap.data()||{}).orders||{})[no];
-  if(!rec) return;
+  if(!rec) return false;
   rec.uid = uid;
-  let dist = !!rec.dist;
-  if(["paid","processing","shipped","done"].includes(st) && !dist){ await distribute(rec, st==="done"?"available":"pending"); dist = true; try{ for(const l of (rec.lines||[])){ if(!l.pid) continue; const c=PST[l.pid]||{}; const nv={views:num(c.views),sold:num(c.sold)+num(l.qty)}; await db.doc("productStats/"+l.pid).set(nv); PST[l.pid]=nv; } }catch(e){} }
+  let dist = await orderDistributed(rec);
+  if(["paid","processing","shipped","done"].includes(st) && !dist){
+    const V=verifyOrder(rec);
+    if(V.fatal.length){ flash(tr("لا يمكن تأكيد الطلب: ","Cannot confirm: ")+V.fatal[0],false); try{ audit("ordblock",{id:no,v:V.fatal.join(" ; ").slice(0,150)}); }catch(e){} return false; }
+    if(V.issues.length){
+      if(!confirm(tr("تم رصد اختلافات بين الطلب والكتالوج:\n","Differences found between the order and the catalog:\n")+V.issues.slice(0,6).join("\n")+tr("\n\nمتابعة بالقيم الصحيحة من الكتالوج؟","\n\nContinue using the catalog values?"))) return false;
+      try{ audit("ordfix",{id:no,v:V.issues.join(" ; ").slice(0,150)}); }catch(e){}
+    }
+    rec.lines=V.lines;
+    await distribute(rec, st==="done"?"available":"pending"); dist = await orderDistributed(rec);
+    await stockOnce(rec,-1);
+    try{ for(const l of (rec.lines||[])){ if(!l.pid) continue; const c=PST[l.pid]||{}; const nv={views:num(c.views),sold:num(c.sold)+num(l.qty)}; await db.doc("productStats/"+l.pid).set(nv); PST[l.pid]=nv; } }catch(e){}
+  }
   else if(st==="done" && dist) await markEntries(rec,{status:"available"});
-  if(["cancelled","returned","refunded"].includes(st) && dist){ await markEntries(rec,{void:true,status:"void"}); dist = false; }
+  if(["cancelled","returned","refunded"].includes(st)){ if(dist){ await markEntries(rec,{void:true,status:"void"}); dist = false; } await stockOnce(rec,1); }
   await ref.update({orders:{[no]:{status:st,dist,log:{[Date.now()]:st}}}});
   try{ await db.doc("orders/"+uid+"/items/"+no).update({status:st}); }catch(e){}
+  return true;
 }
 async function payWd(uid,id,ok){
   const db = A.db, w = A.wIdx.find(x=>x.uid===uid&&x.id===id); if(!w) return;
   if(ok){
+    let dw=null, pd=false; try{ const x=await db.doc("withdrawals/"+uid+"/items/"+id).get(); dw=x.exists?x.data():null; pd=(await db.doc("earnings/"+uid+"/items/p_"+id).get()).exists; }catch(e){}
+    if(pd){ flash(tr("هذا السحب مدفوع سابقاً.","This withdrawal was already paid."),false); return; }
+    if(!dw||num(dw.amount)!==num(w.amount)||dw.status!=="requested"){ flash(tr("بيانات طلب السحب لا تطابق السجل الأصلي — لم يُنفَّذ.","Withdrawal data doesn't match the original record — not processed."),false); try{ audit("wdblock",{id:id,u:uid}); }catch(e){} return; }
     const s = await db.collection("earnings/"+uid+"/items").get(), L = s.docs.map(d=>d.data()).filter(e=>!e.void && e.status==="available");
     const avail = r2(L.reduce((a,e)=>a+num(e.amount),0));
     if(num(w.amount)>avail){ flash(tr("رصيده المتاح الآن ","Available balance now ")+moneyB(avail)+tr(" أقل من المبلغ المطلوب.",", less than requested."),false); return; }
@@ -3683,7 +3792,7 @@ async function accClick(e){
       const cur=Object.assign({},(A.approvals[u]||{}).h||{}); if(cur[id]===hsh(it)) delete cur[id]; else cur[id]=hsh(it);
       await A.db.doc("approvals/"+u).set({h:cur});
     }
-    else if(a==="ost"){ await setOrderStatus(b.dataset.u,b.dataset.n,b.dataset.v); flash(tr("تم تحديث الطلب ✓","Order updated ✓"),true); }
+    else if(a==="ost"){ const r=await setOrderStatus(b.dataset.u,b.dataset.n,b.dataset.v); if(r!==false) flash(tr("تم تحديث الطلب ✓","Order updated ✓"),true); }
     else if(a==="wdpay"){ await payWd(b.dataset.u,b.dataset.id,b.dataset.v==="1"); }
     else if(a==="save-market"){
       const m={commissionPct:num(g("m_c")),platformPct:num(g("m_p")),minWithdraw:num(g("m_w"))};
@@ -3710,13 +3819,14 @@ async function saveProduct(){
   if(name.length<2) er.push(["p_name",tr("اكتب اسم المنتج","Enter a product name")]);
   if(!(price>=0)) er.push(["p_price",tr("اكتب سعراً صحيحاً","Enter a valid price")]);
   if(st!==""&&!(parseInt(st,10)>=0)) er.push(["p_stock",tr("كمية غير صحيحة","Invalid stock")]);
-  const cm=g("p_comm"); if(cm!==""&&!(parseFloat(cm)>=0&&parseFloat(cm)<=commCap())) er.push(["p_comm",tr("نسبة غير صحيحة (الحد الأقصى ","Invalid (max ")+commCap()+"%)"]);
+  const cm=g("p_comm"); if(cm!==""&&!(parseFloat(cm)>=0&&parseFloat(cm)<=afMaxC())) er.push(["p_comm",tr("نسبة غير صحيحة (الحد الأقصى ","Invalid (max ")+afMaxC()+"%)"]);
   if(bad(er)) return;
   const e = A.editP ? (A.items[A.uid]||[]).find(x=>x.id===A.editP) : null;
   const it = Object.assign({},e||{},{name,price,cat:g("p_cat")||"عام",desc:g("p_desc"),emoji:(e&&e.emoji)||"🛍️",t:Date.now()});
   delete it.id;
   if(st!=="") it.stock=parseInt(st,10); else delete it.stock;
   if(cm!=="") it.comm=parseFloat(cm); else delete it.comm;
+  if($("p_lu")&&$("p_lu").checked) it.lu=1; else delete it.lu;
   const sk=g("p_sku"), co2=g("p_cost"), lw=g("p_low");
   if(sk) it.sku=sk; else delete it.sku; if(co2!==""&&parseFloat(co2)>=0) it.cost=parseFloat(co2); else delete it.cost; if(lw!==""&&parseInt(lw,10)>=0) it.lowAt=parseInt(lw,10); else delete it.lowAt;
   if($("pmup-sel")){ const L=pmUpGet("sel").slice(0,PMUP_MAX); delete it.img; delete it.imgs; if(L.length){ it.img=L[0]; if(L.length>1) it.imgs=L.slice(1); } }
@@ -3759,8 +3869,8 @@ const afSavePf = () => { try{ lsSet("affpro_v1",{dk:AF.dk,side:AF.side}); }catch
 const afI = n => ["home","user","set","lock","bell","pal","globe","link","db","help","store","mega","rec","shield","id","wal","x","truck","ret","chat","cart","cmp","info","spark","flame","trophy","search","tag","sun","clock","pay"].includes(n) ? ic(n) : "";
 const afCode = () => ((myRole().affiliate||{}).code||"");
 const afUrl = (pid,lid) => baseUrl()+"#ref-"+afCode()+(pid||lid?"/"+(pid||"home"):"")+(lid?"/"+lid:"");
-const afN = n => Number(n||0).toLocaleString(lang==="ar"?"ar-EG":"en-US");
-const afP = n => (Math.round(n*10)/10).toLocaleString(lang==="ar"?"ar-EG":"en-US")+"%";
+const afN = n => Number(n||0).toLocaleString(lang==="ar"?"ar-EG-u-nu-latn":"en-US");
+const afP = n => (Math.round(n*10)/10).toLocaleString(lang==="ar"?"ar-EG-u-nu-latn":"en-US")+"%";
 const afDay = 864e5;
 const afCom = () => A.earn.filter(e=>e.kind==="commission");
 const afLinkOf = id => AF.links.find(l=>l.id===id);
@@ -3873,7 +3983,7 @@ function afHome(){
    ["rate",tr("معدل التحويل","Conversion rate"),afP(afRate(c)),afRate(c),afRate(p),"reports"],["avg",tr("متوسط قيمة الطلب","Avg order value"),moneyB(Math.round(afAvg(c))),afAvg(c),afAvg(p),"orders"],["links",tr("الروابط النشطة","Active links"),afN(links.length),links.length,links.length,"links"],["prods",tr("منتجات تُسوَّق","Products promoted"),afN(prods.size),prods.size,prods.size,"links"]];
   const prog=lv.next?Math.min(100,Math.round((lv.d-lv.cur.min)/Math.max(1,lv.next.min-lv.cur.min)*100)):100;
   const tgt=num((AF.st||{}).target), mo=afM(new Date(new Date().getFullYear(),new Date().getMonth(),1).getTime(),Date.now()+afDay), tp=tgt>0?Math.min(100,Math.round(mo.total/tgt*100)):0;
-  const welcome='<section class="af-wel"><div class="af-av">'+(me.avatarUrl?'<img alt="" src="'+esc(me.avatarUrl)+'">':esc((nm||"?").slice(0,1).toUpperCase()))+'</div><div class="grow"><h2>'+tr("مرحباً، ","Welcome, ")+esc(nm)+'</h2><p class="afmut">ID: <b dir="ltr">'+esc(code.toUpperCase())+'</b> · '+afStat([tr("نشط","Active"),"g"])+' · '+(num((myRole().affiliate||{}).t)?tr("انضممت ","Joined ")+esc(fmtDT(num((myRole().affiliate||{}).t))):"")+'</p></div><div class="af-lvb"><span class="af-badge" style="--c:'+lv.cur.c+'">'+lv.cur.n+'</span><div class="af-bar2" role="progressbar" aria-valuenow="'+prog+'" aria-valuemin="0" aria-valuemax="100"><i style="width:'+prog+'%"></i></div><small class="afmut">'+(lv.next?tr("إلى ","To ")+lv.next.n+': '+Math.max(0,lv.next.min-lv.d)+tr(" طلب"," orders"):tr("أعلى مستوى","Top level"))+'</small></div></section>'+
+  const welcome='<section class="af-wel"><div class="af-av">'+(me.avatarUrl?'<img alt="" src="'+esc(me.avatarUrl)+'">':esc((nm||"?").slice(0,1).toUpperCase()))+'</div><div class="grow"><h2>'+tr("مرحباً، ","Welcome, ")+esc(nm)+'</h2><p class="afmut">ID: <b dir="ltr">'+esc(code.toUpperCase())+'</b> · '+afStat([tr("نشط","Active"),"g"])+' · '+(num((myRole().affiliate||{}).t)?tr("انضممت ","Joined ")+esc(fmtDT(num((myRole().affiliate||{}).t))):"")+'</p></div><div class="af-lvb"><span class="af-badge" style="--c:'+lv.cur.c+'">'+lv.cur.n+' · '+afP(afRateFor(lv.d))+'</span><div class="af-bar2" role="progressbar" aria-valuenow="'+prog+'" aria-valuemin="0" aria-valuemax="100"><i style="width:'+prog+'%"></i></div><small class="afmut">'+(lv.next?tr("إلى ","To ")+lv.next.n+': '+Math.max(0,lv.next.min-lv.d)+tr(" طلب"," orders"):tr("أعلى مستوى","Top level"))+(lv.next?' · '+tr("عمولة ","rate ")+afP(afRateFor(lv.next.min)):'')+'</small><small class="afmut af-rn">'+tr("زيادة المستوى تُطبّق على منتجات التجار الموافقين فقط","Level uplift applies to products of opted-in sellers only")+'</small></div></section>'+
     (tgt>0?'<div class="af-card"><b>'+tr("هدفك الشهري","Monthly target")+'</b> '+moneyB(mo.total)+' / '+moneyB(tgt)+'<div class="af-bar2"><i style="width:'+tp+'%"></i></div></div>':'');
   const kp=K.map(k=>'<div class="af-kpi"><div class="af-kh"><span>'+k[1]+'</span>'+afDelta(k[3],k[4])+'</div><b>'+k[2]+'</b>'+afSpark(ds(k[0]==="appr"||k[0]==="pend"||k[0]==="rej"||k[0]==="avg"||k[0]==="rate"?"earn":k[0]==="uniq"?"clicks":k[0]==="links"||k[0]==="prods"?"conv":k[0]))+'<button class="af-lk" data-af="nav" data-v="'+k[5]+'">'+tr("عرض التفاصيل","Details")+' ›</button></div>').join("");
   const MT=[["earn",tr("الأرباح","Earnings")],["clicks",tr("النقرات","Clicks")],["conv",tr("التحويلات","Conversions")],["orders",tr("الطلبات المكتملة","Orders")]];
@@ -4175,9 +4285,9 @@ function sAffAdm(){
    '<div class="ac-card"><h4>'+tr("المسوقون","Affiliates")+'</h4><input id="af_aq" placeholder="'+tr("بحث…","Search…")+'" value="'+esc(AF.aq||"")+'" data-afadm="q">'+(lst.length?'<div class="ac-tbl">'+lst.slice(0,30).map(u=>{ const r=A.roles[u], a=r.affiliate, s=r.suspended?[tr("موقوف","Suspended"),"y"]:a.status==="active"?[tr("نشط","Active"),"g"]:a.status==="banned"?[tr("محظور","Banned"),"r"]:[a.status,"y"]; return '<div><span><b>'+esc(pname(u))+'</b> <small class="muted" dir="ltr">'+esc(a.code||"")+'</small><br><span class="pill '+s[1]+'">'+s[0]+'</span></span><span class="ac-row"><button class="sec" data-afadm="clk" data-u="'+u+'">'+tr("النقرات","Clicks")+'</button><button class="sec" data-afadm="susp" data-u="'+u+'">'+(r.suspended?tr("إعادة تفعيل","Reactivate"):tr("إيقاف","Suspend"))+'</button><button class="sec" data-afadm="ban" data-u="'+u+'">'+(a.status==="banned"?tr("رفع الحظر","Unban"):tr("حظر","Ban"))+'</button></span></div>'; }).join("")+'</div>':'<p class="muted">'+tr("لا مسوقين.","None.")+'</p>')+'</div>'+
    (sel?'<div class="ac-card"><h4>'+tr("نقرات المسوّق","Affiliate clicks")+': '+esc(pname(sel))+'</h4><p>'+tr("النقرات: ","Clicks: ")+ck.length+' · '+tr("أجهزة مختلفة: ","Distinct devices: ")+new Set(ck.map(c=>c.d)).size+' · '+tr("أجهزة بأكثر من 20 نقرة/يوم: ","Devices >20 clicks/day: ")+(()=>{ const m={}; ck.forEach(c=>{ const k=c.d+"|"+new Date(num(c.t)).toDateString(); m[k]=(m[k]||0)+1; }); return Object.keys(m).filter(k=>m[k]>20).length; })()+'</p><small class="muted">'+tr("الاشتباه سبب للمراجعة وليس دليل مخالفة.","Suspicion is a reason to review, not proof.")+'</small></div>':'')+
    '<div class="ac-card"><h4>'+tr("إعدادات البرنامج","Program settings")+'</h4><small class="muted">'+tr("نسبة العمولة الافتراضية وحد السحب في تبويب «السوق» من لوحة الإدارة، ونسبة كل منتج من بيانات المنتج.","Default rate and minimum withdrawal live under the Market tab; per-product rate in product data.")+'</small></div>'+
-   fld("affWindow",tr("نافذة الإسناد (أيام)","Attribution window (days)"),0,tr("افتراضي 30. آخر نقرة تفوز.","Default 30. Last click wins."))+fld("affLevels",tr("حدود المستويات (طلبات مكتملة، 7 قيم)","Level thresholds (completed orders, 7 values)"),0,"0,5,20,50,100,250,500")+fld("affLvPerks",tr("مزايا المستويات (سطر لكل مستوى)","Level perks (one line per level)"),5,"")+
+   fld("affWindow",tr("نافذة الإسناد (أيام)","Attribution window (days)"),0,tr("افتراضي 30. آخر نقرة تفوز.","Default 30. Last click wins."))+fld("affLevels",tr("حدود المستويات (طلبات مكتملة، 7 قيم)","Level thresholds (completed orders, 7 values)"),0,"0,5,20,50,100,250,500")+fld("affRates",tr("عمولة كل مستوى % (7 قيم)","Commission per level % (7 values)"),0,"10,10.5,11,12,13,14,15")+fld("affMax",tr("الحد الأقصى لأي عمولة %","Max commission %"),0,"15")+fld("affSellerComm",tr("عمولة مخصصة لتاجر (سطر: معرّف التاجر | نسبة)","Custom seller rate (seller id | %)"),3,"uid | 9")+fld("affLvPerks",tr("مزايا المستويات (سطر لكل مستوى)","Level perks (one line per level)"),5,"")+
    fld("affCampaigns",tr("الحملات (سطر لكل حملة)","Campaigns (one per line)"),5,"id | "+tr("الاسم","name")+" | "+tr("الوصف","description")+" | 2026-12-01 | 2026-12-31 | all | "+tr("شروط","terms"))+fld("affAssets",tr("مواد إعلانية (عنوان | نص)","Assets (title | text)"),4,"")+fld("affStories",tr("قصص نجاح موثقة (سطر لكل قصة)","Verified success stories (one per line)"),3,"")+fld("affRefReward",tr("مكافأة الإحالة (نص)","Referral reward (text)"),0,"")+fld("affTerms",tr("شروط إضافية","Extra terms"),3,"")+
-   '<div class="ac-row"><button class="pri" data-afadm="save">'+tr("حفظ إعدادات الأفيليت","Save affiliate settings")+'</button></div><div class="ac-note">'+tr("تُحفظ للجميع وللمدير فقط. تحتاج قواعد Firestore المحدّثة.","Saved globally; admin only. Requires the updated Firestore rules.")+'</div>';
+   '<div class="ac-note">'+tr("أولوية الاحتساب: عمولة المنتج ← عمولة التاجر ← مستوى المسوّق (لمنتجات التجار الموافقين فقط) ← الافتراضية. لا تُجمع النسب، والسقف يُطبَّق دائماً.","Priority: product → seller → affiliate level (opted-in sellers only) → default. Rates never add up; the cap always applies.")+'</div><div class="ac-row"><button class="sec" data-afadm="resync">'+tr("تحديث مستويات المسوّقين","Refresh affiliate levels")+'</button><button class="pri" data-afadm="save">'+tr("حفظ إعدادات الأفيليت","Save affiliate settings")+'</button></div><div class="ac-note">'+tr("تُحفظ للجميع وللمدير فقط. تحتاج قواعد Firestore المحدّثة.","Saved globally; admin only. Requires the updated Firestore rules.")+'</div>';
 }
 async function afAdmAct(){}
 document.addEventListener("click",async e=>{
@@ -4185,7 +4295,14 @@ document.addEventListener("click",async e=>{
   if(a==="susp"){ const r=Object.assign({},A.roles[u]||{}); r.suspended=!r.suspended; await A.db.doc("roles/"+u).set(r); }
   else if(a==="ban"){ const r=JSON.parse(JSON.stringify(A.roles[u]||{})); if(r.affiliate) r.affiliate.status=r.affiliate.status==="banned"?"active":"banned"; await A.db.doc("roles/"+u).set(r); }
   else if(a==="clk"){ const c=((A.roles[u]||{}).affiliate||{}).code; AF.asel=u; AF.admClicks=[]; try{ const s=await A.db.collection("affClicks/"+c+"/items").get(); AF.admClicks=s.docs.map(d=>d.data()); }catch(x){} accRender(true); }
-  else if(a==="save"){ ["affWindow","affLevels","affLvPerks","affCampaigns","affAssets","affStories","affRefReward","affTerms"].forEach(k=>{ const el=$("afa_"+k); if(el) S[k]=String(el.value).trim(); }); try{ await cfgPush(); flash(tr("تم الحفظ ✓","Saved ✓"),true); }catch(x){ flash(tr("تعذّر الحفظ (قواعد/صلاحيات)","Couldn't save (rules/permissions)"),false); } }
+  else if(a==="resync"){ let n=0; for(const id of Object.keys(A.roles||{})){ if(A.roles[id].affiliate&&A.roles[id].affiliate.status==="active"){ await boardSync(id); n++; } } flash(tr("تم تحديث "+n+" مسوّق ✓","Refreshed "+n+" affiliates ✓"),true); }
+  else if(a==="save"){
+    const nv={}; ["affWindow","affLevels","affRates","affMax","affSellerComm","affLvPerks","affCampaigns","affAssets","affStories","affRefReward","affTerms"].forEach(k=>{ const el=$("afa_"+k); if(el) nv[k]=String(el.value).trim(); });
+    const bad=m=>{ flash(m,false); return true; };
+    if(nv.affRates!==undefined&&nv.affRates!==""){ const r=nv.affRates.split(",").map(x=>parseFloat(x)); if(r.length!==7||r.some(x=>isNaN(x)||x<0||x>Math.max(15,num(nv.affMax)||15))||r.some((x,i)=>i&&x<r[i-1])) return void bad(tr("نسب المستويات: 7 قيم تصاعدية وبحد أقصى 15%","Level rates: 7 ascending values, max 15%")); }
+    if(nv.affMax!==undefined&&nv.affMax!==""&&!(parseFloat(nv.affMax)>0&&parseFloat(nv.affMax)<=15)) return void bad(tr("الحد الأقصى بين 1 و15","Max must be 1–15"));
+    if(nv.affLevels!==undefined&&nv.affLevels!==""){ const t=nv.affLevels.split(",").map(x=>parseInt(x,10)); if(t.length!==7||t.some(x=>isNaN(x)||x<0)||t.some((x,i)=>i&&x<=t[i-1])) return void bad(tr("حدود المستويات: 7 قيم تصاعدية","Thresholds: 7 ascending values")); }
+    Object.keys(nv).forEach(k=>{ const old=String(S[k]||""); if(old!==nv[k]){ try{ audit("affcfg",{k:k,v:(old.slice(0,40)||"∅")+" → "+(nv[k].slice(0,40)||"∅")}); }catch(x){} } S[k]=nv[k]; }); try{ await cfgPush(); flash(tr("تم الحفظ ✓","Saved ✓"),true); }catch(x){ flash(tr("تعذّر الحفظ (قواعد/صلاحيات)","Couldn't save (rules/permissions)"),false); } }
 });
 document.addEventListener("input",e=>{ if(e.target&&e.target.dataset&&e.target.dataset.afadm==="q"){ AF.aq=e.target.value; clearTimeout(_afT); _afT=setTimeout(()=>accRender(true),300); } });
 /* ---------- merchant: affiliate marketing ---------- */
@@ -4677,7 +4794,7 @@ function pmFx(){
     const txt=el.textContent.trim(), key=(el.parentElement&&el.parentElement.textContent||"")+"|"+txt; if(window.__cnt[key]) return; window.__cnt[key]=1;
     const m=txt.match(/^([^\d٠-٩]*)([\d٠-٩][\d٠-٩٬,٫.]*)(.*)$/); if(!m) return;
     const lat=m[2].replace(/[٠-٩]/g,x=>"٠١٢٣٤٥٦٧٨٩".indexOf(x)).replace(/[٬,]/g,"").replace("٫","."), val=parseFloat(lat); if(!isFinite(val)||val<=0) return;
-    const dec=(lat.split(".")[1]||"").length, t0=performance.now(), dur=700, fmt=x=>x.toLocaleString(m[2].match(/[٠-٩]/)?"ar-EG":"en-US",{minimumFractionDigits:dec,maximumFractionDigits:dec});
+    const dec=(lat.split(".")[1]||"").length, t0=performance.now(), dur=700, fmt=x=>x.toLocaleString(m[2].match(/[٠-٩]/)?"ar-EG-u-nu-latn":"en-US",{minimumFractionDigits:dec,maximumFractionDigits:dec});
     const tick=now=>{ const k=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-k,3); el.textContent=k<1?m[1]+fmt(val*e)+m[3]:txt; if(k<1) requestAnimationFrame(tick); }; requestAnimationFrame(tick); });
   if(document.documentElement.classList.contains("pmrvon")&&"IntersectionObserver" in window){
     window.__rvo=window.__rvo||new IntersectionObserver(es=>es.forEach(x=>{ if(x.isIntersecting){ x.target.classList.add("pmrv-in"); window.__rvo.unobserve(x.target); } }),{threshold:.08});
